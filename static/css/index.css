@@ -1,0 +1,7 @@
+* {
+    margin: 0
+}
+.logo {
+    max-height: 100px;
+    max-width: 100px;
+}
