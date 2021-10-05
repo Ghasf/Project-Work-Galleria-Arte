@@ -7,6 +7,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -32,5 +33,8 @@ public class Prenotazioni {
     @ManyToOne
     @JsonIgnoreProperties("prenotazioni")
     private Anagrafica anagrafica;
+
+    @ManyToMany(targetEntity = Sale.class)
+    private List<Sale> sale;
 
 }
