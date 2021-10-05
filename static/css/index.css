@@ -35,6 +35,9 @@ footer{
     margin: 100px 0;
     padding: 100px;
 }
-.table{
-    border-bottom-color: black;
+.form-group{
+    margin: auto;
+}
+.bottone-form{
+    width: 100%;
 }
