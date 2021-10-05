@@ -12,8 +12,9 @@
 <body>
 <header>
     <nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-        <a class="offset-1 navbar-brand" href="#"><img alt="0" class= "logo" src="static/images/GalleriaArte.png"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="offset-1 navbar-brand" href="#"><img alt="0" class="logo" src="static/images/GalleriaArte.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" collapse navbar-collapse" id="navbarText">
@@ -30,7 +31,8 @@
             </ul>
             <div class="offset-8">
                 <a href="#" class="btn btn-danger active outline-color-danger" role="button" aria-pressed="true">Iscriviti</a>
-                <a href="../Project-Work-Galleria-Arte/Iscrizione.html" class="btn btn-primary btn active" role="button" aria-pressed="true">Accedi</a>
+                <a href="../Project-Work-Galleria-Arte/Iscrizione.html" class="btn btn-primary btn active" role="button"
+                   aria-pressed="true">Accedi</a>
             </div>
         </div>
     </nav>
@@ -41,9 +43,9 @@
             <div class="card glass-card">
                 <div class="card-body">
                     <form class="text-white">
-                        <div class="form-group text-center" >
+                        <div class="form-group text-center">
                             <label for="email">
-                                <small class="text-muted">*</small>
+                                <strong class="text-danger">*</strong>
                                 Email
                             </label>
                             <input type="text" class="form-control" id="email" placeholder="">
@@ -51,34 +53,35 @@
                         <div class=" form-group row text-center">
                             <div class="col-md-6">
                                 <label for="password">
-                                    <small class="text-muted">*</small>
+                                    <strong class="text-danger">*</strong>
                                     Password
                                 </label>
                                 <input type="password" class="form-control" id="password" placeholder="">
                             </div>
                             <div class="col-md-6">
                                 <label for="confermapassword">
-                                    <small class="text-muted">*</small>
+                                    <strong class="text-danger">*</strong>
                                     Conferma Password</label>
                                 <input type="password" class="form-control" id="confermapassword" placeholder="">
                             </div>
                         </div>
-                        <div class="nominativo form-group text-center" >
-                            <label for="nominativo" >
-                                <small class="text-muted">*</small>
+                        <div class="nominativo form-group text-center">
+                            <label for="nominativo">
+                                <strong class="text-danger">*</strong>
                                 Nominativo</label>
                             <input type="text" class="nominativo form-control" id="nominativo" placeholder="">
                         </div>
                         <div class="form-group row">
                             <div class="text-center col-md-8">
                                 <label for="indirizzo">
-                                    <small class="text-muted">*</small>
+                                    <strong class="text-danger">*</strong>
                                     Indirizzo</label>
-                                <input type="text" class="form-control" id="indirizzo" placeholder="Es. Via Alberto Rossi 29">
+                                <input type="text" class="form-control" id="indirizzo"
+                                       placeholder="Es. Via Alberto Rossi 29">
                             </div>
                             <div class="text-center col-md-4">
                                 <label for="cap">
-                                    <small class="text-muted">*</small>
+                                    <strong class="text-danger">*</strong>
                                     Cap</label>
                                 <input type="text" class="form-control" id="cap">
                             </div>
@@ -86,30 +89,30 @@
                         <div class="form-group row ">
                             <div class="text-center col-md-6">
                                 <label for="localita">
-                                    <small class="text-muted">*</small>
+                                    <strong class="text-danger">*</strong>
                                     Città</label>
                                 <input type="text" class="form-control" id="localita">
                             </div>
-                                <div class="text-center col-md-6">
-                                    <label for="provincia">
-                                        <small class="text-muted">*</small>
-                                        Provincia</label>
-                                    <input type="text" class="form-control" id="provincia">
-                                </div>
+                            <div class="text-center col-md-6">
+                                <label for="provincia">
+                                    <strong class="text-danger">*</strong>
+                                    Provincia</label>
+                                <input type="text" class="form-control" id="provincia">
                             </div>
+                        </div>
                         <div class="form-group row text-center">
-                        <div class="col-md-6">
-                            <label for="codicefiscale">
-                                <small class="text-muted">*</small>
-                                Codice Fiscale</label>
-                            <input type="text" class="form-control" id="codicefiscale" placeholder="">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="partitaiva">
-                                <small class="text-muted">*</small>
-                                Partita Iva</label>
-                            <input type="text" class="form-control" id="partitaiva" placeholder="">
-                        </div>
+                            <div class="col-md-6">
+                                <label for="codicefiscale">
+                                    <strong class="text-danger">*</strong>
+                                    Codice Fiscale</label>
+                                <input type="text" class="form-control" id="codicefiscale" placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="partitaiva">
+                                    <strong class="text-danger">*</strong>
+                                    Partita Iva</label>
+                                <input type="text" class="form-control" id="partitaiva" placeholder="">
+                            </div>
                         </div>
                         <div class="form-group text-center">
                             <div class="text-center">
@@ -121,12 +124,13 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">
                                 <label class="form-check-label" for="gridCheck"><small>
-                                    Ho letto la <a class="text-dark" href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy policy </a>
+                                    Ho letto la <a class="text-dark"
+                                                   href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy
+                                    policy </a>
                                     e acconsento al trattamento dei dati che non verranno mai ceduti a terzi</small>
                                 </label>
                             </div>
                         </div>
-
                         <button type="submit" class="bottone-form btn btn-primary">Iscriviti</button>
                     </form>
                 </div>
