@@ -34,7 +34,8 @@ public class Prenotazioni {
     @JsonIgnoreProperties("prenotazioni")
     private Anagrafica anagrafica;
 
-    @ManyToMany(targetEntity = Sale.class)
+    @ManyToMany(mappedBy = "prenotazioni", targetEntity = Sale.class)
+    @JsonIgnoreProperties("prenotazioni")
     private List<Sale> sale;
 
 }

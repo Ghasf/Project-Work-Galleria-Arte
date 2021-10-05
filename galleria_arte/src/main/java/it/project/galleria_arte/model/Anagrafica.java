@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "opere")
+@Table(name = "anagrafica")
 public class Anagrafica {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +41,6 @@ public class Anagrafica {
     @Column(name = "sito_web")
     private String sitoWeb;
 
-    @OneToMany(mappedBy = "anagrafica")
+    @OneToMany(mappedBy = "prenotazioni")
     private List<Prenotazioni> prenotazioni;
 }
