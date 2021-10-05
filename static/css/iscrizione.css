@@ -6,6 +6,7 @@
     max-width: 60px;
 }
 .navbar{
+    margin-bottom: 100px;
 }
 
 .testo-footer{
@@ -26,20 +27,17 @@
 
 footer{
     background-color: #212529;
+    margin-top: 100px
 }
 .linksocial {
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-content: stretch;
-    margin: 100px 0;
     padding: 100px;
 }
 .form-group{
     margin: auto;
-}
-.nominativo{
-    width: 100%;
 }
 .bottone-form{
     width: 100%;
