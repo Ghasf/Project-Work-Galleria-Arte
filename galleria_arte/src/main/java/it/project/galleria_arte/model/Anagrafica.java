@@ -1,5 +1,6 @@
 package it.project.galleria_arte.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -42,5 +43,6 @@ public class Anagrafica {
     private String sitoWeb;
 
     @OneToMany(mappedBy = "anagrafica")
+    //@JsonIgnore serve per far vedere solo l'anagrafica nascondento i risultati delle foreign key
     private List<Prenotazioni> prenotazioni;
 }
