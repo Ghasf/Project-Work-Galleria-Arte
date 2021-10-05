@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "opere")
+@Table(name = "anagrafica")
 public class Anagrafica {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
