@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 05, 2021 alle 11:31
--- Versione del server: 10.4.20-MariaDB
--- Versione PHP: 8.0.9
+-- Creato il: Ott 05, 2021 alle 12:06
+-- Versione del server: 10.4.21-MariaDB
+-- Versione PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,8 +115,12 @@ CREATE TABLE `sale` (
 --
 
 INSERT INTO `sale` (`id_sala`, `nome`, `dimensione`, `larghezza_parete_nord`, `altezza_parete_nord`, `larghezza_parete_est`, `altezza_parete_est`, `larghezza_parete_ovest`, `altezza_parete_ovest`, `larghezza_parete_sud`, `altezza_parete_sud`) VALUES
-(1, 'Sala Blu', '100mq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'Sala Rossa', '150mq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'Sala Blu', '100mq', 3, 2, 4, 3, 2, 5, 4, 2),
+(2, 'Sala Rossa', '150mq', 2, 3, 4, 4, 2, 4, 4, 3),
+(3, 'Sala Verde', '80mq', 4, 5, 3, 3, 2, 3, 3, 4),
+(4, 'Sala Viola', '200mq', 4, 4, 5, 4, 3, 5, 5, 5),
+(5, 'Sala Gialla', '170mq', 4, 2, 5, 3, 3, 3, 5, 2),
+(6, 'Sala Nera', '145mq', 2, 3, 5, 5, 4, 4, 3, 3);
 
 --
 -- Indici per le tabelle scaricate
@@ -175,7 +179,7 @@ ALTER TABLE `prenotazioni`
 -- AUTO_INCREMENT per la tabella `sale`
 --
 ALTER TABLE `sale`
-  MODIFY `id_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Limiti per le tabelle scaricate
