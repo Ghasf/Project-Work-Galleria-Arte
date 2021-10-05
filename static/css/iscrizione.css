@@ -35,3 +35,12 @@ footer{
     margin: 100px 0;
     padding: 100px;
 }
+.form-group{
+    margin: auto;
+}
+.nominativo{
+    width: 100%;
+}
+.bottone-form{
+    width: 100%;
+}
