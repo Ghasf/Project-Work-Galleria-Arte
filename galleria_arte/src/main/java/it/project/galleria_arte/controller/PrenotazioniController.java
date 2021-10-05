@@ -2,6 +2,8 @@ package it.project.galleria_arte.controller;
 
 import it.project.galleria_arte.model.Prenotazioni;
 import it.project.galleria_arte.service.PrenotazioniService;
+import org.hibernate.annotations.Target;
+import org.springframework.aop.TargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +32,7 @@ public class PrenotazioniController {
         return prenotazioniService.getDataFineById(id);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
     @DeleteMapping("/delete-prenotazione-by-id/{id}")
     public void deletePrenotazioneById(@PathVariable("id") Integer id){
         prenotazioniService.deletePrenotazioneById(id);
