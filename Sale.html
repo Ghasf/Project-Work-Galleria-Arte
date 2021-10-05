@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
   <script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="static/css/css/bootstrap.css">
   <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/sale.css">
   <meta charset="UTF-8">
   <title>Art Gallery : Sale</title>
 </head>
@@ -33,58 +34,77 @@
     </div>
   </nav>
 </header>
-<main>
-  <h2 class="display-6 text-center mb-4">Le nostre sale</h2>
+<main class="main">
+  <div class="d-flex flex-column justify-content-between align-content-center">
+      <div  class="salaverde d-flex  justify-content-between">
+         <div class="d-flex justify-content-between">
+        <h1  class=" offset-1 description">Sala Verde</h1><br>
+        <h4>
+          Dotata di quattro pareti la sala è così composta:<br>
+          parete nord:4mx5m,<br>parete est:3mx3m,<br>parete ovest:2mx3m,<br>parete sud:3mx4m.<br> Per una cubatura totale di:80mq</h4>
+         </div>
+        <img class="greenroom" src="static/images/greenroom.jpg" alt="greenroom">
+      </div>
 
-  <div class="table-responsive">
-    <table class="table text-center">
-      <thead>
-      <tr>
-        <th style="width: 34%"></th>
-        <th style="width: 22%">Disponibile</th>
-        <th style="width: 22%">Occupata</th>
-        <th style="width: 22%">Indisponibile</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th class="text-start" scope="row">Sala Verde</th>
-        <td>
-          <svg class="bi" width="24" height="24">
-            <use xlink:href="#check">
-              #shadow-root (closed)
-              <symbol id="check" viewBox="0 0 16 16">
-                <title>Check</title>
-              </symbol>
-            </use>
-          </svg>
-        </td>
-        <td>
-          <svg class="bi" width="24" height="24">
-            <use xlink:href="#check">
-              #shadow-root (closed)
-              <symbol id="check" viewBox="0 0 16 16">
-                <title>Check</title>
-              </symbol>
-            </use>
-          </svg>
-        </td>
-        <td>
-          <svg class="bi" width="24" height="24">
-            <use xlink:href="#check">
-              #shadow-root (closed)
-              <symbol id="check" viewBox="0 0 16 16">
-                <title>Check</title>
-              </symbol>
-            </use>
-          </svg>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+      <div class="salablu d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
+        <h1 class="offset-1 description">Sala Blu <br>
+          <h4>Dotata di quattro pareti la sala è così composta:<br>
+            parete nord:3mx2m,<br>parete est:4mx3m,<br>parete ovest:2mx5m,<br>parete sud:4mx2m.<br> Per una cubatura totale di:100mq</h4>
+        </h1>
+</div>
+    <img class="blueroom" src="static/images/blueroom.jpg" alt="blueroom"/>
+</div>
+        </div>
+      <div class="salarossa d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
+        <h1 class="offset-1 description">Sala Rossa <br>
+          <h4>class="offset-1 description">Dotata di quattro pareti la sala è così composta:<br>
+            parete nord:2mx3m,<br>parete est:4mx4m,<br>parete ovest:2mx4m,<br>parete sud:4mx3m.<br> Per una cubatura totale di:150mq</h4>
+        </h1>
+        </div>
+      </div>
+  <div>
+    <img class="redroom" src="static/images/redroom.jpg" alt="redroom"/>
   </div>
- </main>
-<footer class="pt-4 my-md-5 pt-md-5 border-top align-items-center">
+
+  <div class="salaviola d-flex justify-content-between">
+    <div class="d-flex justify-content-between">
+      <h1 class="offset-1 description">Sala Viola <br>
+        <h4>class="offset-1 description">Dotata di quattro pareti la sala è così composta:<br>
+          parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una cubatura totale di:200mq</h4>
+      </h1>
+    </div>
+  </div>
+  <div>
+    <img class="purpleroom" src="static/images/purpleroom.jpg" alt="purpleroom"/>
+  </div>
+
+  <div class="salagialla d-flex justify-content-between">
+    <div class="d-flex justify-content-between">
+      <h1 class="offset-1 description">Sala Gialla <br>
+        <h4>class="offset-1 description">Dotata di quattro pareti la sala è così composta:<br>
+          parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una cubatura totale di:170mq</h4>
+      </h1>
+    </div>
+  </div>
+  <div>
+    <img class="yellowroom" src="static/images/yellowroom.jpg" alt="yellowroom"/>
+  </div>
+
+  <div class="salanera d-flex justify-content-between">
+    <div class="d-flex justify-content-between">
+      <h1 class="offset-1 description">Sala Nera <br>
+        <h4>class="offset-1 description">Dotata di quattro pareti la sala è così composta:<br>
+          parete nord:2mx3m,<br>parete est:5mx5m,<br>parete ovest:4mx4m,<br>parete sud:3mx3m.<br> Per una cubatura totale di:145mq</h4>
+      </h1>
+    </div>
+  </div>
+  <div>
+    <img class="blackroom" src="static/images/blackroom.jpg" alt="blackroom"/>
+  </div>
+</main>
+<footer class="pt-4 pt-md-5 border-top align-items-center">
   <div class="row">
     <div class="text-center col-12 col-md align-items-center">
       <h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
