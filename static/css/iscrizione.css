@@ -27,13 +27,18 @@
 
 footer{
     background-color: #212529;
-    margin-top: 100px;
+    margin-top: 100px
 }
 .linksocial {
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-content: stretch;
-    margin: 100px 0 0 0 ;
     padding: 100px;
+}
+.form-group{
+    margin: auto;
+}
+.bottone-form{
+    width: 100%;
 }
