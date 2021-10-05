@@ -41,6 +41,6 @@ public class Anagrafica {
     @Column(name = "sito_web")
     private String sitoWeb;
 
-    @OneToMany(mappedBy = "prenotazioni")
+    @OneToMany(mappedBy = "anagrafica")
     private List<Prenotazioni> prenotazioni;
 }
