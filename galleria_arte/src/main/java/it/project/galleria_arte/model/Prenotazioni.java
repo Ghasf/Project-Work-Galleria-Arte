@@ -23,11 +23,11 @@ public class Prenotazioni {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "data_inizio")
-    private LocalDate dataInizio;
+    private Date dataInizio;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "data_fine")
-    private LocalDate dataFine;
+    private Date dataFine;
 
     @JoinColumn(name = "id_anagrafica")
     @ManyToOne
