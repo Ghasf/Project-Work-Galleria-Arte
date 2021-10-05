@@ -7,3 +7,31 @@
 }
 .navbar{
 }
+
+.testo-footer{
+    color: white;
+}
+.social1{
+    transition: all 0.5s linear;
+}
+.social2{
+    transition: all 0.5s linear;
+}
+.social1:hover{
+    transform: scale(1.5)
+}
+.social2:hover{
+    transform: scale(1.5)
+}
+
+footer{
+    background-color: #212529;
+}
+.linksocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: stretch;
+    margin: 100px 0;
+    padding: 100px;
+}
