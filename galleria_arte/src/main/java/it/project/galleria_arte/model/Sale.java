@@ -20,6 +20,30 @@ public class Sale {
     @Column(name = "dimensione")
     private String dimensione;
 
+    @Column(name = "larghezza_parete_nord")
+    private Double larghezzaPareteNord;
+
+    @Column(name = "altezza_parete_nord")
+    private Double altezzaPareteNord;
+
+    @Column(name = "larghezza_parete_sud")
+    private Double larghezzaPareteSud;
+
+    @Column(name = "altezza_parete_sud")
+    private Double altezzaPareteSud;
+
+    @Column(name = "larghezza_parete_est")
+    private Double larghezzaPareteEst;
+
+    @Column(name = "altezza_parete_est")
+    private Double altezzaPareteEst;
+
+    @Column(name = "larghezza_parete_ovest")
+    private Double larghezzaPareteOvest;
+
+    @Column(name = "altezza_parete_ovest")
+    private Double altezzaPareteOvest;
+
     @ManyToMany(targetEntity = Prenotazioni.class) //il nome deve essere lo stesso del nome che ho messo nella list della classe che sto collegando
     //LA JoinTable decido io da che lato devo farlo e devo inserirla solo una volta quando ho relazione molti a molti
     @JoinTable(name = "dettagli_prenotazione",
