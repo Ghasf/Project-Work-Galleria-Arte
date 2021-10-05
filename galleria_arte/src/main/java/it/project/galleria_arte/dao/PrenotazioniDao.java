@@ -24,7 +24,7 @@ public class PrenotazioniDao {
         return  currentSession.createQuery("FROM Prenotazioni", Prenotazioni.class).getResultList();
     }
 
-    public void deletePrenotazioniById(Integer id){
+    public void deletePrenotazioneById(Integer id){
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.delete(currentSession.find(Prenotazioni.class, id));
     }
@@ -36,8 +36,10 @@ public class PrenotazioniDao {
         return query.getSingleResult();
     }
 
-    public Prenotazioni getDataFine(){
+    public Date getDataFineById(Integer id){
         Session currentSession = entityManager.unwrap(Session.class);
-        return currentSession.createQuery("SELECT dataFine FROM Prenotazioni", Prenotazioni.class).getSingleResult();
+        Query<Date> query = currentSession.createQuery("SELECT dataFine FROM Prenotazioni  WHERE idPrenotazione = :id", Date.class);
+        query.setParameter("id",id);
+        return query.getSingleResult();
     }
 }

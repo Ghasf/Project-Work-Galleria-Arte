@@ -24,4 +24,12 @@ public class PrenotazioniService {
     public Date getDataInizioById(Integer id){
         return prenotazioniDao.getDataInizioById(id);
     }
+
+    public Date getDataFineById(Integer id){
+        return prenotazioniDao.getDataFineById(id);
+    }
+
+    public void deletePrenotazioneById(Integer id){
+        prenotazioniDao.deletePrenotazioneById(id);
+    }
 }
