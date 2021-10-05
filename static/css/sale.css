@@ -56,3 +56,15 @@ background-color: #0ba12e;
 .salanera{
     background-color: #68695e;
 }
+.immagine{
+    min-width: 612px;
+    min-height: 408px;
+}
+.testo-destra{
+    text-align: center;
+    margin-right: auto;
+}
+.testo-sinistra{
+    text-align: center;
+    offset: auto;
+}
