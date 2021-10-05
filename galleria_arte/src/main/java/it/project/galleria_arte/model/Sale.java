@@ -1,5 +1,6 @@
 package it.project.galleria_arte.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -44,10 +45,10 @@ public class Sale {
     @Column(name = "altezza_parete_ovest")
     private Double altezzaPareteOvest;
 
-    @ManyToMany(targetEntity = Prenotazioni.class) //il nome deve essere lo stesso del nome che ho messo nella list della classe che sto collegando
-    //LA JoinTable decido io da che lato devo farlo e devo inserirla solo una volta quando ho relazione molti a molti
+    @ManyToMany(targetEntity = Prenotazioni.class)
     @JoinTable(name = "dettagli_prenotazione",
-            joinColumns = @JoinColumn(name = "id_sale"),
+            joinColumns = @JoinColumn(name = "id_sala"),
             inverseJoinColumns = @JoinColumn(name = "id_prenotazione"))
+    @JsonIgnoreProperties("sale")
     private List<Prenotazioni> prenotazioni;
 }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +20,9 @@ public class Prenotazioni {
     @Column(name = "descrizione")
     private String  descrizione;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "data_inizio")
     private Date dataInizio;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "data_fine")
     private Date dataFine;
 
@@ -34,7 +31,8 @@ public class Prenotazioni {
     @JsonIgnoreProperties("prenotazioni")
     private Anagrafica anagrafica;
 
-    @ManyToMany(targetEntity = Sale.class)
+    @ManyToMany(mappedBy = "prenotazioni", targetEntity = Sale.class)
+    @JsonIgnoreProperties("prenotazioni")
     private List<Sale> sale;
 
 }
