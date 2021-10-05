@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="static/js/iscrizione.js"></script>
     <link rel="stylesheet" href="static/css/css/bootstrap.css">
     <link rel="stylesheet" href="static/css/iscrizione.css">
     <link rel="stylesheet" href="static/css/css/bootstrap.min.css">
@@ -37,63 +38,91 @@
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content offset-4 align-items-center">
     <div class="row">
         <div class="col-sm-6">
-            <div class="card">
+            <div class="card glass-card">
                 <div class="card-body">
-                    <form>
+                    <form class="text-white">
                         <div class="form-group text-center" >
-                            <label for="email" >Email</label>
-                            <input type="text" class="nominativo form-control" id="email" placeholder="">
+                            <label for="email">
+                                <small class="text-muted">*</small>
+                                Email
+                            </label>
+                            <input type="text" class="form-control" id="email" placeholder="">
                         </div>
                         <div class=" form-group row text-center">
                             <div class="col-md-6">
-                                <label for="password">Password</label>
+                                <label for="password">
+                                    <small class="text-muted">*</small>
+                                    Password
+                                </label>
                                 <input type="password" class="form-control" id="password" placeholder="">
                             </div>
                             <div class="col-md-6">
-                                <label for="confermapassword">Conferma Password</label>
+                                <label for="confermapassword">
+                                    <small class="text-muted">*</small>
+                                    Conferma Password</label>
                                 <input type="password" class="form-control" id="confermapassword" placeholder="">
                             </div>
                         </div>
                         <div class="nominativo form-group text-center" >
-                            <label for="nominativo" >Nominativo</label>
+                            <label for="nominativo" >
+                                <small class="text-muted">*</small>
+                                Nominativo</label>
                             <input type="text" class="nominativo form-control" id="nominativo" placeholder="">
                         </div>
                         <div class="form-group row">
                             <div class="text-center col-md-8">
-                                <label for="indirizzo">Indirizzo</label>
+                                <label for="indirizzo">
+                                    <small class="text-muted">*</small>
+                                    Indirizzo</label>
                                 <input type="text" class="form-control" id="indirizzo" placeholder="Es. Via Alberto Rossi 29">
                             </div>
                             <div class="text-center col-md-4">
-                                <label for="cap">Cap</label>
+                                <label for="cap">
+                                    <small class="text-muted">*</small>
+                                    Cap</label>
                                 <input type="text" class="form-control" id="cap">
                             </div>
                         </div>
                         <div class="form-group row ">
                             <div class="text-center col-md-6">
-                                <label for="localita">Città</label>
+                                <label for="localita">
+                                    <small class="text-muted">*</small>
+                                    Città</label>
                                 <input type="text" class="form-control" id="localita">
                             </div>
                                 <div class="text-center col-md-6">
-                                    <label for="provincia">Provincia</label>
+                                    <label for="provincia">
+                                        <small class="text-muted">*</small>
+                                        Provincia</label>
                                     <input type="text" class="form-control" id="provincia">
                                 </div>
                             </div>
                         <div class="form-group row text-center">
                         <div class="col-md-6">
-                            <label for="codicefiscale">Codice Fiscale</label>
+                            <label for="codicefiscale">
+                                <small class="text-muted">*</small>
+                                Codice Fiscale</label>
                             <input type="text" class="form-control" id="codicefiscale" placeholder="">
                         </div>
                         <div class="col-md-6">
-                            <label for="partitaiva">Partita Iva</label>
+                            <label for="partitaiva">
+                                <small class="text-muted">*</small>
+                                Partita Iva</label>
                             <input type="text" class="form-control" id="partitaiva" placeholder="">
                         </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="text-center">
+                                <label for="sitoweb">Sito Web</label>
+                                <input type="text" class="form-control" id="sitoweb" placeholder="">
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Ho letto la <a href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy policy </a>
-                                    e acconsento al trattamento dei dati che non verranno mai ceduti a terzi
+                                <label class="form-check-label" for="gridCheck"><small>
+                                    Ho letto la <a class="text-dark" href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy policy </a>
+                                    e acconsento al trattamento dei dati che non verranno mai ceduti a terzi</small>
                                 </label>
                             </div>
                         </div>
