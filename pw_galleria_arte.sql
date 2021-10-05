@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 05, 2021 alle 10:11
--- Versione del server: 10.4.21-MariaDB
--- Versione PHP: 8.0.10
+-- Creato il: Ott 05, 2021 alle 11:31
+-- Versione del server: 10.4.20-MariaDB
+-- Versione PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -100,19 +100,23 @@ CREATE TABLE `sale` (
   `id_sala` int(11) NOT NULL,
   `nome` varchar(50) DEFAULT NULL,
   `dimensione` varchar(50) DEFAULT NULL,
-  `parete_nord_3x3` varchar(100) DEFAULT NULL,
-  `parete_sud_4x3` varchar(100) DEFAULT NULL,
-  `parete_est_6x3` varchar(100) DEFAULT NULL,
-  `parete_ovest_5x3` varchar(100) DEFAULT NULL
+  `larghezza_parete_nord` double DEFAULT NULL,
+  `altezza_parete_nord` double DEFAULT NULL,
+  `larghezza_parete_est` double DEFAULT NULL,
+  `altezza_parete_est` double DEFAULT NULL,
+  `larghezza_parete_ovest` double DEFAULT NULL,
+  `altezza_parete_ovest` double DEFAULT NULL,
+  `larghezza_parete_sud` double DEFAULT NULL,
+  `altezza_parete_sud` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `sale`
 --
 
-INSERT INTO `sale` (`id_sala`, `nome`, `dimensione`, `parete_nord_3x3`, `parete_sud_4x3`, `parete_est_6x3`, `parete_ovest_5x3`) VALUES
-(1, 'Sala Blu', '100mq', NULL, NULL, NULL, NULL),
-(2, 'Sala Rossa', '150mq', NULL, NULL, NULL, NULL);
+INSERT INTO `sale` (`id_sala`, `nome`, `dimensione`, `larghezza_parete_nord`, `altezza_parete_nord`, `larghezza_parete_est`, `altezza_parete_est`, `larghezza_parete_ovest`, `altezza_parete_ovest`, `larghezza_parete_sud`, `altezza_parete_sud`) VALUES
+(1, 'Sala Blu', '100mq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'Sala Rossa', '150mq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indici per le tabelle scaricate
