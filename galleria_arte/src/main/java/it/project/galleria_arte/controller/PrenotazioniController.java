@@ -32,7 +32,6 @@ public class PrenotazioniController {
         return prenotazioniService.getDataFineById(id);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
     @DeleteMapping("/delete-prenotazione-by-id/{id}")
     public void deletePrenotazioneById(@PathVariable("id") Integer id){
         prenotazioniService.deletePrenotazioneById(id);
