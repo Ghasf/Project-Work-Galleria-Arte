@@ -1,4 +1,3 @@
-let slideIndex = document.getElementsByClassName("inizio")
 window.addEventListener("load", function (){
     let userWelcome = document.querySelector("#userWelcome");
     let loginbuttons = document.querySelector("#loginButtons");
