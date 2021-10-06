@@ -1,6 +1,7 @@
 package it.project.galleria_arte.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -29,6 +30,7 @@ public class Prenotazioni {
     @JoinColumn(name = "id_anagrafica")
     @ManyToOne
     @JsonIgnoreProperties("prenotazioni")
+    @JsonIgnore
     private Anagrafica anagrafica;
 
     @ManyToMany(mappedBy = "prenotazioni", targetEntity = Sale.class)

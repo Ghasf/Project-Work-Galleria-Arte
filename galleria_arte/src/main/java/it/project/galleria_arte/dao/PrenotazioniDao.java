@@ -24,6 +24,11 @@ public class PrenotazioniDao {
         return  currentSession.createQuery("FROM Prenotazioni", Prenotazioni.class).getResultList();
     }
 
+    public Prenotazioni getPrenotazioneById(Integer id){
+        Session currentSession = entityManager.unwrap(Session.class);
+        return currentSession.find(Prenotazioni.class, id);
+    }
+
     public void deletePrenotazioneById(Integer id){
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.delete(currentSession.find(Prenotazioni.class, id));

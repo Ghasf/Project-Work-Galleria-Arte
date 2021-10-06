@@ -43,6 +43,6 @@ public class Anagrafica {
     private String sitoWeb;
 
     @OneToMany(mappedBy = "anagrafica")
-    //@JsonIgnore serve per far vedere solo l'anagrafica nascondento i risultati delle foreign key
+    @JsonIgnore //serve per far vedere solo l'anagrafica nascondento i risultati delle foreign key
     private List<Prenotazioni> prenotazioni;
 }

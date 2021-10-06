@@ -22,6 +22,11 @@ public class PrenotazioniController {
         return prenotazioniService.getPrenotazioni();
     }
 
+    @GetMapping("/get-prenotazione-by-id/{id}")
+    public Prenotazioni getPrenotazioneById(@PathVariable("id") Integer id){
+        return prenotazioniService.getPrenotazioneById(id);
+    }
+
     @GetMapping("/get-data-inizio-by-id/{id}")
     public Date getDataInizioById(@PathVariable("id") Integer id){
         return prenotazioniService.getDataInizioById(id);

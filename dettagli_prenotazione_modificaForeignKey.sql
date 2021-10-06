@@ -1,3 +1,0 @@
-ALTER TABLE `dettagli_prenotazione` DROP FOREIGN KEY `id_prenotazione`; ALTER TABLE `dettagli_prenotazione` ADD CONSTRAINT `id_prenotazione` FOREIGN KEY (`id_prenotazione`) REFERENCES `prenotazioni`(`id_prenotazione`) ON DELETE CASCADE ON UPDATE RESTRICT; 
-
-ALTER TABLE `dettagli_prenotazione` DROP FOREIGN KEY `id_sala`; ALTER TABLE `dettagli_prenotazione` ADD CONSTRAINT `id_sala` FOREIGN KEY (`id_sala`) REFERENCES `sale`(`id_sala`) ON DELETE CASCADE ON UPDATE RESTRICT;
