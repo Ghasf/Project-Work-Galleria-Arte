@@ -37,22 +37,27 @@ footer{
     padding: 100px;
 }
 .salaverde{
-background-color: #0ba12e;
+    background: rgb(12,93,8);
+    background: linear-gradient(90deg, rgba(12,93,8,1) 0%, rgba(16,163,75,1) 51%, rgba(34,195,66,1) 100%);
 }
 .salablu{
-    background-color: #0b80a1;
+    background: rgb(34,195,177);
+    background: linear-gradient(90deg, rgba(34,195,177,1) 0%, rgba(16,81,163,1) 51%, rgba(9,8,93,1) 100%);
 }
 .salarossa{
-    background-color: #a10b10;
+    background: rgb(152,5,5);
+    background: linear-gradient(90deg, rgba(152,5,5,1) 0%, rgba(170,19,38,1) 51%, rgba(255,0,0,1) 100%);
 }
 .salaviola{
-    background-color: #6d0ba1;
+    background: rgb(231,129,236);
+    background: linear-gradient(90deg, rgba(231,129,236,1) 0%, rgba(142,40,193,1) 51%, rgba(77,4,140,1) 100%);
 }
 .salagialla{
-    background-color: #c8cf15;
-}
+    background: rgb(233,170,8);
+    background: linear-gradient(90deg, rgba(233,170,8,1) 0%, rgba(184,182,50,1) 51%, rgba(238,229,83,1) 100%);}
 .salanera{
-    background-color: #68695e;
+    background: rgb(139,137,133);
+    background: linear-gradient(90deg, rgba(139,137,133,1) 0%, rgba(57,58,102,1) 51%, rgba(4,4,0,1) 100%);
 }
 .immagine{
     min-width: 612px;
@@ -65,4 +70,8 @@ background-color: #0ba12e;
 .testo-sinistra{
     text-align: center;
     offset: auto;
+}
+.glass-card{
+    background: rgba( 255, 255, 255, 0.05 )!important;box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;backdrop-filter: blur( 4px )!important;-webkit-backdrop-filter: blur( 4px )!important;border-radius: 10px!important;border: 1px solid rgba( 255, 255, 255, 0.18 )!important;
+
 }
