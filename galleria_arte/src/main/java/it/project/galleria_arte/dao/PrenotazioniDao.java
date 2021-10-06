@@ -1,7 +1,6 @@
 package it.project.galleria_arte.dao;
 
 import it.project.galleria_arte.model.Prenotazioni;
-import it.project.galleria_arte.model.Sale;
 import jdk.jfr.Registered;
 import org.hibernate.Session;
 import org.hibernate.query.Query;

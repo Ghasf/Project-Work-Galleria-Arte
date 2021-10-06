@@ -19,4 +19,7 @@ public class AnagraficaService {
     public List<Anagrafica> getAnagrafica(){
         return anagraficaDao.getAnagrafica();
     }
+    public Anagrafica getAnagraficaById(Integer id){
+        return  anagraficaDao.getAnagraficaById(id);
+    }
 }
