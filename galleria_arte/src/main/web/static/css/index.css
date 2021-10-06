@@ -12,18 +12,14 @@
 .testo-footer{
     color: white;
 }
-.social1{
+.social-icon{
     transition: all 0.5s linear;
 }
-.social2{
-    transition: all 0.5s linear;
-}
-.social1:hover{
+
+.social-icon:hover{
     transform: scale(1.5)
 }
-.social2:hover{
-    transform: scale(1.5)
-}
+
 
 .slideshow-container {
     min-width: 90vw;
