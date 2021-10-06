@@ -1,0 +1,68 @@
+* {
+    margin: 0
+}
+body{
+    background-color: #000000;
+}
+.logo {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.testo-footer{
+    color: white;
+}
+.social1{
+    transition: all 0.5s linear;
+}
+.social2{
+    transition: all 0.5s linear;
+}
+.social1:hover{
+    transform: scale(1.5)
+}
+.social2:hover{
+    transform: scale(1.5)
+}
+
+footer{
+    background-color: #212529;
+}
+.linksocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: stretch;
+    margin: 100px 0;
+    padding: 100px;
+}
+.salaverde{
+background-color: #0ba12e;
+}
+.salablu{
+    background-color: #0b80a1;
+}
+.salarossa{
+    background-color: #a10b10;
+}
+.salaviola{
+    background-color: #6d0ba1;
+}
+.salagialla{
+    background-color: #c8cf15;
+}
+.salanera{
+    background-color: #68695e;
+}
+.immagine{
+    min-width: 612px;
+    min-height: 408px;
+}
+.testo-destra{
+    text-align: center;
+    margin-right: auto;
+}
+.testo-sinistra{
+    text-align: center;
+    offset: auto;
+}

@@ -1,0 +1,41 @@
+* {
+    margin: 0
+}
+.logo {
+    max-height: 60px;
+    max-width: 60px;
+}
+.navbar{
+    margin-bottom: 100px;
+}
+
+.testo-footer{
+    color: white;
+}
+.social1{
+    transition: all 0.5s linear;
+}
+.social2{
+    transition: all 0.5s linear;
+}
+.social1:hover{
+    transform: scale(1.5)
+}
+.social2:hover{
+    transform: scale(1.5)
+}
+
+footer{
+    background-color: #212529;
+}
+.linksocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: stretch;
+    margin: 100px 0;
+    padding: 100px;
+}
+.table{
+    border-bottom-color: black;
+}
