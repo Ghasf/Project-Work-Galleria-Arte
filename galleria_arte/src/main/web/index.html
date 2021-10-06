@@ -4,36 +4,98 @@
     <script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="static/css/css/bootstrap.css">
     <link rel="stylesheet" href="static/css/index.css">
+
     <meta charset="UTF-8">
     <title>Art Gallery : Home</title>
 </head>
 <body>
+<script rel="script" src="static/js/home.js"></script>
 <header>
     <nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-        <a class="offset-1 navbar-brand" href="#"><img alt="0" class= "logo" src="static/images/GalleriaArte.png"></a>
+        <a class="offset-1 navbar-brand" href="index.html"><img alt="0" class= "logo" src="static/images/GalleriaArte.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home </a>
+                    <a class="nav-link" href="./index.html">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Sale.html">Le nostre sale</a>
+                    <a class="nav-link" href="./Sale.html">Le nostre sale</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Prezzi</a>
                 </li>
             </ul>
             <div class="offset-8">
-            <a href="../Project-Work-Galleria-Arte/Iscrizione.html" class="btn btn-danger active outline-color-danger" role="button" aria-pressed="true">Iscriviti</a>
-            <a href="#" class="btn btn-primary btn active" role="button" aria-pressed="true">Accedi</a>
+                <a href="./Iscrizione.html" class="btn btn-danger active outline-color-danger" role="button" aria-pressed="true">Iscriviti</a>
+                <a href="#" class="btn btn-primary btn active" role="button" aria-pressed="true">Accedi</a>
             </div>
         </div>
     </nav>
 </header>
+<main>
+    <div class="slideshow-container">
 
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 6</div>
+            <img src="static/images/greenroom.jpg" class="immagine">
+            <div class="text">Sala Verde</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 6</div>
+            <img src="static/images/blueroom.jpg" class="immagine">
+            <div class="text">Sala Blu</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 6</div>
+            <img src="static/images/redroom.jpg" class="immagine">
+            <div class="text">Sala Rossa</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 6</div>
+            <img alt="0" src="static/images/purpleroom.jpg" class="immagine">
+            <div class="text">Sala Viola</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 6</div>
+            <img src="static/images/yellowroom.jpg" class="immagine">
+            <div class="text">Sala Gialla</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 6</div>
+            <img src="static/images/blackroom.jpg" class="immagine">
+            <div class="text">Sala Nera</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        &nbsp
+        <span class="dot" onclick="currentSlide(2)"></span>
+        &nbsp
+        <span class="dot" onclick="currentSlide(3)"></span>
+        &nbsp
+        <span class="dot" onclick="currentSlide(4)"></span>
+        &nbsp
+        <span class="dot" onclick="currentSlide(5)"></span>
+        &nbsp
+        <span class="dot" onclick="currentSlide(6)"></span>
+        &nbsp
+    </div>
+</main>
 <footer class="pt-4 pt-md-5 border-top align-items-center">
     <div class="row">
         <div class="text-center col-12 col-md align-items-center">
