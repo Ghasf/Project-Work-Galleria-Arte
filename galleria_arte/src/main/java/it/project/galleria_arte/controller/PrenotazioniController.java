@@ -1,5 +1,6 @@
 package it.project.galleria_arte.controller;
 
+import com.sun.istack.NotNull;
 import it.project.galleria_arte.model.Prenotazioni;
 import it.project.galleria_arte.service.PrenotazioniService;
 import org.hibernate.annotations.Target;
@@ -26,6 +27,11 @@ public class PrenotazioniController {
     @GetMapping("/get-prenotazione-by-id/{id}")
     public Prenotazioni getPrenotazioneById(@PathVariable("id") Integer id){
         return prenotazioniService.getPrenotazioneById(id);
+    }
+
+    @PostMapping("/save-prenotazione")
+    public void savePrenotazione(@RequestBody @NotNull Prenotazioni prenotazione){
+        prenotazioniService.savePrenotazione(prenotazione);
     }
 
     @GetMapping("/get-data-inizio-by-id/{id}")

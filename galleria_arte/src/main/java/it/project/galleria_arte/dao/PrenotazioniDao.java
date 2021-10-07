@@ -28,6 +28,11 @@ public class PrenotazioniDao {
         return currentSession.find(Prenotazioni.class, id);
     }
 
+    public void savePrenotazione(Prenotazioni prenotazione){
+        Session currentSesion = entityManager.unwrap(Session.class);
+        currentSesion.saveOrUpdate(prenotazione);
+    }
+
     public void deletePrenotazioneById(Integer id){
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.delete(currentSession.find(Prenotazioni.class, id));

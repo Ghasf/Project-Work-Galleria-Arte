@@ -25,6 +25,10 @@ public class PrenotazioniService {
         return prenotazioniDao.getPrenotazioneById(id);
     }
 
+    public void savePrenotazione(Prenotazioni prenotazione){
+        prenotazioniDao.savePrenotazione(prenotazione);
+    }
+
     public Date getDataInizioById(Integer id){
         return prenotazioniDao.getDataInizioById(id);
     }
