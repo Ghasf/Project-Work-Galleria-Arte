@@ -40,16 +40,31 @@
     <div class="d-flex flex-column justify-content-between align-content-center ">
         <div class=" salaverde d-flex justify-content-between ">
             <div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center ">
-              <div class="card text-center glass-card text-white" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sala Verde</h5>
-                  <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                    Parete nord: 4mx5m,<br>Parete est: 3mx3m,<br>Parete ovest: 2mx3m,<br>Parete sud: 3mx4m.<br> Per
-                    una cubatura totale di: 80mq.
-                  </p>
-                  <a href="#" class="btn btn-primary btn-success btn-outline-dark text-white" id="prenotaSalaVerde">Prenota ora</a>
+                <div class="card text-center glass-card text-white" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sala Verde</h5>
+                        <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+                            Parete nord: 4mx5m,<br>Parete est: 3mx3m,<br>Parete ovest: 2mx3m,<br>Parete sud: 3mx4m.<br>
+                            Per
+                            una cubatura totale di: 80mq.
+                        </p>
+                        <form class="text-white">
+                            <div class="form-group row text-center">
+                                <div class="col-6 text-center">
+                                    <label for="dataInizioVerde">Data Inizio</label>
+                                    <input type="date" class="form-control" id="dataInizioVerde">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="dataFineVerde">Data Fine</label>
+                                    <input type="date" class="form-control" id="dataFineVerde">
+                                </div>
+                            </div>
+                            <button type="submit" class="mt-2 btn btn-success btn-outline-dark text-white"
+                                    id="prenotaSalaVerde">Prenota ora
+                            </button>
+                        </form>
+                    </div>
                 </div>
-              </div>
             </div>
             <img class="immagine greenroom col-4" src="static/images/greenroom.jpg" alt="greenroom">
         </div>
@@ -57,87 +72,157 @@
         <div class="salablu d-flex justify-content-between">
             <img class="blueroom col-4 immagine" src="static/images/blueroom.jpg" alt="blueroom"/>
             <div class="salablu col-8 testo-destra d-flex flex-column justify-content-center align-items-center  ">
-              <div class="card text-center glass-card text-white" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sala Blu</h5>
-                  <p class="card-text">  Dotata di quattro pareti la sala è così composta:<br>
-                    Parete nord: 3mx2m,<br>Parete est: 4mx3m,<br>Parete ovest: 2mx5m,<br>Parete sud: 4mx2m.<br> Per
-                    una cubatura totale di: 100mq.
-                  </p>
-                  <a href="#" class="btn btn-primary btn-outline-dark text-white" id="prenotaSalaBlu">Prenota ora</a>
+                <div class="card text-center glass-card text-white" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sala Blu</h5>
+                        <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+                            Parete nord: 3mx2m,<br>Parete est: 4mx3m,<br>Parete ovest: 2mx5m,<br>Parete sud: 4mx2m.<br>
+                            Per
+                            una cubatura totale di: 100mq.
+                        </p>
+                        <form class="text-white">
+                            <div class="form-group row text-center">
+                                <div class="col-6 text-center">
+                                    <label for="dataInizioBlu">Data Inizio</label>
+                                    <input type="date" class="form-control" id="dataInizioBlu">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="dataFineBlu">Data Fine</label>
+                                    <input type="date" class="form-control" id="dataFineBlu">
+                                </div>
+                            </div>
+                            <button type="submit" class="mt-2 btn btn-primary btn-outline-dark text-white"
+                                    id="prenotaSalaBlu">Prenota ora
+                            </button>
+                        </form>
+                    </div>
                 </div>
-              </div>
             </div>
 
         </div>
     </div>
 
     <div class="salarossa d-flex justify-content-between">
-      <div class="col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
-          <div class="card text-center glass-card text-white" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Sala Rossa</h5>
-              <p class="card-text">  Dotata di quattro pareti la sala è così composta:<br>
-                parete nord:2mx3m,<br>parete est:4mx4m,<br>parete ovest:2mx4m,<br>parete sud:4mx3m.<br> Per una
-                cubatura totale di:150mq.
-              </p>
-              <a href="#" class="btn btn-danger btn-outline-dark text-white" id="prenotaSalaRossa">Prenota ora</a>
+        <div class="col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
+            <div class="card text-center glass-card text-white" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Sala Rossa</h5>
+                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+                        parete nord:2mx3m,<br>parete est:4mx4m,<br>parete ovest:2mx4m,<br>parete sud:4mx3m.<br> Per una
+                        cubatura totale di:150mq.
+                    </p>
+                    <form class="text-white">
+                        <div class="form-group row text-center">
+                            <div class="col-6 text-center">
+                                <label for="dataInizioRossa">Data Inizio</label>
+                                <input type="date" class="form-control" id="dataInizioRossa">
+                            </div>
+                            <div class="col-6 text-center">
+                                <label for="dataFineRossa">Data Fine</label>
+                                <input type="date" class="form-control" id="dataFineRossa">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-danger btn-outline-dark text-white"
+                                id="prenotaSalaRossa">Prenota ora
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-      <img class="immagine redroom col-4 " src="static/images/redroom.jpg" alt="redroom"/>
+        <img class="immagine redroom col-4 " src="static/images/redroom.jpg" alt="redroom"/>
     </div>
-
 
 
     <div class="salaviola d-flex justify-content-between">
-      <img class="purpleroom col-4 immagine" src="static/images/purpleroom.jpg" alt="purpleroom"/>
-      <div class="salaviola col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
-        <div class="card text-center glass-card text-white" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sala Viola</h5>
-            <p class="card-text">Dotata di quattro pareti la sala è così composta:<br>
-              parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
-              cubatura totale di:200mq
-            </p>
-            <a href="#" class="btn btn-secondary btn-outline-dark text-white" id="prenotaSalaViola">Prenota ora</a>
-          </div>
+        <img class="purpleroom col-4 immagine" src="static/images/purpleroom.jpg" alt="purpleroom"/>
+        <div class="salaviola col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
+            <div class="card text-center glass-card text-white" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Sala Viola</h5>
+                    <p class="card-text">Dotata di quattro pareti la sala è così composta:<br>
+                        parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
+                        cubatura totale di:200mq
+                    </p>
+                    <form class="text-white">
+                        <div class="form-group row text-center">
+                            <div class="col-6 text-center">
+                                <label for="dataInizioViola">Data Inizio</label>
+                                <input type="date" class="form-control" id="dataInizioViola">
+                            </div>
+                            <div class="col-6 text-center">
+                                <label for="dataFineViola">Data Fine</label>
+                                <input type="date" class="form-control" id="dataFineViola">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-secondary btn-outline-dark text-white"
+                                id="prenotaSalaViola">Prenota ora
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="salagialla d-flex justify-content-between">
-      <div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
-        <div class="card text-center glass-card text-white" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sala Gialla</h5>
-            <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-              parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
-              cubatura totale di:170mq.
-            </p>
-            <a href="#" class="btn btn-warning btn-outline-dark text-white" id="prenotaSalaGialla">Prenota ora</a>
-          </div>
+        <div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
+            <div class="card text-center glass-card text-white" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Sala Gialla</h5>
+                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+                        parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
+                        cubatura totale di:170mq.
+                    </p>
+                    <form class="text-white">
+                        <div class="form-group row text-center">
+                            <div class="col-6 text-center">
+                                <label for="dataInizioGialla">Data Inizio</label>
+                                <input type="date" class="form-control" id="dataInizioGialla">
+                            </div>
+                            <div class="col-6 text-center">
+                                <label for="dataFineGialla">Data Fine</label>
+                                <input type="date" class="form-control" id="dataFineGialla">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-warning btn-outline-dark text-white"
+                                id="prenotaSalaGialla">Prenota ora
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <img class="immagine yellowroom col-4" src="static/images/yellowroom.jpg" alt="yellowroom"/>
+        <img class="immagine yellowroom col-4" src="static/images/yellowroom.jpg" alt="yellowroom"/>
     </div>
     <div>
     </div>
 
     <div class="salanera d-flex justify-content-between">
-      <img class="blackroom col-4 immagine" src="static/images/blackroom.jpg" alt="blackroom"/>
-      <div class=" salanera col-8 testo-desra d-flex flex-column justify-content-center align-items-center">
-        <div class="card text-center glass-card text-white" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sala Nera</h5>
-            <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-              parete nord:2mx3m,<br>parete est:5mx5m,<br>parete ovest:4mx4m,<br>parete sud:3mx3m.<br> Per una
-              cubatura totale di:145mq.
-            </p>
-            <a href="#" class="btn btn-dark btn-outline-dark text-white" id="prenotaSalaNera">Prenota ora</a>
-          </div>
+        <img class="blackroom col-4 immagine" src="static/images/blackroom.jpg" alt="blackroom"/>
+        <div class=" salanera col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
+            <div class="card text-center glass-card text-white" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Sala Nera</h5>
+                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+                        parete nord:2mx3m,<br>parete est:5mx5m,<br>parete ovest:4mx4m,<br>parete sud:3mx3m.<br> Per una
+                        cubatura totale di:145mq.
+                    </p>
+                    <form class="text-white">
+                        <div class="form-group row text-center">
+                            <div class="col-6 text-center">
+                                <label for="dataInizioNera">Data Inizio</label>
+                                <input type="date" class="form-control" id="dataInizioNera">
+                            </div>
+                            <div class="col-6 text-center">
+                                <label for="dataFineNera">Data Fine</label>
+                                <input type="date" class="form-control" id="dataFineNera">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-dark btn-outline-dark text-white"
+                                id="prenotaSalaNera">Prenota ora
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
 </main>
