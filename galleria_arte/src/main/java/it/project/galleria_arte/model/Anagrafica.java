@@ -39,6 +39,9 @@ public class Anagrafica {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "sito_web")
     private String sitoWeb;
 

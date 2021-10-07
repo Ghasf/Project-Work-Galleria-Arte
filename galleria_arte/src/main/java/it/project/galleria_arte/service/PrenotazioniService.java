@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -29,11 +31,19 @@ public class PrenotazioniService {
         prenotazioniDao.savePrenotazione(prenotazione);
     }
 
-    public Date getDataInizioById(Integer id){
+    public LocalDate getDataInizioById(Integer id){
         return prenotazioniDao.getDataInizioById(id);
     }
 
-    public Date getDataFineById(Integer id){
+    public List<LocalDate> getDateInizioByIdSala(Integer id){
+        return prenotazioniDao.getDateInizioByIdSala(id);
+    }
+
+    public List<LocalDate> getDateFineByIdSala(Integer id){
+        return prenotazioniDao.getDateFineByIdSala(id);
+    }
+
+    public LocalDate getDataFineById(Integer id){
         return prenotazioniDao.getDataFineById(id);
     }
 

@@ -8,6 +8,8 @@ import org.springframework.aop.TargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -29,18 +31,28 @@ public class PrenotazioniController {
         return prenotazioniService.getPrenotazioneById(id);
     }
 
+    @GetMapping("/get-date-inizio-by-id-sala/{id}")
+    public List<LocalDate> getDateInizioByIdSala(@PathVariable("id") Integer id){
+        return prenotazioniService.getDateInizioByIdSala(id);
+    }
+
+    @GetMapping("/get-date-fine-by-id-sala/{id}")
+    public List<LocalDate> getDateFineByIdSala(@PathVariable("id") Integer id){
+        return prenotazioniService.getDateFineByIdSala(id);
+    }
+
     @PostMapping("/save-prenotazione")
     public void savePrenotazione(@RequestBody @NotNull Prenotazioni prenotazione){
         prenotazioniService.savePrenotazione(prenotazione);
     }
 
     @GetMapping("/get-data-inizio-by-id/{id}")
-    public Date getDataInizioById(@PathVariable("id") Integer id){
+    public LocalDate getDataInizioById(@PathVariable("id") Integer id){
         return prenotazioniService.getDataInizioById(id);
     }
 
     @GetMapping("/get-data-fine-by-id/{id}")
-    public Date getDataFineById(@PathVariable("id") Integer id){
+    public LocalDate getDataFineById(@PathVariable("id") Integer id){
         return prenotazioniService.getDataFineById(id);
     }
 
