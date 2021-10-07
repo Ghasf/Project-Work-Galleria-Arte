@@ -22,4 +22,7 @@ public class AnagraficaService {
     public Anagrafica getAnagraficaById(Integer id){
         return  anagraficaDao.getAnagraficaById(id);
     }
+    public void saveAnagrafica(Anagrafica anagrafica){
+         anagraficaDao.saveAnagrafica(anagrafica);
+    }
 }
