@@ -21,4 +21,8 @@ public class SaleService {
     public List<Sale> getSale(){
         return saleDao.getSale();
     }
+
+    public Integer getSalaIdByName(String nomeSala){
+        return saleDao.getSalaIdByName(nomeSala);
+    }
 }
