@@ -26,4 +26,9 @@ public class AnagraficaDao {
         Session currentSession = entityManager.unwrap(Session.class);
         return currentSession.find(Anagrafica.class, id);
     }
+
+    public void saveAnagrafica(Anagrafica anagrafica){
+        Session currentSesion = entityManager.unwrap(Session.class);
+        currentSesion.saveOrUpdate(anagrafica);
+    }
 }
