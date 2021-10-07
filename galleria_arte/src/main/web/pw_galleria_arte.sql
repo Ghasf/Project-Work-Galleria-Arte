@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 07, 2021 alle 20:08
+-- Creato il: Ott 07, 2021 alle 23:29
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.10
 
@@ -96,10 +96,7 @@ CREATE TABLE `prenotazioni` (
 INSERT INTO `prenotazioni` (`id_prenotazione`, `descrizione`, `data_inizio`, `data_fine`, `id_anagrafica`, `id_sala`) VALUES
 (2, 'Paci Enza - esposizione dal 17 ottobre al 24 ottob', '2021-10-17', '2021-10-24', 2, 3),
 (3, 'Esposizione privata di Gionatan, il mondo visto da Gionatan', '2021-11-03', '2021-11-10', 5, 3),
-(4, 'Flaminia\'s collection', '2021-11-11', '2021-11-16', 4, 3),
-(5, '', NULL, NULL, NULL, NULL),
-(6, '', '2021-12-06', '2021-12-12', NULL, NULL),
-(7, '', '2021-10-25', '2021-10-27', NULL, NULL);
+(4, 'Flaminia\'s collection', '2021-11-11', '2021-11-16', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -183,7 +180,7 @@ ALTER TABLE `dettagli_prenotazione`
 -- AUTO_INCREMENT per la tabella `prenotazioni`
 --
 ALTER TABLE `prenotazioni`
-  MODIFY `id_prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT per la tabella `sale`

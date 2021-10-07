@@ -31,20 +31,20 @@ prenotaSalaVerde.addEventListener("click", function (e) {
      */
     fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Verde', {
         method: 'GET',
-    }).then(res => res.json()).then(idSala => {
+    }).then(res1 => res1.json()).then(idSala => {
         console.log(idSala);
         let dataInizio = dataInizioSalaVerde.value;
         let dataFine = dataFineSalaVerde.value;
 
         fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
             method: 'GET',
-        }).then(res => res.json()).then(dataInizioDb => {
+        }).then(res2 => res2.json()).then(dataInizioDb => {
             console.log("Data inizio db");
             console.log(dataInizioDb);
 
             fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                 method: 'GET',
-            }).then(res => res.json()).then(dataFineDb => {
+            }).then(res3 => res3.json()).then(dataFineDb => {
                 console.log("Data fine db");
                 console.log(dataFineDb);
 
@@ -105,13 +105,15 @@ prenotaSalaVerde.addEventListener("click", function (e) {
                             "Connection": "keep-live"
                         },
                         body: JSON.stringify(Data)
-                    }).then(res => res.json()).then(result => {
+                    }).then(function(res4) {
+                        //res4 => res4.json()
+                    })/*.then(result => {
                         if (result === 0) {
                             console.log("OK");
                         } else {
                             console.log("ERRORE")
                         }
-                    })
+                    })*/
                     //manda una mail di conferma avvenuta prenotazione
                 }
             })
