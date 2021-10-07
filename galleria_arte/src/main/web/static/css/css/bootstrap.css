@@ -4288,6 +4288,7 @@ textarea.form-control-lg {
 
 .card-title {
   margin-bottom: 0.5rem;
+  height: 25px;
 }
 
 .card-subtitle {
