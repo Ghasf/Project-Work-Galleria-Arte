@@ -18,7 +18,7 @@ let dataFineSalaViola = document.querySelector("#dataFineSalaViola");
 let dataInizioSalaGialla = document.querySelector("#dataInizioSalaGialla");
 let dataFineSalaGialla = document.querySelector("#dataFineSalaGialla");
 let dataInizioSalaNera = document.querySelector("#dataInizioSalaNera");
-let dataFineSalaNera = document.querySelector("dataFineSalaNera");
+let dataFineSalaNera = document.querySelector("#dataFineSalaNera");
 
 prenotaSalaVerde.addEventListener("click", function(e){
     e.preventDefault();
@@ -29,7 +29,9 @@ prenotaSalaVerde.addEventListener("click", function(e){
         inserire tutto nel database,
         mostrare un messaggio di conferma.
      */
-
+    fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Verde', {
+        method: 'GET',
+    }).then(res => res.json()).then(res => console.log(res));
 
 
 })
