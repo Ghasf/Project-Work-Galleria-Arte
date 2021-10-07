@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping
 public class AnagraficaController {
@@ -25,7 +26,7 @@ public class AnagraficaController {
     public Anagrafica getAnagraficaById(@PathVariable("id") Integer id){
         return anagraficaService.getAnagraficaById(id);
     }
-    @PostMapping("/save-prenotazione")
+    @PostMapping("/save-anagrafica")
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){
         anagraficaService.saveAnagrafica(anagrafica);
     }

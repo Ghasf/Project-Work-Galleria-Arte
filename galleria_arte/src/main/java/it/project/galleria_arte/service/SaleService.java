@@ -1,8 +1,6 @@
 package it.project.galleria_arte.service;
 
-import it.project.galleria_arte.dao.PrenotazioniDao;
 import it.project.galleria_arte.dao.SaleDao;
-import it.project.galleria_arte.model.Prenotazioni;
 import it.project.galleria_arte.model.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,14 +13,13 @@ import java.util.List;
 public class SaleService {
 
     @Autowired
-
     private SaleDao saleDao;
 
     public List<Sale> getSale(){
         return saleDao.getSale();
     }
 
-    public Integer getSalaIdByName(String nomeSala){
-        return saleDao.getSalaIdByName(nomeSala);
+    public Sale getSalaByName(String nomeSala){
+        return saleDao.getSalaByName(nomeSala);
     }
 }

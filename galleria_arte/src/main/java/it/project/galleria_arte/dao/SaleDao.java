@@ -20,9 +20,9 @@ public class SaleDao {
         return  currentSession.createQuery("FROM Sale", Sale.class).getResultList();
     }
 
-    public Integer getSalaIdByName(String nomeSala){
+    public Sale getSalaByName(String nomeSala){
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<Integer> query = currentSession.createQuery("SELECT idsala FROM Sale WHERE Sale.nome = :nomeSala", Integer.class);
+        Query<Sale> query = currentSession.createQuery("FROM Sale WHERE nome = :nomeSala", Sale.class);
         query.setParameter("nomeSala", nomeSala);
         return query.getSingleResult();
     }
