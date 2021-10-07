@@ -30,5 +30,6 @@ window.addEventListener('load', function (){
     prenotaSalaVerde.addEventListener("click", function(e){
         e.preventDefault();
         //qui dobbiamo prenderci l'id della Sala Verde
+        
     })
 })
