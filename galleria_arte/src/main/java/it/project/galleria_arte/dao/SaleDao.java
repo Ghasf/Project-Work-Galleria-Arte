@@ -2,6 +2,7 @@ package it.project.galleria_arte.dao;
 
 import it.project.galleria_arte.model.Sale;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +18,12 @@ public class SaleDao {
     public List<Sale> getSale(){
         Session currentSession = entityManager.unwrap(Session.class);
         return  currentSession.createQuery("FROM Sale", Sale.class).getResultList();
+    }
+
+    public Integer getSalaIdByName(String nomeSala){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Integer> query = currentSession.createQuery("SELECT idsala FROM Sale WHERE Sale.nome = :nomeSala", Integer.class);
+        query.setParameter("nomeSala", nomeSala);
+        return query.getSingleResult();
     }
 }

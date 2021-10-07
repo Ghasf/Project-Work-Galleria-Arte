@@ -1,8 +1,11 @@
 * {
-    margin: 0
+    margin: 0;
+    overflow-x: hidden;
 }
+
 body{
     background-color: #000000;
+    overflow-x: hidden;
 }
 .logo {
     max-height: 60px;
@@ -58,6 +61,7 @@ footer{
 .salanera{
     background: rgb(139,137,133);
     background: linear-gradient(90deg, rgba(139,137,133,1) 0%, rgba(57,58,102,1) 51%, rgba(4,4,0,1) 100%);
+    overflow-x: hidden;
 }
 .immagine{
     min-width: 612px;
