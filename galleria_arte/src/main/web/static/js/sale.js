@@ -31,7 +31,33 @@ prenotaSalaVerde.addEventListener("click", function(e){
      */
     fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Verde', {
         method: 'GET',
-    }).then(res => res.json()).then(res => console.log(res));
+    }).then(res => res.json()).then(idSala => {
+        console.log(idSala);
+        let dataInizio = dataInizioSalaVerde.value;
+        let dataFine = dataFineSalaVerde.value;
+
+        const Data = {
+            id_utente: idUtente,
+            id_sala: idSala,
+            data_inizio: dataInizio,
+            data_fine: dataFine
+        }
+        fetch('http://localhost:8080/api/save-prenotazione/', {
+            method: 'POST',
+            headers: {
+                "content-type":"application/json; charset=UTF-8"
+            },
+            body: Data
+        }).then(res => res.json()).then(result => {
+            if(result===0){
+                console.log("OK");
+            }else{
+                console.log("ERRORE")
+            }
+        })
+    })
+
+
 
 
 })
