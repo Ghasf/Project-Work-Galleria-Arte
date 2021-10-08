@@ -13,7 +13,7 @@ window.addEventListener('load', function (){
         console.log("Prenotazioni");
         console.log(prenotazioni);
 
-        listaPrenotazioni.innerHTML = prenotazioni.toString();
+        stampaPrenotazioni(prenotazioni);
     })
 
 
@@ -30,3 +30,43 @@ window.addEventListener('load', function (){
 
 
 })
+
+function stampaPrenotazioni(prenotazioni){
+    let tBody = document.querySelector("#tabellaBody")
+
+    console.log(prenotazioni.length);
+    console.log(prenotazioni);
+
+    for (var j = 0; j < prenotazioni.length; j++) {
+        var row = document.createElement("tr");
+
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode(prenotazioni[j].idPrenotazione);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        cell = document.createElement("td");
+        cellText = document.createTextNode(prenotazioni[j].descrizione);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        cell = document.createElement("td");
+        cellText = document.createTextNode(prenotazioni[j].dataInizio);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        cell = document.createElement("td");
+        cellText = document.createTextNode(prenotazioni[j].dataFine);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+        cell = document.createElement("td");
+        cellText = document.createTextNode(prenotazioni[j].sale.nome);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+
+
+
+        tBody.appendChild(row);
+    }
+}

@@ -16,13 +16,13 @@ window.addEventListener("load", function (){
         leMiePrenotazioni.style.display="block";
 
         //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
-        fetch('http://localhost:8080/api/get-name-anagrafica-by-id/' + idUtente, {
+        fetch('http://localhost:8080/api/get-anagrafica-by-id/' + idUtente, {
             method: 'GET',
-        }).then(res => res.text()).then(nomeUtente => { //funziona ma dovremmo ritornare un json
+        }).then(res => res.json()).then(utente => { //funziona ma dovremmo ritornare un json
             console.log("Nome utente");
-            console.log(nomeUtente);
+            console.log(utente.nominativo);
 
-            userWelcomeName.innerHTML = nomeUtente;
+            userWelcomeName.innerHTML = utente.nominativo;
             userWelcomeName.style.display="block";
         })
     })

@@ -31,6 +31,7 @@ public class Anagrafica {
     private String provincia;
 
     @Column(name = "codicefiscale")
+    @JsonIgnore
     private String codiceFiscale;
 
     @Column(name = "partita_iva")
@@ -40,6 +41,7 @@ public class Anagrafica {
     private String email;
 
     @Column(name = "password")
+    @JsonIgnore
     private String password;
 
     @Column(name = "sito_web")

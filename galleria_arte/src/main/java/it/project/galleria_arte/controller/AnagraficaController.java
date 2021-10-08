@@ -27,10 +27,7 @@ public class AnagraficaController {
         return anagraficaService.getAnagraficaById(id);
     }
 
-    @GetMapping("/get-name-anagrafica-by-id/{id}")
-    public String getNameAnagraficaById(@PathVariable("id") Integer id){
-        return anagraficaService.getAnagraficaById(id).getNominativo();
-    }
+
 
     @PostMapping("/save-anagrafica")
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){

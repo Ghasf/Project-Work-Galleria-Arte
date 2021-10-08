@@ -26,4 +26,11 @@ public class SaleDao {
         query.setParameter("nomeSala", nomeSala);
         return query.getSingleResult();
     }
+
+    public Sale getSalaById(Integer id){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Sale> query = currentSession.createQuery("FROM Sale WHERE idsala = :id", Sale.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
+    }
 }

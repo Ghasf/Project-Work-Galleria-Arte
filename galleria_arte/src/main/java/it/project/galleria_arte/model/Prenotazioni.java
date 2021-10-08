@@ -38,7 +38,6 @@ public class Prenotazioni {
     @JoinColumn(name = "id_sala")
     @ManyToOne
     @JsonIgnoreProperties("prenotazioni")
-    @JsonIgnore
     private Sale sale;
 
 

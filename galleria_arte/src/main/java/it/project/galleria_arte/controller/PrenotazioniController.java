@@ -1,8 +1,12 @@
 package it.project.galleria_arte.controller;
 
 import com.sun.istack.NotNull;
+import it.project.galleria_arte.model.Anagrafica;
 import it.project.galleria_arte.model.Prenotazioni;
+import it.project.galleria_arte.model.Sale;
+import it.project.galleria_arte.service.AnagraficaService;
 import it.project.galleria_arte.service.PrenotazioniService;
+import it.project.galleria_arte.service.SaleService;
 import org.hibernate.annotations.Target;
 import org.springframework.aop.TargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,12 @@ public class PrenotazioniController {
 
     @Autowired
     private PrenotazioniService prenotazioniService;
+
+    @Autowired
+    private AnagraficaService anagraficaService;
+
+    @Autowired
+    private SaleService saleService;
 
     @GetMapping("/get-prenotazioni")
     public List<Prenotazioni> getPrenotazioni(){
@@ -46,10 +56,17 @@ public class PrenotazioniController {
         return prenotazioniService.getDateFineByIdSala(id);
     }
 
-    @PostMapping("/save-prenotazione")
-    public void savePrenotazione(@RequestBody @NotNull Prenotazioni prenotazione){
+    @PostMapping(value= {"/save-prenotazione", "/save-prenotazione/{idAnagrafica}/{idSala}"})
+    public void savePrenotazione(@RequestBody @NotNull Prenotazioni prenotazione, @PathVariable("idAnagrafica") Integer idAnagrafica, @PathVariable("idSala") Integer idSala){
+        if((idAnagrafica != null) && (idSala != null)){
+            Anagrafica anagrafica = anagraficaService.getAnagraficaById(idAnagrafica);
+            Sale sale = saleService.getSalaById(idSala);
+            prenotazione.setAnagrafica(anagrafica);
+            prenotazione.setSale(sale);
+        }
         prenotazioniService.savePrenotazione(prenotazione);
     }
+
 
     @GetMapping("/get-data-inizio-by-id/{id}")
     public LocalDate getDataInizioById(@PathVariable("id") Integer id){
