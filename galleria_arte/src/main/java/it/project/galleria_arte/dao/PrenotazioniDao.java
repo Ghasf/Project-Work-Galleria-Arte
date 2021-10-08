@@ -30,6 +30,13 @@ public class PrenotazioniDao {
         return  currentSession.createQuery("FROM Prenotazioni", Prenotazioni.class).getResultList();
     }
 
+    public List<Prenotazioni> getPrenotazioniByIdUtente(Integer id){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Prenotazioni> query = currentSession.createQuery("FROM Prenotazioni WHERE anagrafica.idAnagrafica = :id", Prenotazioni.class);
+        query.setParameter("id", id);
+        return query.getResultList();
+    }
+
     public Prenotazioni getPrenotazioneById(Integer id){
         Session currentSession = entityManager.unwrap(Session.class);
         return currentSession.find(Prenotazioni.class, id);

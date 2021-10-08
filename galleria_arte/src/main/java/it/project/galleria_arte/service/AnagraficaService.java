@@ -13,7 +13,6 @@ import java.util.List;
 public class AnagraficaService {
 
     @Autowired
-
     private AnagraficaDao anagraficaDao;
 
     public List<Anagrafica> getAnagrafica(){
