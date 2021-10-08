@@ -20,7 +20,7 @@ let dataFineSalaGialla = document.querySelector("#dataFineSalaGialla");
 let dataInizioSalaNera = document.querySelector("#dataInizioSalaNera");
 let dataFineSalaNera = document.querySelector("#dataFineSalaNera");
 
-prenotaSalaVerde.addEventListener("click", function(e){
+prenotaSalaVerde.addEventListener("click", function (e) {
     e.preventDefault();
     /* qui dobbiamo prenderci:
         l'id dell'utente tramite il suo nominativo di login,
@@ -31,33 +31,92 @@ prenotaSalaVerde.addEventListener("click", function(e){
      */
     fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Verde', {
         method: 'GET',
-    }).then(res => res.json()).then(idSala => {
+    }).then(res1 => res1.json()).then(idSala => {
         console.log(idSala);
         let dataInizio = dataInizioSalaVerde.value;
         let dataFine = dataFineSalaVerde.value;
 
-        const Data = {
-            id_utente: idUtente,
-            id_sala: idSala,
-            data_inizio: dataInizio,
-            data_fine: dataFine
-        }
-        fetch('http://localhost:8080/api/save-prenotazione/', {
-            method: 'POST',
-            headers: {
-                "content-type":"application/json; charset=UTF-8"
-            },
-            body: Data
-        }).then(res => res.json()).then(result => {
-            if(result===0){
-                console.log("OK");
-            }else{
-                console.log("ERRORE")
-            }
+        fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+            method: 'GET',
+        }).then(res2 => res2.json()).then(dataInizioDb => {
+            console.log("Data inizio db");
+            console.log(dataInizioDb);
+
+            fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res3 => res3.json()).then(dataFineDb => {
+                console.log("Data fine db");
+                console.log(dataFineDb);
+
+                let salaLibera = false;
+                for (var i = 0; i < dataFineDb.length; i++) {
+                    if (((dataFine < dataInizioDb[i]) || (dataFine > dataFineDb[i]) && ((dataInizio < dataInizioDb[i]) || (dataInizio > dataFineDb[i])))) {
+                        //fai la post
+                        salaLibera = true;
+                    } else {
+                        salaLibera = false;
+                        console.log("La sala è già occupata");
+                        alert("Sala occupata!");
+                        break;
+                    }
+                }
+                if(salaLibera) {
+                    /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                    console.log("FAI LA POST QUI");
+                    const Data = {
+                        descrizione: '',
+                        dataInizio: dataInizio,
+                        dataFine: dataFine,
+                        anagrafica: {
+                            idAnagrafica: idUtente,
+                            nominativo: '',
+                            indirizzo: '',
+                            cap: '',
+                            localita: '',
+                            provincia: '',
+                            codiceFiscale: '',
+                            partitaIva: '',
+                            email: '',
+                            password: '',
+                            sitoWeb: ''
+                        },
+                        sale: {
+                            idsala: idSala,
+                            nome: '',
+                            dimensione: '',
+                            larghezzaPareteNord: '',
+                            altezzaPareteNord: '',
+                            larghezzaPareteSud: '',
+                            altezzaPareteSud: '',
+                            larghezzaPareteEst: '',
+                            altezzaPareteEst: '',
+                            larghezzaPareteOvest: '',
+                            altezzaPareteOvest: '',
+                            prenotazioni: []
+                        }
+                    }
+
+                    fetch('http://localhost:8080/api/save-prenotazione/', {
+                        method: 'POST',
+                        headers: {
+                            "content-type": "application/json; charset=UTF-8",
+                            "Accept": "*/*",
+                            "Accept-Encoding": "gzip,deflate,br",
+                            "Connection": "keep-live"
+                        },
+                        body: JSON.stringify(Data)
+                    }).then(function(res4) {
+                        //res4 => res4.json()
+                    })/*.then(result => {
+                        if (result === 0) {
+                            console.log("OK");
+                        } else {
+                            console.log("ERRORE")
+                        }
+                    })*/
+                    //manda una mail di conferma avvenuta prenotazione
+                }
+            })
         })
     })
-
-
-
-
 })

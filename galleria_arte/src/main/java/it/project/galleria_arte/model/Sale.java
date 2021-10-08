@@ -1,5 +1,6 @@
 package it.project.galleria_arte.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -45,10 +46,14 @@ public class Sale {
     @Column(name = "altezza_parete_ovest")
     private Double altezzaPareteOvest;
 
-    @ManyToMany(targetEntity = Prenotazioni.class)
+    @OneToMany(mappedBy = "sale")
+    @JsonIgnore
+    private List<Prenotazioni> prenotazioni;
+
+    /*@ManyToMany(targetEntity = Prenotazioni.class)
     @JoinTable(name = "dettagli_prenotazione",
             joinColumns = @JoinColumn(name = "id_sala"),
             inverseJoinColumns = @JoinColumn(name = "id_prenotazione"))
     @JsonIgnoreProperties("sale")
-    private List<Prenotazioni> prenotazioni;
+    private List<Prenotazioni> prenotazioni;*/
 }

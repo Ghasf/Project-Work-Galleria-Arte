@@ -3,7 +3,8 @@
     overflow-x: hidden;
 }
 body{
-    background-color: #000000;
+    background: rgb(63,94,251)!important;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) !important;
     overflow-x: hidden;
 }
 .logo {
@@ -54,4 +55,11 @@ td, th {
 }
 .nota{
     text-decoration: underline;
+}
+.colorful{
+    background: rgb(63,94,251)!important;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) !important;
+}
+.tabella{
+    --bs-table-hover-color: white !important;
 }

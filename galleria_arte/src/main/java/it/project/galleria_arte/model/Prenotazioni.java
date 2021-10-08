@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +16,7 @@ import java.util.List;
 @Table(name = "prenotazioni")
 public class Prenotazioni {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prenotazione")
     private Integer idPrenotazione;
 
@@ -22,10 +24,10 @@ public class Prenotazioni {
     private String  descrizione;
 
     @Column(name = "data_inizio")
-    private Date dataInizio;
+    private LocalDate dataInizio;
 
     @Column(name = "data_fine")
-    private Date dataFine;
+    private LocalDate dataFine;
 
     @JoinColumn(name = "id_anagrafica")
     @ManyToOne
@@ -33,8 +35,16 @@ public class Prenotazioni {
     @JsonIgnore
     private Anagrafica anagrafica;
 
-    @ManyToMany(mappedBy = "prenotazioni", targetEntity = Sale.class)
+    @JoinColumn(name = "id_sala")
+    @ManyToOne
     @JsonIgnoreProperties("prenotazioni")
-    private List<Sale> sale;
+    @JsonIgnore
+    private Sale sale;
+
+
+
+    /*@ManyToMany(mappedBy = "prenotazioni", targetEntity = Sale.class)
+    @JsonIgnoreProperties("prenotazioni")
+    private List<Sale> sale;*/
 
 }
