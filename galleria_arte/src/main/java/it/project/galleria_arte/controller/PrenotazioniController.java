@@ -21,7 +21,7 @@ public class PrenotazioniController {
     @Autowired
     private PrenotazioniService prenotazioniService;
 
-    @GetMapping("/get-prenotazioni")//devo mettere un indirizzo con sintassi http
+    @GetMapping("/get-prenotazioni")
     public List<Prenotazioni> getPrenotazioni(){
         return prenotazioniService.getPrenotazioni();
     }
@@ -29,6 +29,11 @@ public class PrenotazioniController {
     @GetMapping("/get-prenotazione-by-id/{id}")
     public Prenotazioni getPrenotazioneById(@PathVariable("id") Integer id){
         return prenotazioniService.getPrenotazioneById(id);
+    }
+
+    @GetMapping("/get-prenotazioni-by-id-utente/{id}")
+    public List<Prenotazioni> getPrenotazioniByIdUtente(@PathVariable("id") Integer id){
+        return prenotazioniService.getPrenotazioniByIdUtente(id);
     }
 
     @GetMapping("/get-date-inizio-by-id-sala/{id}")

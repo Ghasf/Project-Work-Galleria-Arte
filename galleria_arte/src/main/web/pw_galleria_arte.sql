@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 07, 2021 alle 10:02
+-- Creato il: Ott 07, 2021 alle 23:29
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.10
 
@@ -85,17 +85,18 @@ CREATE TABLE `prenotazioni` (
   `descrizione` varchar(100) DEFAULT NULL,
   `data_inizio` date DEFAULT NULL,
   `data_fine` date DEFAULT NULL,
-  `id_anagrafica` int(11) DEFAULT NULL
+  `id_anagrafica` int(11) DEFAULT NULL,
+  `id_sala` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `prenotazioni`
 --
 
-INSERT INTO `prenotazioni` (`id_prenotazione`, `descrizione`, `data_inizio`, `data_fine`, `id_anagrafica`) VALUES
-(2, 'Paci Enza - esposizione dal 17 ottobre al 24 ottob', '2021-10-17', '2021-10-24', 2),
-(3, 'Esposizione privata di Gionatan, il mondo visto da Gionatan', '2021-11-03', '2021-11-10', 5),
-(4, 'Flaminia\'s collection', '2021-11-11', '2021-11-16', 4);
+INSERT INTO `prenotazioni` (`id_prenotazione`, `descrizione`, `data_inizio`, `data_fine`, `id_anagrafica`, `id_sala`) VALUES
+(2, 'Paci Enza - esposizione dal 17 ottobre al 24 ottob', '2021-10-17', '2021-10-24', 2, 3),
+(3, 'Esposizione privata di Gionatan, il mondo visto da Gionatan', '2021-11-03', '2021-11-10', 5, 3),
+(4, 'Flaminia\'s collection', '2021-11-11', '2021-11-16', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -143,16 +144,15 @@ ALTER TABLE `anagrafica`
 -- Indici per le tabelle `dettagli_prenotazione`
 --
 ALTER TABLE `dettagli_prenotazione`
-  ADD PRIMARY KEY (`id_dettaglio_prenotazione`),
-  ADD KEY `id_sala` (`id_sala`),
-  ADD KEY `id_prenotazione` (`id_prenotazione`);
+  ADD PRIMARY KEY (`id_dettaglio_prenotazione`);
 
 --
 -- Indici per le tabelle `prenotazioni`
 --
 ALTER TABLE `prenotazioni`
   ADD PRIMARY KEY (`id_prenotazione`),
-  ADD KEY `id_anagrafica` (`id_anagrafica`);
+  ADD KEY `id_anagrafica` (`id_anagrafica`),
+  ADD KEY `id_sala2` (`id_sala`);
 
 --
 -- Indici per le tabelle `sale`
@@ -193,17 +193,11 @@ ALTER TABLE `sale`
 --
 
 --
--- Limiti per la tabella `dettagli_prenotazione`
---
-ALTER TABLE `dettagli_prenotazione`
-  ADD CONSTRAINT `id_prenotazione` FOREIGN KEY (`id_prenotazione`) REFERENCES `prenotazioni` (`id_prenotazione`) ON DELETE CASCADE,
-  ADD CONSTRAINT `id_sala` FOREIGN KEY (`id_sala`) REFERENCES `sale` (`id_sala`) ON DELETE CASCADE;
-
---
 -- Limiti per la tabella `prenotazioni`
 --
 ALTER TABLE `prenotazioni`
-  ADD CONSTRAINT `id_anagrafica` FOREIGN KEY (`id_anagrafica`) REFERENCES `anagrafica` (`id_anagrafica`) ON DELETE CASCADE;
+  ADD CONSTRAINT `id_anagrafica` FOREIGN KEY (`id_anagrafica`) REFERENCES `anagrafica` (`id_anagrafica`) ON DELETE CASCADE,
+  ADD CONSTRAINT `id_sala2` FOREIGN KEY (`id_sala`) REFERENCES `sale` (`id_sala`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

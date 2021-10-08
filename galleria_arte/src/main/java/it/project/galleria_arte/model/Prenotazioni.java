@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "prenotazioni")
 public class Prenotazioni {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prenotazione")
     private Integer idPrenotazione;
 
