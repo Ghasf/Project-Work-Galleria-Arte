@@ -65,7 +65,10 @@ function stampaPrenotazioni(prenotazioni){
         cell.appendChild(cellText);
         row.appendChild(cell);
 
-
+        cell = document.createElement("td");
+        cellText = document.createElement("button");
+        cell.appendChild(cellText);
+        row.appendChild(cell);
 
         tBody.appendChild(row);
     }
