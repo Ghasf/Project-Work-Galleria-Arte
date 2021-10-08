@@ -17,19 +17,13 @@ window.addEventListener('load', function (){
     })
 
 
-    cancellaPrenotazione.addEventListener("click", function (e){
-        e.preventDefault();
-        //console.log("dopo il prevent default")
-
-
-
         fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + idPrenotazione, {
             method: 'DELETE',
         }).then(res => res.json()).then(res => console.log(res));
     })
 
 
-})
+
 
 function stampaPrenotazioni(prenotazioni){
     let tBody = document.querySelector("#tabellaBody")
@@ -66,10 +60,21 @@ function stampaPrenotazioni(prenotazioni){
         row.appendChild(cell);
 
         cell = document.createElement("td");
-        cellText = document.createElement("button");
+        cellText = document.createElement("button")
+        cellText.dataset.id = prenotazioni[j].idPrenotazione;
+        cellText.innerHTML = "cancella"
         cell.appendChild(cellText);
         row.appendChild(cell);
+        cellText.addEventListener("click", function (e){
+            e.preventDefault();
+            console.log(e.currentTarget);
+            console.log(e.currentTarget.dataset.id);
 
+            fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + e.currentTarget.dataset.id, {
+                method: 'DELETE',
+            }).then(res => res.json()).then(res => console.log(res));
+            alert("prenotazione cancellata");
+        })
         tBody.appendChild(row);
     }
 }
