@@ -66,3 +66,6 @@ footer{
 .hidden{
     display: none;
 }
+.messaggi{
+    font-size: small;
+}

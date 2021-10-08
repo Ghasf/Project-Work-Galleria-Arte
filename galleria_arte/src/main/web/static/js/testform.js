@@ -1,35 +1,26 @@
 let idUtente = 2; //da cambiare quando sarà implementato il login
 let idPrenotazione = 5;
 
-let listaPrenotazioni = document.querySelector("#listaPrenotazioni");
-let cancellaPrenotazione = document.querySelector("#cancellaPrenotazione");
+/*let listaPrenotazioni = document.querySelector("#listaPrenotazioni");
+let cancellaPrenotazione = document.querySelector("#cancellaPrenotazione");*/
 
-window.addEventListener('load', function (){
+window.addEventListener('load', function () {
 
-    //console.log("prima dell'event listener")
     fetch('http://localhost:8080/api/get-prenotazioni-by-id-utente/' + idUtente, {
         method: 'GET',
     }).then(res => res.json()).then(prenotazioni => {
-        console.log("Prenotazioni");
-        console.log(prenotazioni);
+        //console.log("Prenotazioni");
+        //console.log(prenotazioni);
 
         stampaPrenotazioni(prenotazioni);
     })
+})
 
-
-        fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + idPrenotazione, {
-            method: 'DELETE',
-        }).then(res => res.json()).then(res => console.log(res));
-    })
-
-
-
-
-function stampaPrenotazioni(prenotazioni){
+function stampaPrenotazioni(prenotazioni) {
     let tBody = document.querySelector("#tabellaBody")
 
-    console.log(prenotazioni.length);
-    console.log(prenotazioni);
+    //console.log(prenotazioni.length);
+    //console.log(prenotazioni);
 
     for (var j = 0; j < prenotazioni.length; j++) {
         var row = document.createElement("tr");
@@ -65,10 +56,10 @@ function stampaPrenotazioni(prenotazioni){
         cellText.innerHTML = "cancella"
         cell.appendChild(cellText);
         row.appendChild(cell);
-        cellText.addEventListener("click", function (e){
+        cellText.addEventListener("click", function (e) {
             e.preventDefault();
-            console.log(e.currentTarget);
-            console.log(e.currentTarget.dataset.id);
+            //console.log(e.currentTarget);
+            //console.log(e.currentTarget.dataset.id);
 
             fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + e.currentTarget.dataset.id, {
                 method: 'DELETE',

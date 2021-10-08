@@ -1,9 +1,7 @@
-let formIscrizione = document.querySelector("#submitForm")
-    console.log("cciciic")
-    formIscrizione.addEventListener("submit",function (e) {
-        console.log("cciciic")
+window.addEventListener('load', function(event) {
+    let formIscrizione = document.querySelector("#submitForm")
+    formIscrizione.addEventListener("submit", function (e) {
         e.preventDefault()
-        console.log("cciciic")
 
         let fields = formIscrizione.querySelectorAll('.required');
         let formValido = true;
@@ -13,14 +11,28 @@ let formIscrizione = document.querySelector("#submitForm")
                 console.log(`TROVATO CAMPO VUOTO -> ${el.name}`)
                 let formRow = el.closest('.formRow');
                 let messaggi = formRow.querySelector('.messaggi');
-                // messaggi.innerHTML = "Campo obbligatorio"
-                messaggi.classList.remove("hidden")
+                messaggi.classList.remove("hidden");
                 formValido = false;
             } else {
                 let formRow = el.closest('.formRow');
                 let messaggi = formRow.querySelector('.messaggi');
-                // messaggi.innerHTML = ""
-                messaggi.classList.add("hidden")
+                messaggi.classList.add("hidden");
             }
         })
+        let privacy2 = document.querySelector("#gridCheck")
+        let privacy = document.querySelector("[id=gridCheck]:checked");
+        if(privacy === null){
+            let formRow = privacy2.closest('.formRow');
+            let messaggi = formRow.querySelector('.messaggi');
+            messaggi.classList.remove("hidden");
+            formValido = false;
+        }
+
+        if(formValido){
+            console.log("Form valido");
+            /**qui devi fare la post**/
+        }else{
+            console.log("Form non valido");
+        }
     })
+})
