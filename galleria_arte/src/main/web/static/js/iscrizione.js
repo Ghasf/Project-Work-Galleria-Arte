@@ -93,7 +93,6 @@ function emailCheckAndPost() {
                     },
                     body: JSON.stringify(Data)
                 })
-
                 console.log("Utente registrato con successo!");
                 alert("Utente registrato con successo!");
             }else{

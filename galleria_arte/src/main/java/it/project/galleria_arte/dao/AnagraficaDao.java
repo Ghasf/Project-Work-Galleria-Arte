@@ -38,6 +38,14 @@ public class AnagraficaDao {
     public String getPasswordByEmail(String email){
         Session currentSession = entityManager.unwrap(Session.class);
         Query<String> query = currentSession.createQuery("SELECT password FROM Anagrafica WHERE email = :email", String.class);
+        query.setParameter("email",email);
+        return query.getSingleResult();
+    }
+
+    public Integer getUserIdByEmail(String email){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Integer> query = currentSession.createQuery("SELECT idAnagrafica FROM Anagrafica WHERE email = :email", Integer.class);
+        query.setParameter("email",email);
         return query.getSingleResult();
     }
 }

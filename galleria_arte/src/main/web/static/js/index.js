@@ -1,14 +1,22 @@
-let idUtente = 2;
+//let idUtente = 2;
 
 window.addEventListener("load", function (){
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let idUtente = urlParams.get('id');
+    console.log(idUtente);
+
+    let sale = document.querySelector("#sale");
+    let prezzi = document.querySelector("#prezzi");
+    let leMiePrenotazioni = document.querySelector("#leMiePrenotazioni");
     let userWelcome = document.querySelector("#userWelcome");
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let loginbuttons = document.querySelector("#loginButtons");
-    let leMiePrenotazioni = document.querySelector("#leMiePrenotazioni");
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
     leMiePrenotazioni.style.display="none";
     let loginUtente = document.querySelector("#buttonAccedi");
+
 
     loginUtente.addEventListener("click", function (e){
         userWelcome.style.display="block";
@@ -25,5 +33,20 @@ window.addEventListener("load", function (){
             userWelcomeName.innerHTML = utente.nominativo;
             userWelcomeName.style.display="block";
         })
+    })
+
+    sale.addEventListener("click", function (e){
+        e.preventDefault();
+        open("Sale.html?id=" + idUtente);
+    })
+
+    prezzi.addEventListener("click", function (e){
+        e.preventDefault();
+        open("prezzi.html?id=" + idUtente);
+    })
+
+    leMiePrenotazioni.addEventListener("click", function (e){
+        e.preventDefault();
+        open("testform.html?id=" + idUtente);
     })
 })

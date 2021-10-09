@@ -26,19 +26,24 @@ public class AnagraficaController {
         return anagraficaService.getAnagraficaById(id);
     }
 
-    @GetMapping("get-password-by-email/{email}")
-    public String getPasswordByEmail(@PathVariable("email")String email){
+    @GetMapping("/get-email-list")
+    public List<String> getEmailList(){
+        return anagraficaService.getEmailList();
+    }
+
+    @GetMapping("/get-password-by-email/{email}")
+    public String getPasswordByEmail(@PathVariable("email") String email){
         return anagraficaService.getPasswordByEmail(email);
+    }
+
+    @GetMapping("/get-user-id-by-email/{email}")
+    public Integer getUserIdByEmail(@PathVariable("email") String email){
+        return anagraficaService.getUserIdByEmail(email);
     }
 
     @PostMapping("/save-anagrafica")
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){
         anagraficaService.saveAnagrafica(anagrafica);
-    }
-
-    @GetMapping("/get-email-list")
-    public List<String> getEmailList(){
-        return anagraficaService.getEmailList();
     }
 }
 

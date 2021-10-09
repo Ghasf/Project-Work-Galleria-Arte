@@ -27,7 +27,12 @@ public class AnagraficaService {
     public String getPasswordByEmail(String email){
         return anagraficaDao.getPasswordByEmail(email);
     }
+
     public List<String> getEmailList(){
         return anagraficaDao.getEmailList();
+    }
+
+    public Integer getUserIdByEmail(String email){
+        return anagraficaDao.getUserIdByEmail(email);
     }
 }
