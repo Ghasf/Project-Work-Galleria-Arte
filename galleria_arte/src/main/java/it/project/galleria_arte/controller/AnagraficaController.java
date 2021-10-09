@@ -26,6 +26,10 @@ public class AnagraficaController {
         return anagraficaService.getAnagraficaById(id);
     }
 
+    @GetMapping("get-password-by-email/{email}")
+    public String getPasswordByEmail(@PathVariable("email")String email){
+        return anagraficaService.getPasswordByEmail(email);
+    }
 
     @PostMapping("/save-anagrafica")
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){

@@ -35,4 +35,9 @@ public class AnagraficaDao {
         Query<String> query = currentSession.createQuery("SELECT email FROM Anagrafica", String.class);
         return query.getResultList();
     }
+    public String getPasswordByEmail(String email){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<String> query = currentSession.createQuery("SELECT password FROM Anagrafica WHERE email = :email", String.class);
+        return query.getSingleResult();
+    }
 }
