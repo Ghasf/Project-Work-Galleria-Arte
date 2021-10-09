@@ -2,7 +2,6 @@ package it.project.galleria_arte.controller;
 
 import com.sun.istack.NotNull;
 import it.project.galleria_arte.model.Anagrafica;
-import it.project.galleria_arte.model.Prenotazioni;
 import it.project.galleria_arte.service.AnagraficaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,10 +27,14 @@ public class AnagraficaController {
     }
 
 
-
     @PostMapping("/save-anagrafica")
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){
         anagraficaService.saveAnagrafica(anagrafica);
+    }
+
+    @GetMapping("/get-email-list")
+    public List<String> getEmailList(){
+        return anagraficaService.getEmailList();
     }
 }
 

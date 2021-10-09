@@ -1,14 +1,12 @@
 package it.project.galleria_arte.dao;
 
 import it.project.galleria_arte.model.Anagrafica;
-import it.project.galleria_arte.model.Prenotazioni;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -28,7 +26,13 @@ public class AnagraficaDao {
     }
 
     public void saveAnagrafica(Anagrafica anagrafica){
-        Session currentSesion = entityManager.unwrap(Session.class);
-        currentSesion.saveOrUpdate(anagrafica);
+        Session currentSession = entityManager.unwrap(Session.class);
+        currentSession.saveOrUpdate(anagrafica);
+    }
+
+    public List<String> getEmailList(){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<String> query = currentSession.createQuery("SELECT email FROM Anagrafica", String.class);
+        return query.getResultList();
     }
 }

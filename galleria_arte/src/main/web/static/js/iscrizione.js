@@ -30,9 +30,43 @@ window.addEventListener('load', function(event) {
 
         if(formValido){
             console.log("Form valido");
-            /**qui devi fare la post**/
+
+            /** controlla che l'email non sia già presente nel database
+             *
+             * poi fai la POST
+             */
+
+            emailCheckAndPost();
+
         }else{
             console.log("Form non valido");
         }
     })
 })
+
+function emailCheckAndPost(){
+    let emailOk = true;
+    let emailField = document.querySelector("#email").value;
+
+    fetch('http://localhost:8080/api/get-email-list', {
+        method:"GET",
+    }).then(res => res.json()).then(email => {
+        console.log("Lista email");
+        console.log(email);
+
+        for(var i=0; i<email.length; i++){
+            console.log(emailField + " " + email[i]);
+            if(emailField === email[i]){
+                console.log("La mail è già presente, imposta emailOk a FALSO")
+                console.log(emailOk)
+                emailOk = false;
+                console.log(emailOk)
+                break;
+            }
+        }
+
+        if(emailOk){
+            /** fai la POST **/
+        }
+    })
+}

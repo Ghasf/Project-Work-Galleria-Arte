@@ -24,4 +24,8 @@ public class AnagraficaService {
     public void saveAnagrafica(Anagrafica anagrafica){
          anagraficaDao.saveAnagrafica(anagrafica);
     }
+
+    public List<String> getEmailList(){
+        return anagraficaDao.getEmailList();
+    }
 }
