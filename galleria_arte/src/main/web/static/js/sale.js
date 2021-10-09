@@ -6,11 +6,6 @@ window.addEventListener("load", function(){
     let idUtente = urlParams.get('id');
     console.log(idUtente);
 
-
-    let prezzi = document.querySelector("#prezzi");
-    let leMiePrenotazioni = document.querySelector("#leMiePrenotazioni");
-    let home = document.querySelector("#homeIndex");
-
     let prenotaSalaVerde = document.querySelector("#prenotaSalaVerde");
     let prenotaSalaBlu = document.querySelector("#prenotaSalaBlu");
     let prenotaSalaRossa = document.querySelector("#prenotaSalaRossa");
@@ -97,18 +92,23 @@ window.addEventListener("load", function(){
         })
     })
 
+    let prezzi = document.querySelector("#prezzi");
+    //let leMiePrenotazioni = document.querySelector("#leMiePrenotazioni");
+    let home = document.querySelector("#homeIndex");
+
     prezzi.addEventListener("click", function (e){
         e.preventDefault();
         open("prezzi.html?id=" + idUtente);
     })
 
-    leMiePrenotazioni.addEventListener("click", function (e){
-        e.preventDefault();
-        open("testform.html?id=" + idUtente);
-    })
+    // leMiePrenotazioni.addEventListener("click", function (e){
+    //     e.preventDefault();
+    //     open("testform.html?id=" + idUtente);
+    // })
 
     home.addEventListener("click", function (e){
-        e.preventDefault();
+        //e.preventDefault();
+        console.log("Ho cliccato il link Home");
         open("index.html?id=" + idUtente);
     })
 })
