@@ -59,12 +59,12 @@ footer{
     background: linear-gradient(90deg, rgba(233,170,8,1) 0%, rgba(184,182,50,1) 51%, rgba(238,229,83,1) 100%);}
 .salanera{
     background: rgb(139,137,133);
-    background: linear-gradient(90deg, rgba(139,137,133,1) 0%, rgba(57,58,102,1) 51%, rgba(4,4,0,1) 100%);
+    background: linear-gradient(90deg, rgba(139,137,133,1) 0%, rgba(57,58,102,1) 51%, rgba(65,65,59,1) 100%);
     overflow-x: hidden;
 }
 .immagine{
-    min-width: 612px;
-    min-height: 408px;
+    max-width: 612px;
+    max-height: 408px;
 }
 .testo-destra{
     text-align: center;
@@ -75,5 +75,10 @@ footer{
     offset: auto;
 }
 .glass-card{
-    background: rgba( 255, 255, 255, 0.05 )!important;box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;backdrop-filter: blur( 4px )!important;-webkit-backdrop-filter: blur( 4px )!important;border-radius: 10px!important;border: 1px solid rgba( 255, 255, 255, 0.18 )!important;
+    background: rgba( 255, 255, 255, 0.05 )!important;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;
+    backdrop-filter: blur( 4px )!important;
+    -webkit-backdrop-filter: blur( 4px )!important;
+    border-radius: 10px!important;
+    border: 1px solid rgba( 255, 255, 255, 0.18 )!important;
 }

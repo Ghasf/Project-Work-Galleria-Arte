@@ -5,6 +5,8 @@ body{
     background: rgb(63,94,251)!important;
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) !important;
     overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 .logo {
     max-height: 60px;
@@ -61,4 +63,8 @@ td, th {
 }
 .tabella{
     --bs-table-hover-color: white !important;
+}
+.bottom-footer{
+    bottom: 0;
+    width: 100vw;
 }
