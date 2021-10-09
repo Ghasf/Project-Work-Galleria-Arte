@@ -15,10 +15,9 @@ window.addEventListener("load", function (){
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
     leMiePrenotazioni.style.display="none";
-    let loginUtente = document.querySelector("#buttonAccedi");
+    //let loginUtente = document.querySelector("#buttonAccedi");
 
-
-    loginUtente.addEventListener("click", function (e){
+    if(idUtente != null){
         userWelcome.style.display="block";
         loginbuttons.style.display="none";
         leMiePrenotazioni.style.display="block";
@@ -33,7 +32,12 @@ window.addEventListener("load", function (){
             userWelcomeName.innerHTML = utente.nominativo;
             userWelcomeName.style.display="block";
         })
-    })
+    }
+
+
+    // loginUtente.addEventListener("click", function (e){
+    //
+    // })
 
     sale.addEventListener("click", function (e){
         e.preventDefault();

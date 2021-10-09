@@ -1,268 +1,282 @@
 <!DOCTYPE html>
 <html lang="en"> <!--xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">-->
 <head>
-
-    <link rel="stylesheet" href="static/css/css/bootstrap.css">
-    <link rel="stylesheet" href="static/css/sale.css">
-    <link rel="stylesheet" href="static/css/navbar.css">
-    <meta charset="UTF-8">
-    <title>Art Gallery : Sale</title>
+	
+	<link rel="stylesheet" href="static/css/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/sale.css">
+	<link rel="stylesheet" href="static/css/navbar.css">
+	<meta charset="UTF-8">
+	<title>Art Gallery : Sale</title>
 </head>
 <body>
 <header>
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-        <a class="offset-1 navbar-brand" href="index.html"><img alt="0" class="logo" src="static/images/GalleriaArte.png"></a>
-
-        <div class="collapse navbar-collapse " id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="" id="homeIndex">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" id="sale">Le nostre sale</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" id="prezzi">Prezzi</a>
-                </li>
-            </ul>
-            <div class="offset-8">
-                <a href="#" class="btn btn-danger active outline-color-danger" role="button" aria-pressed="true">Iscriviti</a>
-                <a href="#" class="btn btn-primary btn active" role="button" aria-pressed="true">Accedi</a>
-            </div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="index.html">Home</a>
-            <a href="Sale.html">Le nostre sale</a>
-            <a href="prezzi.html">Prezzi</a>
-        </div>
-        <span style="font-size:30px;cursor:pointer" class="text-white bottone-navbar" onclick="openNav()">&#9776;</span>
-    </nav>
+	<nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
+		<a class="offset-1 navbar-brand" href="index.html"><img alt="0" class="logo"
+																src="static/images/GalleriaArte.png"></a>
+		
+		<div class="collapse navbar-collapse " id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="" id="homeIndex">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="" id="sale">Le nostre sale</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="" id="prezzi">Prezzi</a>
+				</li>
+				<li class="nav-item hidden" id="navPrenotazioni">
+					<a class="nav-link" id="leMiePrenotazioni" href="#">Le Mie Prenotazioni</a>
+				</li>
+			</ul>
+			<div class="offset-7" id="loginButtons">
+				<a href="Iscrizione.html" class="btn btn-danger active outline-color-danger" role="button" aria-pressed="true">Iscriviti</a>
+				<a href="Accedi.html" class="btn btn-primary btn active" role="button" aria-pressed="true" id="buttonAccedi">Accedi</a>
+			</div>
+			<div class="offset-6 text-white" id="userWelcome">
+				<p>Welcome</p>
+			</div>
+			<div class="text-white ps-2" id="userWelcomeName">
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="index.html">Home</a>
+				<a href="Sale.html">Le nostre sale</a>
+				<a href="prezzi.html">Prezzi</a>
+			</div>
+			<span style="font-size:30px;cursor:pointer" class="text-white bottone-navbar"
+				  onclick="openNav()">&#9776;</span>
+	</nav>
 </header>
 <main class="main">
-
-    <div class="d-flex flex-column justify-content-between align-content-center ">
-        <div class=" salaverde d-flex justify-content-between ">
-            <div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center ">
-                <div class="card w-auto text-center glass-card text-white ">
-                    <div class="card-body">
-                        <h5 class="card-title">Sala Verde</h5>
-                        <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                            Parete nord: 4mx5m,<br>Parete est: 3mx3m,<br>Parete ovest: 2mx3m,<br>Parete sud: 3mx4m.<br>
-                            Per
-                            una cubatura totale di: 80mq.
-                        </p>
-                        <form class="text-white">
-                            <div class="form-group row text-center">
-                                <label for="navbarText"size="1">
-                                    <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                                </label>
-                                <div class="col-6 text-center">
-                                    <label for="dataInizioSalaVerde">Data Inizio</label>
-                                    <input type="date" class="form-control text-center" id="dataInizioSalaVerde">
-                                </div>
-                                <div class="col-6 text-center">
-                                    <label for="dataFineSalaVerde">Data Fine</label>
-                                    <input type="date" class="form-control text-center" id="dataFineSalaVerde">
-                                </div>
-                            </div>
-                            <button type="submit" class="mt-2 btn btn-success btn-outline-dark text-white"
-                                    id="prenotaSalaVerde">Prenota ora
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <img class="immagine greenroom col-4" src="static/images/greenroom.jpg" alt="greenroom">
-        </div>
-
-        <div class="salablu d-flex justify-content-between">
-            <img class="blueroom col-4 immagine" src="static/images/blueroom.jpg" alt="blueroom"/>
-            <div class="salablu col-8 testo-destra d-flex flex-column justify-content-center align-items-center  ">
-                <div class="card w-auto text-center glass-card text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Sala Blu</h5>
-                        <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                            Parete nord: 3mx2m,<br>Parete est: 4mx3m,<br>Parete ovest: 2mx5m,<br>Parete sud: 4mx2m.<br>
-                            Per
-                            una cubatura totale di: 100mq.
-                        </p>
-                        <form class="text-white">
-                            <div class="form-group row text-center">
-                                <label for="navbarText"size="1">
-                                    <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                                </label>
-                                <div class="col-6 text-center">
-                                    <label for="dataInizioBlu">Data Inizio</label>
-                                    <input type="date" class="form-control text-center" id="dataInizioBlu">
-                                </div>
-                                <div class="col-6 text-center">
-                                    <label for="dataFineBlu">Data Fine</label>
-                                    <input type="date" class="form-control text-center" id="dataFineBlu">
-                                </div>
-                            </div>
-                            <button type="submit" class="mt-2 btn btn-primary btn-outline-dark text-white"
-                                    id="prenotaSalaBlu">Prenota ora
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="salarossa d-flex justify-content-between">
-        <div class="col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
-            <div class="card w-auto text-center glass-card text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Sala Rossa</h5>
-                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                        parete nord:2mx3m,<br>parete est:4mx4m,<br>parete ovest:2mx4m,<br>parete sud:4mx3m.<br> Per una
-                        cubatura totale di:150mq.
-                    </p>
-                    <form class="text-white">
-                        <div class="form-group row text-center">
-                            <label for="navbarText"size="1">
-                                <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                            </label>
-                            <div class="col-6 text-center">
-                                <label for="dataInizioRossa">Data Inizio</label>
-                                <input type="date" class="form-control text-center" id="dataInizioRossa">
-                            </div>
-                            <div class="col-6 text-center">
-                                <label for="dataFineRossa">Data Fine</label>
-                                <input type="date" class="form-control text-center" id="dataFineRossa">
-                            </div>
-                        </div>
-                        <button type="submit" class="mt-2 btn btn-danger btn-outline-dark text-white"
-                                id="prenotaSalaRossa">Prenota ora
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <img class="immagine redroom col-4 " src="static/images/redroom.jpg" alt="redroom"/>
-    </div>
-
-
-    <div class="salaviola d-flex justify-content-between">
-        <img class="purpleroom col-4 immagine" src="static/images/purpleroom.jpg" alt="purpleroom"/>
-        <div class="salaviola col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
-            <div class="card w-auto text-center glass-card text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Sala Viola</h5>
-                    <p class="card-text">Dotata di quattro pareti la sala è così composta:<br>
-                        parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
-                        cubatura totale di:200mq
-                    </p>
-                    <form class="text-white">
-                        <div class="form-group row text-center">
-                            <label for="navbarText"size="1">
-                                <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                            </label>
-
-                            <div class="col-6 text-center">
-
-                                <label for="dataInizioViola">Data Inizio</label>
-                                <input type="date" class="form-control text-center" id="dataInizioViola">
-                            </div>
-                            <div class="col-6 text-center">
-                                <label for="dataFineViola">Data Fine</label>
-                                <input type="date" class="form-control text-center" id="dataFineViola">
-                            </div>
-                        </div>
-                        <button type="submit" class="mt-2 btn btn-secondary btn-outline-dark text-white"
-                                id="prenotaSalaViola">Prenota ora
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="salagialla d-flex justify-content-between">
-        <div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
-            <div class="card w-auto text-center glass-card text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Sala Gialla</h5>
-                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                        parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
-                        cubatura totale di:170mq.
-                    </p>
-                    <form class="text-white">
-                        <div class="form-group row text-center">
-                            <label for="navbarText"size="1">
-                                <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                            </label>
-                            <div class="col-6 text-center">
-                                <label for="dataInizioGialla">Data Inizio</label>
-                                <input type="date" class="form-control text-center" id="dataInizioGialla">
-                            </div>
-                            <div class="col-6 text-center">
-                                <label for="dataFineGialla">Data Fine</label>
-                                <input type="date" class="form-control text-center" id="dataFineGialla">
-                            </div>
-                        </div>
-                        <button type="submit" class="mt-2 btn btn-warning btn-outline-dark text-white"
-                                id="prenotaSalaGialla">Prenota ora
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <img class="immagine yellowroom col-4" src="static/images/yellowroom.jpg" alt="yellowroom"/>
-    </div>
-    <div>
-    </div>
-
-    <div class="salanera d-flex justify-content-between">
-        <img class="blackroom col-4 immagine" src="static/images/blackroom.jpg" alt="blackroom"/>
-        <div class=" salanera col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
-            <div class="card w-auto text-center glass-card text-white" >
-                <div class="card-body">
-                    <h5 class="card-title">Sala Nera</h5>
-                    <p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
-                        parete nord:2mx3m,<br>parete est:5mx5m,<br>parete ovest:4mx4m,<br>parete sud:3mx3m.<br> Per una
-                        cubatura totale di:145mq.
-                    </p>
-                    <form class="text-white">
-                        <div class="form-group row text-center">
-                            <label for="navbarText"size="1">
-                                <input class="form-control text-center" type="text" placeholder="Dai un nome alla tua presentazione"size="1">
-                            </label>
-                            <div class="col-6 text-center">
-                                <label for="dataInizioNera">Data Inizio</label>
-                                <input type="date" class="form-control text-center" id="dataInizioNera">
-                            </div>
-                            <div class="col-6 text-center">
-                                <label for="dataFineNera">Data Fine</label>
-                                <input type="date" class="form-control text-center" id="dataFineNera">
-                            </div>
-                        </div>
-                        <button type="submit" class="mt-2 btn btn-dark btn-outline-dark text-white"
-                                id="prenotaSalaNera">Prenota ora
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+	
+	<div class="d-flex flex-column justify-content-between align-content-center ">
+		<div class=" salaverde d-flex justify-content-between ">
+			<div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center ">
+				<div class="card w-auto text-center glass-card text-white ">
+					<div class="card-body">
+						<h5 class="card-title">Sala Verde</h5>
+						<p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+							Parete nord: 4mx5m,<br>Parete est: 3mx3m,<br>Parete ovest: 2mx3m,<br>Parete sud: 3mx4m.<br>
+							Per
+							una cubatura totale di: 80mq.
+						</p>
+						<form class="text-white">
+							<div class="form-group row text-center">
+								<label for="navbarText" size="1">
+									<input class="form-control text-center" type="text"
+										   placeholder="Dai un nome alla tua presentazione" size="1">
+								</label>
+								<div class="col-6 text-center">
+									<label for="dataInizioSalaVerde">Data Inizio</label>
+									<input type="date" class="form-control text-center" id="dataInizioSalaVerde">
+								</div>
+								<div class="col-6 text-center">
+									<label for="dataFineSalaVerde">Data Fine</label>
+									<input type="date" class="form-control text-center" id="dataFineSalaVerde">
+								</div>
+							</div>
+							<button type="submit" class="mt-2 btn btn-success btn-outline-dark text-white"
+									id="prenotaSalaVerde">Prenota ora
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<img class="immagine greenroom col-4" src="static/images/greenroom.jpg" alt="greenroom">
+		</div>
+		
+		<div class="salablu d-flex justify-content-between">
+			<img class="blueroom col-4 immagine" src="static/images/blueroom.jpg" alt="blueroom"/>
+			<div class="salablu col-8 testo-destra d-flex flex-column justify-content-center align-items-center  ">
+				<div class="card w-auto text-center glass-card text-white">
+					<div class="card-body">
+						<h5 class="card-title">Sala Blu</h5>
+						<p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+							Parete nord: 3mx2m,<br>Parete est: 4mx3m,<br>Parete ovest: 2mx5m,<br>Parete sud: 4mx2m.<br>
+							Per
+							una cubatura totale di: 100mq.
+						</p>
+						<form class="text-white">
+							<div class="form-group row text-center">
+								<label for="navbarText" size="1">
+									<input class="form-control text-center" type="text"
+										   placeholder="Dai un nome alla tua presentazione" size="1">
+								</label>
+								<div class="col-6 text-center">
+									<label for="dataInizioBlu">Data Inizio</label>
+									<input type="date" class="form-control text-center" id="dataInizioBlu">
+								</div>
+								<div class="col-6 text-center">
+									<label for="dataFineBlu">Data Fine</label>
+									<input type="date" class="form-control text-center" id="dataFineBlu">
+								</div>
+							</div>
+							<button type="submit" class="mt-2 btn btn-primary btn-outline-dark text-white"
+									id="prenotaSalaBlu">Prenota ora
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	
+	<div class="salarossa d-flex justify-content-between">
+		<div class="col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
+			<div class="card w-auto text-center glass-card text-white">
+				<div class="card-body">
+					<h5 class="card-title">Sala Rossa</h5>
+					<p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+						parete nord:2mx3m,<br>parete est:4mx4m,<br>parete ovest:2mx4m,<br>parete sud:4mx3m.<br> Per una
+						cubatura totale di:150mq.
+					</p>
+					<form class="text-white">
+						<div class="form-group row text-center">
+							<label for="navbarText" size="1">
+								<input class="form-control text-center" type="text"
+									   placeholder="Dai un nome alla tua presentazione" size="1">
+							</label>
+							<div class="col-6 text-center">
+								<label for="dataInizioRossa">Data Inizio</label>
+								<input type="date" class="form-control text-center" id="dataInizioRossa">
+							</div>
+							<div class="col-6 text-center">
+								<label for="dataFineRossa">Data Fine</label>
+								<input type="date" class="form-control text-center" id="dataFineRossa">
+							</div>
+						</div>
+						<button type="submit" class="mt-2 btn btn-danger btn-outline-dark text-white"
+								id="prenotaSalaRossa">Prenota ora
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<img class="immagine redroom col-4 " src="static/images/redroom.jpg" alt="redroom"/>
+	</div>
+	
+	
+	<div class="salaviola d-flex justify-content-between">
+		<img class="purpleroom col-4 immagine" src="static/images/purpleroom.jpg" alt="purpleroom"/>
+		<div class="salaviola col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
+			<div class="card w-auto text-center glass-card text-white">
+				<div class="card-body">
+					<h5 class="card-title">Sala Viola</h5>
+					<p class="card-text">Dotata di quattro pareti la sala è così composta:<br>
+						parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
+						cubatura totale di:200mq
+					</p>
+					<form class="text-white">
+						<div class="form-group row text-center">
+							<label for="navbarText" size="1">
+								<input class="form-control text-center" type="text"
+									   placeholder="Dai un nome alla tua presentazione" size="1">
+							</label>
+							
+							<div class="col-6 text-center">
+								
+								<label for="dataInizioViola">Data Inizio</label>
+								<input type="date" class="form-control text-center" id="dataInizioViola">
+							</div>
+							<div class="col-6 text-center">
+								<label for="dataFineViola">Data Fine</label>
+								<input type="date" class="form-control text-center" id="dataFineViola">
+							</div>
+						</div>
+						<button type="submit" class="mt-2 btn btn-secondary btn-outline-dark text-white"
+								id="prenotaSalaViola">Prenota ora
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="salagialla d-flex justify-content-between">
+		<div class=" col-8 testo-sinistra d-flex flex-column justify-content-center align-items-center">
+			<div class="card w-auto text-center glass-card text-white">
+				<div class="card-body">
+					<h5 class="card-title">Sala Gialla</h5>
+					<p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+						parete nord:4mx4m,<br>parete est:5mx4m,<br>parete ovest:3mx5m,<br>parete sud:5mx5m.<br> Per una
+						cubatura totale di:170mq.
+					</p>
+					<form class="text-white">
+						<div class="form-group row text-center">
+							<label for="navbarText" size="1">
+								<input class="form-control text-center" type="text"
+									   placeholder="Dai un nome alla tua presentazione" size="1">
+							</label>
+							<div class="col-6 text-center">
+								<label for="dataInizioGialla">Data Inizio</label>
+								<input type="date" class="form-control text-center" id="dataInizioGialla">
+							</div>
+							<div class="col-6 text-center">
+								<label for="dataFineGialla">Data Fine</label>
+								<input type="date" class="form-control text-center" id="dataFineGialla">
+							</div>
+						</div>
+						<button type="submit" class="mt-2 btn btn-warning btn-outline-dark text-white"
+								id="prenotaSalaGialla">Prenota ora
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<img class="immagine yellowroom col-4" src="static/images/yellowroom.jpg" alt="yellowroom"/>
+	</div>
+	<div>
+	</div>
+	
+	<div class="salanera d-flex justify-content-between">
+		<img class="blackroom col-4 immagine" src="static/images/blackroom.jpg" alt="blackroom"/>
+		<div class=" salanera col-8 testo-destra d-flex flex-column justify-content-center align-items-center">
+			<div class="card w-auto text-center glass-card text-white">
+				<div class="card-body">
+					<h5 class="card-title">Sala Nera</h5>
+					<p class="card-text"> Dotata di quattro pareti la sala è così composta:<br>
+						parete nord:2mx3m,<br>parete est:5mx5m,<br>parete ovest:4mx4m,<br>parete sud:3mx3m.<br> Per una
+						cubatura totale di:145mq.
+					</p>
+					<form class="text-white">
+						<div class="form-group row text-center">
+							<label for="navbarText" size="1">
+								<input class="form-control text-center" type="text"
+									   placeholder="Dai un nome alla tua presentazione" size="1">
+							</label>
+							<div class="col-6 text-center">
+								<label for="dataInizioNera">Data Inizio</label>
+								<input type="date" class="form-control text-center" id="dataInizioNera">
+							</div>
+							<div class="col-6 text-center">
+								<label for="dataFineNera">Data Fine</label>
+								<input type="date" class="form-control text-center" id="dataFineNera">
+							</div>
+						</div>
+						<button type="submit" class="mt-2 btn btn-dark btn-outline-dark text-white"
+								id="prenotaSalaNera">Prenota ora
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </main>
 <footer class="pt-4 pt-md-5 border-top align-items-center">
-    <div class="row">
-        <div class="text-center col-12 col-md-12 align-items-center">
-            <h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
-            <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
-                <img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-                <img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
-            </a>
-            <small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
-        </div>
-    </div>
+	<div class="row">
+		<div class="text-center col-12 col-md-12 align-items-center">
+			<h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
+			<a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
+				<img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
+			</a>
+			<a href="https://www.facebook.com/" target="_blank">
+				<img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
+			</a>
+			<small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
+		</div>
+	</div>
 </footer>
 <script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="static/js/navbar.js"></script>
