@@ -68,3 +68,7 @@ td, th {
     bottom: 0;
     width: 100vw;
 }
+
+.hidden{
+    display: none;
+}
