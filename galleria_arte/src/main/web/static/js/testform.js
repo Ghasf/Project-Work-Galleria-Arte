@@ -105,7 +105,7 @@ function stampaPrenotazioni(prenotazioni) {
 
         cell = document.createElement("td");
         bottone = document.createElement("button")
-        bottone.className="btn btn-danger"
+        bottone.className="btn-sm btn-danger"
         bottone.dataset.id = prenotazioni[j].idPrenotazione;
         bottone.innerHTML = "cancella"
         cell.appendChild(bottone);
