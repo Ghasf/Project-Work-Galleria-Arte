@@ -17,8 +17,7 @@ window.addEventListener("load", function (e){
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
     logoutButton.style.display="none";
-    //leMiePrenotazioni.style.display="none";
-    //let loginUtente = document.querySelector("#buttonAccedi");
+
     if(idUtente !== "null"){
         if(idUtente !== null) {
             if (idUtente !== "") {
@@ -37,6 +36,7 @@ window.addEventListener("load", function (e){
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
+                    logoutButton.style.display = "block";
                 })
             }
         }

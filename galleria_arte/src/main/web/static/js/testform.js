@@ -10,6 +10,9 @@ window.addEventListener('load', function () {
     let idUtente = urlParams.get('id');
     console.log(idUtente);
 
+    let home = document.querySelector("#home");
+    let sale = document.querySelector("#sale");
+    let prezzi = document.querySelector("#prezzi");
     let userWelcome = document.querySelector("#userWelcome");
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
@@ -45,6 +48,23 @@ window.addEventListener('load', function () {
         //console.log(prenotazioni);
 
         stampaPrenotazioni(prenotazioni);
+    })
+
+    home.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + idUtente);
+    })
+
+    sale.addEventListener("click", function (e){
+        e.preventDefault();
+        console.log("Ho cliccato sulle sale");
+        open("Sale.html?id=" + idUtente);
+    })
+
+    prezzi.addEventListener("click", function (e){
+        e.preventDefault();
+        console.log("Ho cliccato sulle sale");
+        open("prezzi.html?id=" + idUtente);
     })
 })
 

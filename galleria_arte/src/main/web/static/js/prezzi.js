@@ -11,12 +11,17 @@ window.addEventListener("load", function() {
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let loginbuttons = document.querySelector("#loginButtons");
+    let logoutButton = document.querySelector("#buttonEsci");
+    userWelcome.style.display="none";
+    userWelcomeName.style.display="none";
+    logoutButton.style.display="none";
 
     if(idUtente !== "null"){
         if(idUtente !== null) {
             if (idUtente !== "") {
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
+                logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
                 console.log("Ho rimosso la classe hidden");
 
@@ -29,16 +34,17 @@ window.addEventListener("load", function() {
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
+                    logoutButton.style.display = "block";
                 })
             }
         }
     }
 
 
-    // leMiePrenotazioni.addEventListener("click", function (e){
-    //     e.preventDefault();
-    //     open("testform.html?id=" + idUtente);
-    // })
+    leMiePrenotazioni.addEventListener("click", function (e){
+        e.preventDefault();
+        open("testform.html?id=" + idUtente);
+    })
 
     home.addEventListener("click", function (e){
         e.preventDefault();

@@ -29,12 +29,19 @@ window.addEventListener("load", function(){
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let loginbuttons = document.querySelector("#loginButtons");
+    let logoutButton = document.querySelector("#buttonEsci");
+
+    userWelcome.style.display="none";
+    userWelcomeName.style.display="none";
+    logoutButton.style.display="none";
+    leMiePrenotazioni.style.display="none";
 
     if(idUtente !== "null"){
         if(idUtente !== null) {
             if (idUtente !== "") {
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
+                logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
                 console.log("Ho rimosso la classe hidden");
 
@@ -47,6 +54,7 @@ window.addEventListener("load", function(){
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
+                    logoutButton.style.display = "block";
                 })
             }
         }
@@ -587,7 +595,6 @@ window.addEventListener("load", function(){
     })
 
     let prezzi = document.querySelector("#prezzi");
-    //let leMiePrenotazioni = document.querySelector("#leMiePrenotazioni");
     let home = document.querySelector("#homeIndex");
 
     prezzi.addEventListener("click", function (e){
