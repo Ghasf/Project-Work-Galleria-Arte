@@ -61,6 +61,7 @@ function checkAndPost() {
                         passwordOk = true;
                     } else {
                         console.log("La password inserita è errata");
+                        alert("La  password inserita è errata")
                     }
 
                     if (passwordOk) {
