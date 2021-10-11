@@ -40,7 +40,6 @@ window.addEventListener("load", function() {
         }
     }
 
-
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
         open("testform.html?id=" + idUtente);
