@@ -41,7 +41,7 @@ footer{
     padding: 100px;
 }
 .Presentazione{
-    font-family:Impact,fantasy ;
+    font-family:"Felix Titling",fantasy ;
     font-size: large;
     font-weight: bold;
 }
@@ -63,6 +63,7 @@ td, th {
 }
 .tabella{
     --bs-table-hover-color: white !important;
+    font-family:Centaur,fantasy;
 }
 .bottom-footer{
     bottom: 0;
