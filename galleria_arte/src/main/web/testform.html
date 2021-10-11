@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="static/css/css/bootstrap.css">
 	<link rel="stylesheet" href="static/css/testform.css">
-	<title>Test Prenotazione</title>
+	<title>Art Gallery : Prenotazioni</title>
 </head>
 <body>
 <div class="container d-flex flex-column justify-content-between align-items-stretch">
@@ -36,10 +36,10 @@
 					<a href="Accedi.html" class="btn btn-primary btn active" role="button" aria-pressed="true"
 					   id="buttonAccedi">Accedi</a>
 				</div>
-				<div class="offset-6 text-white" id="userWelcome">
-					<p>Welcome</p>
+				<div class="offset-6  text-white" id="userWelcome">
+					<p class="mb-0">Welcome</p>
 				</div>
-				<div class="text-white ps-2" id="userWelcomeName">
+				<div class="text-warning ps-2 pe-2" id="userWelcomeName">
 				
 				</div>
 				<div class="text-white" id="logoutButton">
@@ -49,16 +49,14 @@
 			</div>
 		</nav>
 	</header>
-	
-	<div>
-		<h2>Se vuoi cancellare la prenotazione</h2>
-		<div class="" id="listaPrenotazioni">
-		
-		</div>
-		<button id="cancellaPrenotazione" type="button">Cancella la prenotazione</button>
+	<div class="text-center text-white">
+		<h1>Le mie Prenotazioni</h1>
+		<h5>Benvenuto nella pagina delle tue prenotazioni, da qui potrai gestire e cancellare le tue prenotazioni</h5>
 	</div>
-	<div class="col-6 card glass-card text-center">
-		<table id="tabella" class="card-header">
+<div class="d-flex justify-content-center align-content-center text-white">
+
+	<div class="col-12 col-md-6 card glass-card text-center align-content-center">
+		<table id="tabella" class="col-12 card-header">
 			<thead>
 			<tr>
 				<th>Codice prenotazione</th>
@@ -68,7 +66,7 @@
 				<th>Sala</th>
 			</tr>
 			</thead>
-			<tbody id="tabellaBody" class="card-text card-body">
+			<tbody id="tabellaBody" class="col-12 card-text card-body text-white">
 			<tr>
 				<!--                        <td style="border: 1px solid black;">id prenotazione</td>-->
 				<!--                        <td style="border: 1px solid black;">1965-07-31</td>-->
@@ -80,6 +78,7 @@
 			</tbody>
 		</table>
 	</div>
+</div>
 	<footer class="pt-4 pt-md-5 border-top align-items-center">
 		<div class="row">
 			<div class="text-center col-12 col-md align-items-center">

@@ -54,11 +54,12 @@ function stampaPrenotazioni(prenotazioni) {
     //console.log(prenotazioni.length);
     //console.log(prenotazioni);
 
-    for (var j = 0; j < prenotazioni.length; j++) {
-        var row = document.createElement("tr");
+    for (let j = 0; j < prenotazioni.length; j++) {
+        let row = document.createElement("tr");
 
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(prenotazioni[j].idPrenotazione);
+        let cell = document.createElement("td");
+        let cellText = document.createTextNode(prenotazioni[j].idPrenotazione);
+        let bottone = document.createTextNode(prenotazioni[j].idPrenotazione);
         cell.appendChild(cellText);
         row.appendChild(cell);
 
@@ -83,12 +84,13 @@ function stampaPrenotazioni(prenotazioni) {
         row.appendChild(cell);
 
         cell = document.createElement("td");
-        cellText = document.createElement("button")
-        cellText.dataset.id = prenotazioni[j].idPrenotazione;
-        cellText.innerHTML = "cancella"
-        cell.appendChild(cellText);
+        bottone = document.createElement("button")
+        bottone.className="btn btn-danger"
+        bottone.dataset.id = prenotazioni[j].idPrenotazione;
+        bottone.innerHTML = "cancella"
+        cell.appendChild(bottone);
         row.appendChild(cell);
-        cellText.addEventListener("click", function (e) {
+        bottone.addEventListener("click", function (e) {
             e.preventDefault();
             //console.log(e.currentTarget);
             //console.log(e.currentTarget.dataset.id);
