@@ -63,14 +63,14 @@ public class PrenotazioniDao {
     }
 
     public List<LocalDate> getDateInizioByIdSala(Integer id){
-        Session currentSession = entityManager.unwrap(Session.class); /* se la query non funziona, provare con Prenotazioni.sala.idsala */
+        Session currentSession = entityManager.unwrap(Session.class);
         Query<LocalDate> query = currentSession.createQuery("SELECT dataInizio FROM Prenotazioni WHERE sale.idsala = :id", LocalDate.class);
         query.setParameter("id",id);
         return query.getResultList();
     }
 
     public List<LocalDate> getDateFineByIdSala(Integer id){
-        Session currentSession = entityManager.unwrap(Session.class); /* se la query non funziona, provare con Prenotazioni.sala.idsala */
+        Session currentSession = entityManager.unwrap(Session.class);
         Query<LocalDate> query = currentSession.createQuery("SELECT dataFine FROM Prenotazioni WHERE sale.idsala = :id", LocalDate.class);
         query.setParameter("id",id);
         return query.getResultList();
