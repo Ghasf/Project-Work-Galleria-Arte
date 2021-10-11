@@ -595,7 +595,7 @@ window.addEventListener("load", function(){
     })
 
     let prezzi = document.querySelector("#prezzi");
-    let home = document.querySelector("#homeIndex");
+    let home = document.querySelector("#home");
 
     prezzi.addEventListener("click", function (e){
         e.preventDefault();
@@ -611,5 +611,10 @@ window.addEventListener("load", function(){
         //e.preventDefault();
         console.log("Ho cliccato il link Home");
         open("index.html?id=" + idUtente);
+    })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
     })
 })

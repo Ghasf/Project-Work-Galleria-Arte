@@ -56,4 +56,9 @@ window.addEventListener("load", function() {
         console.log("Ho cliccato sulle sale");
         open("Sale.html?id=" + idUtente);
     })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
+    })
 })
