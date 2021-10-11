@@ -1,10 +1,14 @@
-let idUtente = 2; //da cambiare quando sarà implementato il login
+//let idUtente = 2; da cambiare quando sarà implementato il login
 let idPrenotazione = 5;
 
 /*let listaPrenotazioni = document.querySelector("#listaPrenotazioni");
 let cancellaPrenotazione = document.querySelector("#cancellaPrenotazione");*/
 
 window.addEventListener('load', function () {
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let idUtente = urlParams.get('id');
+    console.log(idUtente);
 
     fetch('http://localhost:8080/api/get-prenotazioni-by-id-utente/' + idUtente, {
         method: 'GET',
@@ -65,6 +69,10 @@ function stampaPrenotazioni(prenotazioni) {
                 method: 'DELETE',
             }).then(res => res.json()).then(res => console.log(res));
             alert("prenotazione cancellata");
+
+            //open("testform.html?id=" + idUtente);
+            location.reload();
+
         })
         tBody.appendChild(row);
     }

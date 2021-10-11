@@ -12,7 +12,6 @@ window.addEventListener("load", function(){
     let prenotaSalaViola = document.querySelector("#prenotaSalaViola");
     let prenotaSalaGialla = document.querySelector("#prenotaSalaGialla");
     let prenotaSalaNera = document.querySelector("#prenotaSalaNera");
-    let inserisciPrenotazione = document.querySelector("#inserisciPrenotazione");
     let dataInizioSalaVerde = document.querySelector("#dataInizioSalaVerde");
     let dataFineSalaVerde = document.querySelector("#dataFineSalaVerde");
     let dataInizioSalaBlu = document.querySelector("#dataInizioSalaBlu");
@@ -112,6 +111,353 @@ window.addEventListener("load", function(){
                             },
                             body: JSON.stringify(Data)
                         })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
+                        //manda una mail di conferma avvenuta prenotazione
+                    }
+                })
+            })
+        })
+    })
+
+
+    prenotaSalaBlu.addEventListener("click", function (e) {
+        e.preventDefault();
+        /* qui dobbiamo prenderci:
+            l'id dell'utente tramite il suo nominativo di login,
+            l'id della sala che sta prenotando,
+            le date di inizio e fine dall'html della pagina di prenotazione,
+            inserire tutto nel database,
+            mostrare un messaggio di conferma.
+         */
+        fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Blu', {
+            method: 'GET',
+        }).then(res1 => res1.json()).then(idSala => {
+            console.log(idSala);
+            let startDate = dataInizioSalaBlu.value;
+            let endDate = dataFineSalaBlu.value;
+
+            fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res2 => res2.json()).then(dataInizioDb => {
+                console.log("Data inizio db");
+                console.log(dataInizioDb);
+
+                fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                    method: 'GET',
+                }).then(res3 => res3.json()).then(dataFineDb => {
+                    console.log("Data fine db");
+                    console.log(dataFineDb);
+
+                    let salaLibera = false;
+                    for (var i = 0; i < dataFineDb.length; i++) {
+                        if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                            //fai la post
+                            salaLibera = true;
+                        } else {
+                            salaLibera = false;
+                            console.log("La sala è già occupata");
+                            alert("Sala occupata!");
+                            break;
+                        }
+                    }
+                    if(salaLibera) {
+                        /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                        console.log("FAI LA POST QUI");
+                        const Data = {
+                            descrizione: '',
+                            dataInizio: startDate,
+                            dataFine: endDate
+                        }
+
+                        fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                            method: 'POST',
+                            headers: {
+                                "content-type": "application/json; charset=UTF-8",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-live"
+                            },
+                            body: JSON.stringify(Data)
+                        })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
+                        //manda una mail di conferma avvenuta prenotazione
+                    }
+                })
+            })
+        })
+    })
+
+
+    prenotaSalaRossa.addEventListener("click", function (e) {
+        e.preventDefault();
+        /* qui dobbiamo prenderci:
+            l'id dell'utente tramite il suo nominativo di login,
+            l'id della sala che sta prenotando,
+            le date di inizio e fine dall'html della pagina di prenotazione,
+            inserire tutto nel database,
+            mostrare un messaggio di conferma.
+         */
+        fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Rossa', {
+            method: 'GET',
+        }).then(res1 => res1.json()).then(idSala => {
+            console.log(idSala);
+            let startDate = dataInizioSalaRossa.value;
+            let endDate = dataFineSalaRossa.value;
+
+            fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res2 => res2.json()).then(dataInizioDb => {
+                console.log("Data inizio db");
+                console.log(dataInizioDb);
+
+                fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                    method: 'GET',
+                }).then(res3 => res3.json()).then(dataFineDb => {
+                    console.log("Data fine db");
+                    console.log(dataFineDb);
+
+                    let salaLibera = false;
+                    for (var i = 0; i < dataFineDb.length; i++) {
+                        if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                            //fai la post
+                            salaLibera = true;
+                        } else {
+                            salaLibera = false;
+                            console.log("La sala è già occupata");
+                            alert("Sala occupata!");
+                            break;
+                        }
+                    }
+                    if(salaLibera) {
+                        /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                        console.log("FAI LA POST QUI");
+                        const Data = {
+                            descrizione: '',
+                            dataInizio: startDate,
+                            dataFine: endDate
+                        }
+
+                        fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                            method: 'POST',
+                            headers: {
+                                "content-type": "application/json; charset=UTF-8",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-live"
+                            },
+                            body: JSON.stringify(Data)
+                        })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
+                        //manda una mail di conferma avvenuta prenotazione
+                    }
+                })
+            })
+        })
+    })
+
+
+    prenotaSalaViola.addEventListener("click", function (e) {
+        e.preventDefault();
+        /* qui dobbiamo prenderci:
+            l'id dell'utente tramite il suo nominativo di login,
+            l'id della sala che sta prenotando,
+            le date di inizio e fine dall'html della pagina di prenotazione,
+            inserire tutto nel database,
+            mostrare un messaggio di conferma.
+         */
+        fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Viola', {
+            method: 'GET',
+        }).then(res1 => res1.json()).then(idSala => {
+            console.log(idSala);
+            let startDate = dataInizioSalaViola.value;
+            let endDate = dataFineSalaViola.value;
+
+            fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res2 => res2.json()).then(dataInizioDb => {
+                console.log("Data inizio db");
+                console.log(dataInizioDb);
+
+                fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                    method: 'GET',
+                }).then(res3 => res3.json()).then(dataFineDb => {
+                    console.log("Data fine db");
+                    console.log(dataFineDb);
+
+                    let salaLibera = false;
+                    for (var i = 0; i < dataFineDb.length; i++) {
+                        if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                            //fai la post
+                            salaLibera = true;
+                        } else {
+                            salaLibera = false;
+                            console.log("La sala è già occupata");
+                            alert("Sala occupata!");
+                            break;
+                        }
+                    }
+                    if(salaLibera) {
+                        /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                        console.log("FAI LA POST QUI");
+                        const Data = {
+                            descrizione: '',
+                            dataInizio: startDate,
+                            dataFine: endDate
+                        }
+
+                        fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                            method: 'POST',
+                            headers: {
+                                "content-type": "application/json; charset=UTF-8",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-live"
+                            },
+                            body: JSON.stringify(Data)
+                        })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
+                        //manda una mail di conferma avvenuta prenotazione
+                    }
+                })
+            })
+        })
+    })
+
+
+    prenotaSalaGialla.addEventListener("click", function (e) {
+        e.preventDefault();
+        /* qui dobbiamo prenderci:
+            l'id dell'utente tramite il suo nominativo di login,
+            l'id della sala che sta prenotando,
+            le date di inizio e fine dall'html della pagina di prenotazione,
+            inserire tutto nel database,
+            mostrare un messaggio di conferma.
+         */
+        fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Gialla', {
+            method: 'GET',
+        }).then(res1 => res1.json()).then(idSala => {
+            console.log(idSala);
+            let startDate = dataInizioSalaGialla.value;
+            let endDate = dataFineSalaGialla.value;
+
+            fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res2 => res2.json()).then(dataInizioDb => {
+                console.log("Data inizio db");
+                console.log(dataInizioDb);
+
+                fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                    method: 'GET',
+                }).then(res3 => res3.json()).then(dataFineDb => {
+                    console.log("Data fine db");
+                    console.log(dataFineDb);
+
+                    let salaLibera = false;
+                    for (var i = 0; i < dataFineDb.length; i++) {
+                        if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                            //fai la post
+                            salaLibera = true;
+                        } else {
+                            salaLibera = false;
+                            console.log("La sala è già occupata");
+                            alert("Sala occupata!");
+                            break;
+                        }
+                    }
+                    if(salaLibera) {
+                        /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                        console.log("FAI LA POST QUI");
+                        const Data = {
+                            descrizione: '',
+                            dataInizio: startDate,
+                            dataFine: endDate
+                        }
+
+                        fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                            method: 'POST',
+                            headers: {
+                                "content-type": "application/json; charset=UTF-8",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-live"
+                            },
+                            body: JSON.stringify(Data)
+                        })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
+                        //manda una mail di conferma avvenuta prenotazione
+                    }
+                })
+            })
+        })
+    })
+
+
+    prenotaSalaNera.addEventListener("click", function (e) {
+        e.preventDefault();
+        /* qui dobbiamo prenderci:
+            l'id dell'utente tramite il suo nominativo di login,
+            l'id della sala che sta prenotando,
+            le date di inizio e fine dall'html della pagina di prenotazione,
+            inserire tutto nel database,
+            mostrare un messaggio di conferma.
+         */
+        fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Nera', {
+            method: 'GET',
+        }).then(res1 => res1.json()).then(idSala => {
+            console.log(idSala);
+            let startDate = dataInizioSalaNera.value;
+            let endDate = dataFineSalaNera.value;
+
+            fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
+                method: 'GET',
+            }).then(res2 => res2.json()).then(dataInizioDb => {
+                console.log("Data inizio db");
+                console.log(dataInizioDb);
+
+                fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
+                    method: 'GET',
+                }).then(res3 => res3.json()).then(dataFineDb => {
+                    console.log("Data fine db");
+                    console.log(dataFineDb);
+
+                    let salaLibera = false;
+                    for (var i = 0; i < dataFineDb.length; i++) {
+                        if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                            //fai la post
+                            salaLibera = true;
+                        } else {
+                            salaLibera = false;
+                            console.log("La sala è già occupata");
+                            alert("Sala occupata!");
+                            break;
+                        }
+                    }
+                    if(salaLibera) {
+                        /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
+                        console.log("FAI LA POST QUI");
+                        const Data = {
+                            descrizione: '',
+                            dataInizio: startDate,
+                            dataFine: endDate
+                        }
+
+                        fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                            method: 'POST',
+                            headers: {
+                                "content-type": "application/json; charset=UTF-8",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-live"
+                            },
+                            body: JSON.stringify(Data)
+                        })
+                        console.log("Prenotazione registrata con successo!");
+                        alert("Prenotazione registrata con successo!");
                         //manda una mail di conferma avvenuta prenotazione
                     }
                 })
@@ -128,10 +474,10 @@ window.addEventListener("load", function(){
         open("prezzi.html?id=" + idUtente);
     })
 
-    // leMiePrenotazioni.addEventListener("click", function (e){
-    //     e.preventDefault();
-    //     open("testform.html?id=" + idUtente);
-    // })
+    leMiePrenotazioni.addEventListener("click", function (e){
+        e.preventDefault();
+        open("testform.html?id=" + idUtente);
+    })
 
     home.addEventListener("click", function (e){
         //e.preventDefault();

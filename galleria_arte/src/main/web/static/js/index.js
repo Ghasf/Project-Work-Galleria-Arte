@@ -13,6 +13,7 @@ window.addEventListener("load", function (e){
     let userWelcome = document.querySelector("#userWelcome");
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let loginbuttons = document.querySelector("#loginButtons");
+    let logoutButton = document.querySelector("#buttonEsci");
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
     //leMiePrenotazioni.style.display="none";
@@ -58,5 +59,10 @@ window.addEventListener("load", function (e){
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
         open("testform.html?id=" + idUtente);
+    })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
     })
 })
