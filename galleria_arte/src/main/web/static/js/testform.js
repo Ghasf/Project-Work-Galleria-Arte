@@ -1,5 +1,5 @@
 //let idUtente = 2; da cambiare quando sarà implementato il login
-let idPrenotazione = 5;
+//let idPrenotazione = 5;
 
 /*let listaPrenotazioni = document.querySelector("#listaPrenotazioni");
 let cancellaPrenotazione = document.querySelector("#cancellaPrenotazione");*/
