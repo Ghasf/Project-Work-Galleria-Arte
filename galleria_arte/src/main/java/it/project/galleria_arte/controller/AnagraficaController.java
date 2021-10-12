@@ -46,5 +46,10 @@ public class AnagraficaController {
         anagraficaService.saveAnagrafica(anagrafica);
     }
 
+    @GetMapping("/get-email-by-id/{id}")
+        public String getEmailById(@PathVariable("id") Integer id){
+        return anagraficaService.getEmailById(id);
+    }
+
 }
 

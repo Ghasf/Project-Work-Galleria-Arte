@@ -35,4 +35,8 @@ public class AnagraficaService {
     public Integer getUserIdByEmail(String email){
         return anagraficaDao.getUserIdByEmail(email);
     }
+
+    public String getEmailById(Integer id){
+        return anagraficaDao.getEmailById(id);
+    }
 }
