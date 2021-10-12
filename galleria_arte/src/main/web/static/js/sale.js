@@ -605,7 +605,7 @@ window.addEventListener("load", function(){
 
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
-        open("testform.html?id=" + idUtente);
+        open("prenotazioni.html?id=" + idUtente);
     })
 
     home.addEventListener("click", function (e){

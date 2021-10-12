@@ -126,7 +126,7 @@ function stampaPrenotazioni(prenotazioni) {
             }).then(res => res.json()).then(res => console.log(res));
             alert("prenotazione cancellata");
 
-            //open("testform.html?id=" + idUtente);
+            //open("prenotazioni.html?id=" + idUtente);
             location.reload();
 
         })
