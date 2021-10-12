@@ -8,79 +8,78 @@
     <link rel="stylesheet" href="static/css/accedi.css">
     <link rel="stylesheet" href="static/css/css/bootstrap.min.css">
     <meta charset="UTF-8">
-    <title>Art Gallery: Accesso</title>
+    <title>Art Gallery : Iscrizione</title>
 </head>
 <body>
-<div class="p-0 container d-flex flex-column justify-content-between align-items-stretch">
-	<header>
-		<nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-			<a class="offset-1 navbar-brand" href="#"><img alt="0" class="logo" src="static/images/GalleriaArte.png"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-					aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class=" collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Home </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="Sale.html">Le nostre sale</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="prezzi.html">Prezzi</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</header>
-	<main class="d-flex col-12 justify-content-center align-items-stretch">
-		<div class="row">
-				<div class="card glass-card">
-					<div class="card-body">
-						<form class="text-white" method="post" id="submitForm">
-							<div class="form-group text-center formRow">
-								<label for="email">
-									<strong class="text-danger">*</strong>
-									Email
-								</label>
-								<input type="text" class="form-control required" id="email" placeholder="">
-								<div class="messaggi hidden text-danger">
-									Campo obbligatorio
-								</div>
-							</div>
-							<div class="form-group text-center formRow">
-									<label for="password">
-										<strong class="text-danger">*</strong>
-										Password
-									</label>
-									<input type="password" class="form-control required" id="password" placeholder="">
-									<div class="messaggi hidden text-danger">
-										Campo obbligatorio
-									</div>
-								<button type="submit" id="submitAccesso" class="bottone-form btn btn-primary mt-3">Accedi</button>
-								<p class="">Non sei ancora registrato? <a href="Iscrizione.html" class="text-white">Registrati qui</a></p>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-	</main>
-	<footer class="pt-4 pt-md-5 border-top align-items-center">
-		<div class="row">
-			<div class="text-center col-12 col-md align-items-center">
-				<h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
-				<a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
-					<img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
-				</a>
-				<a href="https://www.facebook.com/" target="_blank">
-					<img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
-				</a>
-				<small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
-			</div>
-		</div>
-	</footer>
-</div>
-
+<header>
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
+        <a class="offset-1 navbar-brand" href=""><img alt="0" class="logo" src="static/images/GalleriaArte.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id="home" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sale" href="#">Le nostre sale</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="prezzi" href="#">Prezzi</a>
+                </li>
+                <li class="nav-item hidden" id="navPrenotazioni">
+                    <a class="nav-link" id="leMiePrenotazioni" href="#">Le Mie Prenotazioni</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="d-flex col-12 py-md-3 pl-md-5 bd-content justify-content-center align-items-center">
+    <div class="row">
+            <div class="card glass-card">
+                <div class="card-body">
+                    <form class="text-white" method="post" id="submitForm">
+                        <div class="form-group row text-center formRow">
+                            <label for="email">
+                                <strong class="text-danger">*</strong>
+                                Email
+                            </label>
+                            <input type="text" class="form-control required" id="email" placeholder="">
+                            <div class="messaggi hidden text-danger">
+                                Campo obbligatorio
+                            </div>
+                        </div>
+                        <div class=" form-group row text-center formRow">
+                                <label for="password">
+                                    <strong class="text-danger">*</strong>
+                                    Password
+                                </label>
+                                <input type="password" class="form-control required" id="password" placeholder="">
+                                <div class="messaggi hidden text-danger">
+                                    Campo obbligatorio
+                                </div>
+                            <button type="submit" id="submitAccesso" class="bottone-form btn btn-primary">Accedi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</main>
+<footer class="pt-4 pt-md-5 border-top align-items-center bottom-footer">
+    <div class="row">
+        <div class="text-center col-12 col-md align-items-center">
+            <h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
+            <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
+                <img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
+            </a>
+            <small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
