@@ -142,17 +142,20 @@ function stampaPrenotazioni(prenotazioni) {
             }).then(res => res.json()).then(res => console.log(res));
             alert("prenotazione cancellata");
 
-            bottone.send({
-                Host : "smtp.gmail.com",
-                Username : "sublimeartjaba37@gmail.com",
-                Password : "J4b437!!",
-                To : 'dom.co9999@libero.it',
-                From : "sublimeartjaba37@gmail.com",
-                Subject : "This is the subject",
-                Body : "And this is the body"
-            }).then(
-                message => alert(message)
-            );
+            let destinatario = "dom.co9999@libero.it";
+            let oggetto = "Email di prova";
+            let messaggio = "Questa è una mail di prova";
+
+            fetch('http://localhost:8080/api/send-email/' + destinatario + '/' + oggetto + '/' + messaggio, {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json; charset=UTF-8",
+                    "Accept": "*/*",
+                    "Accept-Encoding": "gzip,deflate,br",
+                    "Connection": "keep-live"
+                },
+                body: JSON.stringify(messaggio)
+            }).then(res => res.json()).then(res => console.log(res));
 
             alert("Ti è stata inviata una email di conferma.");
 
