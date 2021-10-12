@@ -54,7 +54,7 @@ window.addEventListener("load", function (e){
 
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
-        open("testform.html?id=" + idUtente);
+        open("prenotazioni.html?id=" + idUtente);
     })
 
     logoutButton.addEventListener("click", function (e){

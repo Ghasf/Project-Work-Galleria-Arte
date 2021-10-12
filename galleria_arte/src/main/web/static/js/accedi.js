@@ -54,8 +54,6 @@ function checkAndPost() {
                 fetch('http://localhost:8080/api/get-password-by-email/' + emailField, {
                     method: "GET",
                 }).then(res => res.text()).then(psw => {
-                    console.log("Stampo la password della relativa email");
-                    console.log(psw);
 
                     if (password === psw) {
                         passwordOk = true;

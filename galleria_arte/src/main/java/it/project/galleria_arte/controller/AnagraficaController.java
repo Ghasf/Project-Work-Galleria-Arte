@@ -45,5 +45,6 @@ public class AnagraficaController {
     public void saveAnagrafica(@RequestBody @NotNull Anagrafica anagrafica){
         anagraficaService.saveAnagrafica(anagrafica);
     }
+
 }
 
