@@ -86,3 +86,26 @@ footer{
 .hidden{
     display: none;
 }
+#loginButtons{
+    position: absolute;
+    right: 0;
+}
+.login{
+    position: absolute;
+    right: 0;
+}
+.font-size{
+    font-size: large;
+}
+
+@media (max-width: 900px){
+    #loginButtons{
+        position: unset;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .login{
+        position: unset;
+    }
+
+}
