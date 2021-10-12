@@ -15,6 +15,7 @@ window.addEventListener("load", function() {
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
     logoutButton.style.display="none";
+    leMiePrenotazioni.style.display="none";
 
     if(idUtente !== "null"){
         if(idUtente !== null) {
@@ -23,6 +24,7 @@ window.addEventListener("load", function() {
                 loginbuttons.style.display = "none";
                 logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
+                leMiePrenotazioni.style.display="block";
                 console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
