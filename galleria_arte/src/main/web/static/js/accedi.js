@@ -9,7 +9,7 @@ window.addEventListener('load', function (event) {
 
         fields.forEach(function (el, i, ar) {
             if (el.value === "") {
-                console.log(`TROVATO CAMPO VUOTO -> ${el.name}`)
+                //console.log(`TROVATO CAMPO VUOTO -> ${el.name}`)
                 let formRow = el.closest('.formRow');
                 let messaggi = formRow.querySelector('.messaggi');
                 messaggi.classList.remove("hidden");
@@ -38,13 +38,13 @@ function checkAndPost() {
     fetch('http://localhost:8080/api/get-email-list', {
         method: "GET",
     }).then(res => res.json()).then(email => {
-            console.log("Lista email");
-            console.log(email);
+            //console.log("Lista email");
+            //console.log(email);
 
             for (var i = 0; i < email.length; i++) {
-                console.log(emailField + " " + email[i]);
+                //console.log(emailField + " " + email[i]);
                 if (emailField === email[i]) {
-                    console.log("Ho trovato la mail nel database")
+                    //console.log("Ho trovato la mail nel database")
                     emailOk = true;
                     break;
                 }
@@ -58,8 +58,8 @@ function checkAndPost() {
                     if (password === psw) {
                         passwordOk = true;
                     } else {
-                        console.log("La password inserita è errata");
-                        alert("La  password inserita è errata")
+                        //console.log("La password inserita è errata!");
+                        alert("La password inserita è errata")
                     }
 
                     if (passwordOk) {
@@ -68,15 +68,15 @@ function checkAndPost() {
                         fetch('http://localhost:8080/api/get-user-id-by-email/' + emailField, {
                             method: "GET",
                         }).then(res => res.json()).then(userId => {
-                            console.log("Stampo l'ID dell'utente per la relativa email");
-                            console.log(userId);
+                            //console.log("Stampo l'ID dell'utente per la relativa email");
+                            //console.log(userId);
                             open("index.html?id=" + userId);
-                            console.log("Dopo la open");
+                            //console.log("Dopo la open");
                         })
                     }
                 })
             } else {
-                console.log("Nessun utente registrato con questa email!");
+                //console.log("Nessun utente registrato con questa email!");
                 alert("Nessun utente registrato con questa email!");
             }
         }

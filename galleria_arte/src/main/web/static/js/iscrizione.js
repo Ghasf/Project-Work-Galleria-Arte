@@ -8,7 +8,7 @@ window.addEventListener('load', function (event) {
 
         fields.forEach(function (el, i, ar) {
             if (el.value === "") {
-                console.log(`TROVATO CAMPO VUOTO -> ${el.name}`)
+                //console.log(`TROVATO CAMPO VUOTO -> ${el.name}`)
                 let formRow = el.closest('.formRow');
                 let messaggi = formRow.querySelector('.messaggi');
                 messaggi.classList.remove("hidden");
@@ -29,7 +29,7 @@ window.addEventListener('load', function (event) {
         }
 
         if (formValido) {
-            console.log("Form valido");
+            //console.log("Form valido");
 
             /** controlla che l'email non sia già presente nel database
              *
@@ -39,7 +39,7 @@ window.addEventListener('load', function (event) {
             emailCheckAndPost();
 
         } else {
-            console.log("Form non valido");
+            //console.log("Form non valido");
         }
     })
 })
@@ -51,16 +51,16 @@ function emailCheckAndPost() {
     fetch('http://localhost:8080/api/get-email-list', {
         method: "GET",
     }).then(res => res.json()).then(email => {
-        console.log("Lista email");
-        console.log(email);
+        //console.log("Lista email");
+        //console.log(email);
 
         for (var i = 0; i < email.length; i++) {
-            console.log(emailField + " " + email[i]);
+            //console.log(emailField + " " + email[i]);
             if (emailField === email[i]) {
-                console.log("La mail è già presente, imposta emailOk a FALSO")
-                console.log(emailOk)
+                //console.log("La mail è già presente, imposta emailOk a FALSO")
+                //console.log(emailOk)
                 emailOk = false;
-                console.log(emailOk)
+                //console.log(emailOk)
                 break;
             }
         }
@@ -93,11 +93,11 @@ function emailCheckAndPost() {
                     },
                     body: JSON.stringify(Data)
                 })
-                console.log("Utente registrato con successo!");
+                //console.log("Utente registrato con successo!");
                 alert("Utente registrato con successo!");
                 open("accedi.html");
             }else{
-                console.log("Le password non corrispondono!");
+                //console.log("Le password non corrispondono!");
                 alert("Le password non corrispondono!");
             }
         }

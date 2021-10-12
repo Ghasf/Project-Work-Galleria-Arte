@@ -4,7 +4,7 @@ window.addEventListener("load", function(){
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     let idUtente = urlParams.get('id');
-    console.log(idUtente);
+    //console.log(idUtente);
 
     let prenotaSalaVerde = document.querySelector("#prenotaSalaVerde");
     let prenotaSalaBlu = document.querySelector("#prenotaSalaBlu");
@@ -46,14 +46,14 @@ window.addEventListener("load", function(){
                 mostraLogin.classList.remove("hidden");
                 //leMiePrenotazioni.classList.remove("hidden");
                 leMiePrenotazioni.style.display="block";
-                console.log("Ho rimosso la classe hidden");
+                //console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
                 fetch('http://localhost:8080/api/get-anagrafica-by-id/' + idUtente, {
                     method: 'GET',
                 }).then(res => res.json()).then(utente => { //funziona ma dovremmo ritornare un json
-                    console.log("Nome utente");
-                    console.log(utente.nominativo);
+                    //console.log("Nome utente");
+                    //console.log(utente.nominativo);
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
@@ -82,21 +82,21 @@ window.addEventListener("load", function(){
             fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Verde', {
                 method: 'GET',
             }).then(res1 => res1.json()).then(idSala => {
-                console.log(idSala);
+                //console.log(idSala);
                 let startDate = dataInizioSalaVerde.value;
                 let endDate = dataFineSalaVerde.value;
 
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
@@ -109,7 +109,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -120,7 +120,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaVerde").value,
                                     dataInizio: startDate,
@@ -137,12 +137,12 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
 
@@ -180,14 +180,14 @@ window.addEventListener("load", function(){
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
                             let salaLibera = false;
@@ -197,7 +197,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -208,7 +208,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaBlu").value,
                                     dataInizio: startDate,
@@ -225,12 +225,12 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
 
@@ -262,21 +262,21 @@ window.addEventListener("load", function(){
             fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Rossa', {
                 method: 'GET',
             }).then(res1 => res1.json()).then(idSala => {
-                console.log(idSala);
+                //console.log(idSala);
                 let startDate = dataInizioSalaRossa.value;
                 let endDate = dataFineSalaRossa.value;
 
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
                             let salaLibera = false;
@@ -286,7 +286,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -297,7 +297,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaRossa").value,
                                     dataInizio: startDate,
@@ -314,16 +314,14 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
-
-
                     })
                 })
             })
@@ -351,21 +349,21 @@ window.addEventListener("load", function(){
             fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Viola', {
                 method: 'GET',
             }).then(res1 => res1.json()).then(idSala => {
-                console.log(idSala);
+                //console.log(idSala);
                 let startDate = dataInizioSalaViola.value;
                 let endDate = dataFineSalaViola.value;
 
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
                             let salaLibera = false;
@@ -375,7 +373,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -386,7 +384,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaViola").value,
                                     dataInizio: startDate,
@@ -403,16 +401,14 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
-
-
                     })
                 })
             })
@@ -440,21 +436,21 @@ window.addEventListener("load", function(){
             fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Gialla', {
                 method: 'GET',
             }).then(res1 => res1.json()).then(idSala => {
-                console.log(idSala);
+                //console.log(idSala);
                 let startDate = dataInizioSalaGialla.value;
                 let endDate = dataFineSalaGialla.value;
 
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
                             let salaLibera = false;
@@ -464,7 +460,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -475,7 +471,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaGialla").value,
                                     dataInizio: startDate,
@@ -492,16 +488,14 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
-
-
                     })
                 })
             })
@@ -529,21 +523,21 @@ window.addEventListener("load", function(){
             fetch('http://localhost:8080/api/get-sala-id-by-name/' + 'Sala Nera', {
                 method: 'GET',
             }).then(res1 => res1.json()).then(idSala => {
-                console.log(idSala);
+                //console.log(idSala);
                 let startDate = dataInizioSalaNera.value;
                 let endDate = dataFineSalaNera.value;
 
                 fetch('http://localhost:8080/api/get-date-inizio-by-id-sala/' + idSala, {
                     method: 'GET',
                 }).then(res2 => res2.json()).then(dataInizioDb => {
-                    console.log("Data inizio db");
-                    console.log(dataInizioDb);
+                    //console.log("Data inizio db");
+                    //console.log(dataInizioDb);
 
                     fetch('http://localhost:8080/api/get-date-fine-by-id-sala/' + idSala, {
                         method: 'GET',
                     }).then(res3 => res3.json()).then(dataFineDb => {
-                        console.log("Data fine db");
-                        console.log(dataFineDb);
+                        //console.log("Data fine db");
+                        //console.log(dataFineDb);
 
                         if (startDate !== "" && endDate !== "" && endDate >= startDate) {
                             let salaLibera = false;
@@ -553,7 +547,7 @@ window.addEventListener("load", function(){
                                     salaLibera = true;
                                 } else {
                                     salaLibera = false;
-                                    console.log("La sala è già occupata");
+                                    //console.log("La sala è già occupata");
                                     alert("Sala occupata!");
                                     break;
                                 }
@@ -564,7 +558,7 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                console.log("FAI LA POST QUI");
+                                //console.log("FAI LA POST QUI");
                                 const Data = {
                                     descrizione: document.querySelector("#descrizioneSalaNera").value,
                                     dataInizio: startDate,
@@ -581,16 +575,14 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                console.log("Prenotazione registrata con successo!");
+                                //console.log("Prenotazione registrata con successo!");
                                 alert("Prenotazione registrata con successo!");
                                 //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
-                            console.log("Date inserite non correttamente");
+                            //console.log("Date inserite non correttamente");
                             alert("Date inserite non correttamente");
                         }
-
-
                     })
                 })
             })
@@ -612,7 +604,7 @@ window.addEventListener("load", function(){
 
     home.addEventListener("click", function (e){
         //e.preventDefault();
-        console.log("Ho cliccato il link Home");
+        //console.log("Ho cliccato il link Home");
         open("index.html?id=" + idUtente);
     })
 

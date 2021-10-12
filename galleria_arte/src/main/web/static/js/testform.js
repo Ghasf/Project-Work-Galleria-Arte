@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     let idUtente = urlParams.get('id');
-    console.log(idUtente);
+    //console.log(idUtente);
 
     let home = document.querySelector("#home");
     let sale = document.querySelector("#sale");
@@ -25,14 +25,14 @@ window.addEventListener('load', function () {
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
                 leMiePrenotazioni.classList.remove("hidden");
-                console.log("Ho rimosso la classe hidden");
+                //console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
                 fetch('http://localhost:8080/api/get-anagrafica-by-id/' + idUtente, {
                     method: 'GET',
                 }).then(res => res.json()).then(utente => { //funziona ma dovremmo ritornare un json
-                    console.log("Nome utente");
-                    console.log(utente.nominativo);
+                    //console.log("Nome utente");
+                    //console.log(utente.nominativo);
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
@@ -58,13 +58,13 @@ window.addEventListener('load', function () {
 
     sale.addEventListener("click", function (e){
         e.preventDefault();
-        console.log("Ho cliccato sulle sale");
+        //console.log("Ho cliccato sulle sale");
         open("Sale.html?id=" + idUtente);
     })
 
     prezzi.addEventListener("click", function (e){
         e.preventDefault();
-        console.log("Ho cliccato sulle sale");
+        //console.log("Ho cliccato sulle sale");
         open("prezzi.html?id=" + idUtente);
     })
 
@@ -80,6 +80,15 @@ function stampaPrenotazioni(prenotazioni) {
     //console.log(prenotazioni.length);
     //console.log(prenotazioni);
 
+    let viewportWidth = window.innerWidth;
+    let titolo = document.querySelector("#titolo");
+    if(viewportWidth <= 500){
+        console.log("titolo inferiore");
+        titolo.style.display="none";
+    }else{
+        titolo.style.display="block";
+    }
+
     for (let j = 0; j < prenotazioni.length; j++) {
         let row = document.createElement("tr");
 
@@ -87,6 +96,13 @@ function stampaPrenotazioni(prenotazioni) {
         let cellText = document.createTextNode(prenotazioni[j].idPrenotazione);
         let bottone = document.createTextNode(prenotazioni[j].idPrenotazione);
         cell.appendChild(cellText);
+
+        if (viewportWidth <= 500) {
+            console.log("dimensione inferiore");
+            cell.classList.add("hidden");
+        } else {
+            cell.classList.remove("hidden");
+        }
         row.appendChild(cell);
 
         cell = document.createElement("td");
@@ -125,6 +141,21 @@ function stampaPrenotazioni(prenotazioni) {
                 method: 'DELETE',
             }).then(res => res.json()).then(res => console.log(res));
             alert("prenotazione cancellata");
+
+            bottone.send({
+                Host : "smtp.gmail.com",
+                Username : "sublimeartjaba37@gmail.com",
+                Password : "J4b437!!",
+                To : 'dom.co9999@libero.it',
+                From : "sublimeartjaba37@gmail.com",
+                Subject : "This is the subject",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+
+            alert("Ti è stata inviata una email di conferma.");
+
 
             //open("prenotazioni.html?id=" + idUtente);
             location.reload();

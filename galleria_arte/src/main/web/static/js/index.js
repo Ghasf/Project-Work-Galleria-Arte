@@ -5,7 +5,7 @@ window.addEventListener("load", function (e){
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     let idUtente = urlParams.get('id');
-    console.log(idUtente);
+    //console.log(idUtente);
 
     let sale = document.querySelector("#sale");
     let prezzi = document.querySelector("#prezzi");
@@ -27,14 +27,14 @@ window.addEventListener("load", function (e){
                 logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
                 mostraLogin.classList.remove("hidden");
-                console.log("Ho rimosso la classe hidden");
+                //console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
                 fetch('http://localhost:8080/api/get-anagrafica-by-id/' + idUtente, {
                     method: 'GET',
                 }).then(res => res.json()).then(utente => { //funziona ma dovremmo ritornare un json
-                    console.log("Nome utente");
-                    console.log(utente.nominativo);
+                    //console.log("Nome utente");
+                    //console.log(utente.nominativo);
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";

@@ -25,14 +25,14 @@ window.addEventListener("load", function() {
                 logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
                 leMiePrenotazioni.style.display="block";
-                console.log("Ho rimosso la classe hidden");
+                //console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
                 fetch('http://localhost:8080/api/get-anagrafica-by-id/' + idUtente, {
                     method: 'GET',
                 }).then(res => res.json()).then(utente => { //funziona ma dovremmo ritornare un json
-                    console.log("Nome utente");
-                    console.log(utente.nominativo);
+                    //console.log("Nome utente");
+                    //console.log(utente.nominativo);
 
                     userWelcomeName.innerHTML = utente.nominativo;
                     userWelcomeName.style.display = "block";
@@ -54,7 +54,7 @@ window.addEventListener("load", function() {
 
     sale.addEventListener("click", function (e){
         e.preventDefault();
-        console.log("Ho cliccato sulle sale");
+        //console.log("Ho cliccato sulle sale");
         open("Sale.html?id=" + idUtente);
     })
 
