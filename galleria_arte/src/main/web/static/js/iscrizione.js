@@ -95,7 +95,7 @@ function emailCheckAndPost() {
                 })
                 console.log("Utente registrato con successo!");
                 alert("Utente registrato con successo!");
-                open("Accedi.html");
+                open("accedi.html");
             }else{
                 console.log("Le password non corrispondono!");
                 alert("Le password non corrispondono!");
