@@ -10,6 +10,7 @@ window.addEventListener("load", function (e){
     let sale = document.querySelector("#sale");
     let prezzi = document.querySelector("#prezzi");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
+    let mostraLogin = document.querySelector("#login");
     let userWelcome = document.querySelector("#userWelcome");
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let loginbuttons = document.querySelector("#loginButtons");
@@ -25,6 +26,7 @@ window.addEventListener("load", function (e){
                 loginbuttons.style.display = "none";
                 logoutButton.style.display="block";
                 leMiePrenotazioni.classList.remove("hidden");
+                mostraLogin.classList.remove("hidden");
                 console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
