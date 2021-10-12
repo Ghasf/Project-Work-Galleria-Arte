@@ -17,11 +17,11 @@ body{
 .navbar{
 }
 #loginButtons{
-    position: fixed;
+    position: absolute;
     right: 0;
 }
 .login{
-    position: fixed;
+    position: absolute;
     right: 0;
 }
 .loader-wrapper {
@@ -125,6 +125,9 @@ footer{
 
 .hidden{
     display: none;
+}
+.font-size{
+    font-size: large;
 }
 
 @media (max-width: 900px){
