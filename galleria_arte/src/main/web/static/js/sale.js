@@ -30,6 +30,7 @@ window.addEventListener("load", function(){
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let loginbuttons = document.querySelector("#loginButtons");
     let logoutButton = document.querySelector("#buttonEsci");
+    let mostraLogin = document.querySelector("#login");
 
     userWelcome.style.display="none";
     userWelcomeName.style.display="none";
@@ -42,6 +43,7 @@ window.addEventListener("load", function(){
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
                 logoutButton.style.display="block";
+                mostraLogin.classList.remove("hidden");
                 //leMiePrenotazioni.classList.remove("hidden");
                 leMiePrenotazioni.style.display="block";
                 console.log("Ho rimosso la classe hidden");

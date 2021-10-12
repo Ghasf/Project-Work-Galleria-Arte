@@ -37,7 +37,7 @@ body{
 }
 
 .loader {
-    display: inline-block;
+    display: block;
     width: 30px;
     height: 30px;
     position: relative;
@@ -47,7 +47,7 @@ body{
 
 .loader-inner {
     vertical-align: top;
-    display: inline-block;
+    display: block;
     width: 100%;
     background-color: #fff;
     animation: loader-inner 2s infinite ease-in;
