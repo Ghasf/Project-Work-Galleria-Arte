@@ -40,7 +40,6 @@ window.addEventListener("load", function() {
         }
     }
 
-
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
         open("testform.html?id=" + idUtente);
@@ -55,5 +54,10 @@ window.addEventListener("load", function() {
         e.preventDefault();
         console.log("Ho cliccato sulle sale");
         open("Sale.html?id=" + idUtente);
+    })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
     })
 })

@@ -42,7 +42,8 @@ window.addEventListener("load", function(){
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
                 logoutButton.style.display="block";
-                leMiePrenotazioni.classList.remove("hidden");
+                //leMiePrenotazioni.classList.remove("hidden");
+                leMiePrenotazioni.style.display="block";
                 console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
@@ -595,7 +596,7 @@ window.addEventListener("load", function(){
     })
 
     let prezzi = document.querySelector("#prezzi");
-    let home = document.querySelector("#homeIndex");
+    let home = document.querySelector("#home");
 
     prezzi.addEventListener("click", function (e){
         e.preventDefault();
@@ -611,5 +612,10 @@ window.addEventListener("load", function(){
         //e.preventDefault();
         console.log("Ho cliccato il link Home");
         open("index.html?id=" + idUtente);
+    })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
     })
 })

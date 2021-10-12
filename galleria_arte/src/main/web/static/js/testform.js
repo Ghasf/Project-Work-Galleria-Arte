@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
     let userWelcomeName = document.querySelector("#userWelcomeName");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let loginbuttons = document.querySelector("#loginButtons");
+    let logoutButton = document.querySelector("#buttonEsci");
 
     if(idUtente !== "null"){
         if(idUtente !== null) {
@@ -65,6 +66,11 @@ window.addEventListener('load', function () {
         e.preventDefault();
         console.log("Ho cliccato sulle sale");
         open("prezzi.html?id=" + idUtente);
+    })
+
+    logoutButton.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + null);
     })
 })
 

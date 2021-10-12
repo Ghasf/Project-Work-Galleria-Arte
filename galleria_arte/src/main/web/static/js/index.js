@@ -42,11 +42,6 @@ window.addEventListener("load", function (e){
         }
     }
 
-
-    // loginUtente.addEventListener("click", function (e){
-    //
-    // })
-
     sale.addEventListener("click", function (e){
         e.preventDefault();
         open("Sale.html?id=" + idUtente);
