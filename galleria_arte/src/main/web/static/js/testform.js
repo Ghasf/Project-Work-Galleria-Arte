@@ -175,19 +175,23 @@ function stampaPrenotazioni(prenotazioni, idUtente) {
             //         }).then(function (ress) {
             //             console.log(ress);
 
+                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                    method: 'GET',
+                }).then(res => res.text()).then(function (emailUtente) {
+
                         fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + idPrenotazione, {
                             method: 'DELETE',
                         }).then(function(data){
-                            alert("prenotazione cancellata");
+                            alert("***Prenotazione cancellata***");
 
-                            alert("Ti è stata inviata una email di conferma.");
+                            alert("Ti è stata inviata una email di conferma all'inidirizzo " + emailUtente);
 
 
                             //open("prenotazioni.html?id=" + idUtente);
                             location.reload();
                         })
                     })
-                //})
+                })
             //})
         //})
         tBody.appendChild(row);

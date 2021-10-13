@@ -69,6 +69,14 @@ public class PrenotazioniController {
             prenotazione.setSale(sale);
         }
         prenotazioniService.savePrenotazione(prenotazione);
+
+        String dest = prenotazione.getAnagrafica().getEmail();
+        String ogg = "Sublime Art - prenotazione confermata con successo";
+        String mess = "Hai confermato la prenotazione: " +
+                prenotazione.getDescrizione() + " dal giorno " +
+                prenotazione.getDataInizio() + " al giorno " + prenotazione.getDataFine() +
+                " per la " + prenotazione.getSale().getNome() + ".";
+        mailSenderComponent.send(dest,ogg,mess);
     }
 
 
@@ -89,7 +97,10 @@ public class PrenotazioniController {
 
         String dest = p.getAnagrafica().getEmail();
         String ogg = "Sublime Art - prenotazione cancellata con successo";
-        String mess = "Hai cancellato la prenotazione: " + p.getDescrizione() + " che era prenotata dal giorno " + p.getDataInizio() + " al giorno " + p.getDataFine() + " per la " + p.getSale().getNome();
+        String mess = "Hai cancellato la prenotazione: " +
+                p.getDescrizione() + " che era prenotata dal giorno " +
+                p.getDataInizio() + " al giorno " + p.getDataFine() +
+                " per la " + p.getSale().getNome() + ".";
         mailSenderComponent.send(dest,ogg,mess);
         prenotazioniService.deletePrenotazioneById(id);
     }
