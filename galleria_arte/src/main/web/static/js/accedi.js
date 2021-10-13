@@ -1,5 +1,21 @@
 window.addEventListener('load', function (event) {
+    let sale = document.querySelector("#sale");
+    let prezzi = document.querySelector("#prezzi");
+    let home = document.querySelector("#home");
 
+    prezzi.addEventListener("click", function (e){
+        e.preventDefault();
+        open("prezzi.html?id=");
+    })
+    home.addEventListener("click", function (e){
+        //e.preventDefault();
+        //console.log("Ho cliccato il link Home");
+        open("index.html?id=");
+    })
+    sale.addEventListener("click", function (e){
+        e.preventDefault();
+        open("Sale.html?id=");
+    })
     let formAccedi = document.querySelector("#submitForm");
     formAccedi.addEventListener("submit", function (e) {
         e.preventDefault();

@@ -1,20 +1,19 @@
 * {
     margin: 0;
-    box-sizing: border-box;
 }
 body{
-    overflow-x:hidden;
-    margin:0;
     background: rgb(63,94,251)!important;
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) !important;
-    width: 100% !important;
-    height: 100% !important;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.navbar{
+    margin-bottom: 100px;
 }
 .logo {
     max-height: 60px;
     max-width: 60px;
-}
-.navbar{
 }
 #loginButtons{
     position: absolute;
@@ -79,8 +78,10 @@ body{
 .social-icon:hover{
     transform: scale(1.5)
 }
+
 footer{
     background-color: #212529;
+    margin-top:100px;
 }
 .linksocial {
     display: flex;
@@ -128,6 +129,20 @@ footer{
 }
 .font-size{
     font-size: large;
+}
+
+.bottom-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+#loginButtons{
+    position: absolute;
+    right: 0;
+}
+.login{
+    position: absolute;
+    right: 0;
 }
 
 @media (max-width: 900px){
