@@ -598,7 +598,7 @@ window.addEventListener("load", function () {
 
     let prezzi = document.querySelector("#prezzi");
     let home = document.querySelector("#home");
-
+    let logo = document.querySelector("#logo");
     prezzi.addEventListener("click", function (e) {
         e.preventDefault();
         open("prezzi.html?id=" + idUtente);
@@ -618,5 +618,9 @@ window.addEventListener("load", function () {
     logoutButton.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + null);
+    })
+    logo.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + idUtente);
     })
 })

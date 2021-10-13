@@ -42,6 +42,29 @@ window.addEventListener('load', function (event) {
             //console.log("Form non valido");
         }
     })
+    let sale = document.querySelector("#sale");
+    let prezzi = document.querySelector("#prezzi");
+    let home = document.querySelector("#home")
+    let logo = document.querySelector("#logo")
+
+    sale.addEventListener("click", function (e){
+        e.preventDefault();
+        open("Sale.html");
+    })
+
+    prezzi.addEventListener("click", function (e){
+        e.preventDefault();
+        open("prezzi.html");
+    })
+    home.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html");
+    })
+    logo.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html");
+    })
+
 })
 
 function emailCheckAndPost() {

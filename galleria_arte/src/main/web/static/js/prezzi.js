@@ -4,8 +4,9 @@ window.addEventListener("load", function (e){
     let urlParams = new URLSearchParams(queryString);
     let idUtente = urlParams.get('id');
     //console.log(idUtente);
-
+    let logo = document.querySelector("#logo");
     let sale = document.querySelector("#sale");
+    let home = document.querySelector("#home")
     let prezzi = document.querySelector("#prezzi");
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let mostraLogin = document.querySelector("#login");
@@ -55,6 +56,15 @@ window.addEventListener("load", function (e){
     leMiePrenotazioni.addEventListener("click", function (e){
         e.preventDefault();
         open("prenotazioni.html?id=" + idUtente);
+    })
+    logo.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + idUtente);
+    })
+
+    home.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?id=" + idUtente)
     })
 
     logoutButton.addEventListener("click", function (e){

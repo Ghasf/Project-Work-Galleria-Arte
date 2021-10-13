@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
     let leMiePrenotazioni = document.querySelector("#navPrenotazioni");
     let loginbuttons = document.querySelector("#loginButtons");
     let logoutButton = document.querySelector("#buttonEsci");
+    let logo = document.querySelector("#logo")
 
     if (idUtente !== "null") {
         if (idUtente !== null) {
@@ -54,6 +55,10 @@ window.addEventListener('load', function () {
     home.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + idUtente);
+    })
+    logo.addEventListener("click", function (e){
+        e.preventDefault();
+        open("index.html?=" + idUtente);
     })
 
     sale.addEventListener("click", function (e) {
