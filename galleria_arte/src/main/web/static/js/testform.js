@@ -134,7 +134,7 @@ function stampaPrenotazioni(prenotazioni, idUtente) {
         bottone = document.createElement("button")
         bottone.className = "btn-sm btn-danger"
         bottone.dataset.id = prenotazioni[j].idPrenotazione;
-        bottone.innerHTML = "cancella"
+        bottone.innerHTML = "Cancella"
         cell.appendChild(bottone);
         row.appendChild(cell);
         bottone.addEventListener("click", function (e) {
@@ -187,10 +187,7 @@ function stampaPrenotazioni(prenotazioni, idUtente) {
                         fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + idPrenotazione, {
                             method: 'DELETE',
                         }).then(function(data){
-                            alert("***Prenotazione cancellata***");
-
-                            alert("Ti è stata inviata una email di conferma all'inidirizzo " + emailUtente);
-
+                            alert("***Prenotazione cancellata***\n\nTi è stata inviata una email di conferma all'inidirizzo " + emailUtente)
 
                             //open("prenotazioni.html?id=" + idUtente);
                             location.reload();

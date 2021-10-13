@@ -1,178 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="static/js/iscrizione.js"></script>
-    <link rel="stylesheet" href="static/css/css/bootstrap.css">
-    <link rel="stylesheet" href="static/css/iscrizione.css">
-    <link rel="stylesheet" href="static/css/css/bootstrap.min.css">
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Art Gallery: Iscrizione</title>
+	<script type="text/javascript" src="static/js/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="static/js/iscrizione.js"></script>
+	<link rel="stylesheet" href="static/css/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/iscrizione.css">
+	<link rel="stylesheet" href="static/css/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<title>Art Gallery: Iscrizione</title>
 </head>
 <body>
 <div class="p-0 m-0 container d-flex flex-column justify-content-between align-items-stretch">
-<header>
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between text-center pb-md-3 ">
-        <div class="col-12 m-0 col-md-6 offset-1 offset-md-0">
-            <ul class="navbar-nav align-items-center">
-                <li><a class="nav-link" id="logo" href="#"><img alt="0" class="logo ms-md-2" src="static/images/GalleriaArte.png"></a></li>
-                <li class="">
-                    <a class="nav-link font-size" id="home" href="#">Home </a>
-                </li>
-                <li class="">
-                    <a class="nav-link font-size" id="sale" href="#">Le nostre sale</a>
-                </li>
-                <li class="">
-                    <a class="nav-link font-size" id="prezzi" href="#">Tariffe</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-<main class="d-flex col-12 justify-content-center align-items-stretch">
-    <div class="row">
-            <div class="card glass-card">
-                <div class="card-body">
-                    <form class="text-white" method="post" id="submitForm">
-                        <div class="form-group text-center formRow">
-                            <label for="email">
-                                <strong class="text-danger">*</strong>
-                                Email
-                            </label>
-                            <input type="text" class="form-control required" id="email" placeholder="">
-                            <div class="messaggi hidden text-danger">
-                                Campo obbligatorio
-                            </div>
-                        </div>
-                        <div class=" form-group row text-center formRow">
-                            <div class="col-md-6">
-                                <label for="password">
-                                    <strong class="text-danger">*</strong>
-                                    Password
-                                </label>
-                                <input type="password" class="form-control required" id="password" placeholder="">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                            <div class="col-md-6 formRow">
-                                <label for="confermapassword">
-                                    <strong class="text-danger">*</strong>
-                                    Conferma Password</label>
-                                <input type="password" class="form-control required" id="confermapassword" placeholder="">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nominativo form-group text-center formRow">
-                            <label for="nominativo">
-                                <strong class="text-danger">*</strong>
-                                Nominativo</label>
-                            <input type="text" class="nominativo form-control required" id="nominativo" placeholder="">
-                            <div class="messaggi hidden text-danger">
-                                Campo obbligatorio
-                            </div>
-                        </div>
-                        <div class="form-group row formRow">
-                            <div class="text-center col-md-8">
-                                <label for="indirizzo">
-                                    <strong class="text-danger">*</strong>
-                                    Indirizzo</label>
-                                <input type="text" class="form-control required" id="indirizzo"
-                                       placeholder="Es. Via Alberto Rossi 29">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                            <div class="text-center col-md-4 formRow">
-                                <label for="cap">
-                                    <strong class="text-danger">*</strong>
-                                    Cap</label>
-                                <input type="text" class="form-control required" id="cap">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row formRow">
-                            <div class="text-center col-md-6">
-                                <label for="localita">
-                                    <strong class="text-danger">*</strong>
-                                    Città</label>
-                                <input type="text" class="form-control required" id="localita">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                            <div class="text-center col-md-6 formRow">
-                                <label for="provincia">
-                                    <strong class="text-danger">*</strong>
-                                    Provincia</label>
-                                <input type="text" class="form-control required" id="provincia">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row text-center formRow">
-                            <div class="col-md-6">
-                                <label for="codicefiscale">
-                                    <strong class="text-danger">*</strong>
-                                    Codice Fiscale</label>
-                                <input type="text" class="form-control required" id="codicefiscale" placeholder="">
-                                <div class="messaggi hidden text-danger">
-                                    Campo obbligatorio
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="partitaiva">
-                                    Partita Iva</label>
-                                <input type="text" class="form-control" id="partitaiva" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group text-center">
-                            <div class="text-center">
-                                <label for="sitoweb">Sito Web</label>
-                                <input type="text" class="form-control" id="sitoweb" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check formRow">
-                                <input class="form-check-input required checkReq" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck"><small>
-                                    Ho letto la <a class="text-dark"
-                                                   href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy
-                                    policy </a>
-                                    e acconsento al trattamento dei dati che non verranno mai ceduti a terzi</small>
-                                </label>
+	<header>
+		<nav class=" navbar navbar-expand-lg navbar-dark bg-dark justify-content-between text-center pb-md-3 ">
+			<div class="col-12 m-0 col-md-6 offset-1 offset-md-0">
+				<ul class="navbar-nav align-items-center">
+					<li><a class="nav-link" id="logo" href="#"><img alt="0" class="logo ms-md-2"
+																	src="static/images/GalleriaArte.png"></a></li>
+					<li class="">
+						<a class="nav-link font-size" id="home" href="#">Home </a>
+					</li>
+					<li class="">
+						<a class="nav-link font-size" id="sale" href="#">Le nostre sale</a>
+					</li>
+					<li class="">
+						<a class="nav-link font-size" id="prezzi" href="#">Tariffe</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main class="d-flex col-12 justify-content-center align-items-stretch">
+		<div class="row">
+			<div class="card glass-card">
+				<div class="card-body">
+					<form class="text-white" method="post" id="submitForm">
+						<div class="form-group text-center formRow">
+							<label for="email">
+								<strong class="text-danger">*</strong>
+								Email
+							</label>
+							<input type="text" class="form-control required" id="email" placeholder="">
+							<div class="messaggi hidden text-danger">
+								Campo obbligatorio
+							</div>
+						</div>
+						<div class=" form-group row text-center formRow">
+							<div class="col-md-6">
+								<label for="password">
+									<strong class="text-danger">*</strong>
+									Password
+								</label>
+								<input type="password" class="form-control required" id="password" placeholder="">
 								<div class="messaggi hidden text-danger">
 									Campo obbligatorio
 								</div>
-                            </div>
-                        </div>
-                        <button type="submit" id="submitIscrizione" class="bottone-form btn btn-primary">Iscriviti</button>
-                        <p class="text-center small">Sei già iscritto? <a href="accedi.html" class="text-white">Accedi</a></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-</main>
-<footer class="pt-4 pt-md-5 border-top align-items-center">
-    <div class="row m-0 p-0">
-        <div class="text-center col-12 col-md-12 align-items-center p-0 m-0">
-            <h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
-            <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
-                <img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-                <img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
-            </a>
-            <small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
-        </div>
-    </div>
-</footer>
+							</div>
+							<div class="col-md-6 formRow">
+								<label for="confermapassword">
+									<strong class="text-danger">*</strong>
+									Conferma Password</label>
+								<input type="password" class="form-control required" id="confermapassword"
+									   placeholder="">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+						</div>
+						<div class="nominativo form-group text-center formRow">
+							<label for="nominativo">
+								<strong class="text-danger">*</strong>
+								Nominativo</label>
+							<input type="text" class="nominativo form-control required" id="nominativo" placeholder="">
+							<div class="messaggi hidden text-danger">
+								Campo obbligatorio
+							</div>
+						</div>
+						<div class="form-group row formRow">
+							<div class="text-center col-md-8">
+								<label for="indirizzo">
+									<strong class="text-danger">*</strong>
+									Indirizzo</label>
+								<input type="text" class="form-control required" id="indirizzo"
+									   placeholder="Es. Via Alberto Rossi 29">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+							<div class="text-center col-md-4 formRow">
+								<label for="cap">
+									<strong class="text-danger">*</strong>
+									Cap</label>
+								<input type="text" class="form-control required" id="cap">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+						</div>
+						<div class="form-group row formRow">
+							<div class="text-center col-md-6">
+								<label for="localita">
+									<strong class="text-danger">*</strong>
+									Città</label>
+								<input type="text" class="form-control required" id="localita">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+							<div class="text-center col-md-6 formRow">
+								<label for="provincia">
+									<strong class="text-danger">*</strong>
+									Provincia</label>
+								<input type="text" class="form-control required" id="provincia">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+						</div>
+						<div class="form-group row text-center formRow">
+							<div class="col-md-6">
+								<label for="codicefiscale">
+									<strong class="text-danger">*</strong>
+									Codice Fiscale</label>
+								<input type="text" class="form-control required" id="codicefiscale" placeholder="">
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+							<div class="col-md-6">
+								<label for="partitaiva">
+									Partita Iva</label>
+								<input type="text" class="form-control" id="partitaiva" placeholder="">
+							</div>
+						</div>
+						<div class="form-group text-center">
+							<div class="text-center">
+								<label for="sitoweb">Sito Web</label>
+								<input type="text" class="form-control" id="sitoweb" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check formRow">
+								<input class="form-check-input required checkReq" type="checkbox" id="gridCheck">
+								<label class="form-check-label" for="gridCheck"><small>
+									Ho letto la <a class="text-dark"
+												   href="https://en.wikipedia.org/wiki/Privacy_policy"> privacy
+									policy </a>
+									e acconsento al trattamento dei dati che non verranno mai ceduti a terzi</small>
+								</label>
+								<div class="messaggi hidden text-danger">
+									Campo obbligatorio
+								</div>
+							</div>
+						</div>
+						<button type="submit" id="submitIscrizione" class="bottone-form btn btn-primary">Iscriviti
+						</button>
+						<p class="text-center small">Sei già iscritto? <a href="accedi.html"
+																		  class="text-white">Accedi</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="pt-4 pt-md-5 border-top align-items-center">
+		<div class="row m-0 p-0">
+			<div class="text-center col-12 col-md-12 align-items-center p-0 m-0">
+				<h3 class="testo-footer d-block mb-3">Seguici sui Social!</h3>
+				<a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
+					<img class="mb-2 social1" src="static/images/instagram.png" alt="" width="50" height="50">
+				</a>
+				<a href="https://www.facebook.com/" target="_blank">
+					<img class="mb-2 social2" src="static/images/facebook.png" alt="" width="37" height="37">
+				</a>
+				<small class="d-block mb-3 text-muted">Art Gallery ©2021</small>
+			</div>
+		</div>
+	</footer>
 </div>
 </body>
 </html>
