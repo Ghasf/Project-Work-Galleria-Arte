@@ -7,6 +7,7 @@ import it.project.galleria_arte.model.Sale;
 import it.project.galleria_arte.service.AnagraficaService;
 import it.project.galleria_arte.service.PrenotazioniService;
 import it.project.galleria_arte.service.SaleService;
+import it.project.galleria_arte.util.MailSenderComponent;
 import org.hibernate.annotations.Target;
 import org.springframework.aop.TargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class PrenotazioniController {
 
     @Autowired
     private SaleService saleService;
+
+    @Autowired
+    private MailSenderComponent mailSenderComponent;
 
     @GetMapping("/get-prenotazioni")
     public List<Prenotazioni> getPrenotazioni(){
@@ -65,6 +69,14 @@ public class PrenotazioniController {
             prenotazione.setSale(sale);
         }
         prenotazioniService.savePrenotazione(prenotazione);
+
+        String dest = prenotazione.getAnagrafica().getEmail();
+        String ogg = "Sublime Art - prenotazione confermata con successo";
+        String mess = "Hai confermato la prenotazione: " +
+                prenotazione.getDescrizione() + " dal giorno " +
+                prenotazione.getDataInizio() + " al giorno " + prenotazione.getDataFine() +
+                " per la " + prenotazione.getSale().getNome() + ".";
+        mailSenderComponent.send(dest,ogg,mess);
     }
 
 
@@ -80,6 +92,16 @@ public class PrenotazioniController {
 
     @DeleteMapping("/delete-prenotazione-by-id/{id}")
     public void deletePrenotazioneById(@PathVariable("id") Integer id){
+
+        Prenotazioni p = prenotazioniService.getPrenotazioneById(id);
+
+        String dest = p.getAnagrafica().getEmail();
+        String ogg = "Sublime Art - prenotazione cancellata con successo";
+        String mess = "Hai cancellato la prenotazione: " +
+                p.getDescrizione() + " che era prenotata dal giorno " +
+                p.getDataInizio() + " al giorno " + p.getDataFine() +
+                " per la " + p.getSale().getNome() + ".";
+        mailSenderComponent.send(dest,ogg,mess);
         prenotazioniService.deletePrenotazioneById(id);
     }
 }

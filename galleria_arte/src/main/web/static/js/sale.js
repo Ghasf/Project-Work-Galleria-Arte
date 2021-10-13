@@ -1,6 +1,6 @@
 //let idUtente = 2;
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     let idUtente = urlParams.get('id');
@@ -32,20 +32,20 @@ window.addEventListener("load", function(){
     let logoutButton = document.querySelector("#buttonEsci");
     let mostraLogin = document.querySelector("#login");
 
-    userWelcome.style.display="none";
-    userWelcomeName.style.display="none";
-    logoutButton.style.display="none";
-    leMiePrenotazioni.style.display="none";
+    userWelcome.style.display = "none";
+    userWelcomeName.style.display = "none";
+    logoutButton.style.display = "none";
+    leMiePrenotazioni.style.display = "none";
 
-    if(idUtente !== "null"){
-        if(idUtente !== null) {
+    if (idUtente !== "null") {
+        if (idUtente !== null) {
             if (idUtente !== "") {
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
-                logoutButton.style.display="block";
+                logoutButton.style.display = "block";
                 mostraLogin.classList.remove("hidden");
                 //leMiePrenotazioni.classList.remove("hidden");
-                leMiePrenotazioni.style.display="block";
+                leMiePrenotazioni.style.display = "block";
                 //console.log("Ho rimosso la classe hidden");
 
                 //prendi il nome dell'utente dal db (tramite l'id) e stampalo nel div #userWelcomeName
@@ -65,12 +65,12 @@ window.addEventListener("load", function(){
 
     prenotaSalaVerde.addEventListener("click", function (e) {
         e.preventDefault();
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -104,7 +104,7 @@ window.addEventListener("load", function(){
                             let salaLibera = false;
 
                             for (var i = 0; i < dataFineDb.length; i++) {
-                                if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i] && endDate <dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
+                                if (((endDate < dataInizioDb[i]) || (endDate > dataFineDb[i]) && ((startDate < dataInizioDb[i] && endDate < dataInizioDb[i]) || (startDate > dataFineDb[i])))) {
                                     //fai la post
                                     salaLibera = true;
                                 } else {
@@ -120,14 +120,18 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaVerde").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaVerde").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
                                     headers: {
                                         "content-type": "application/json; charset=UTF-8",
@@ -137,15 +141,18 @@ window.addEventListener("load", function(){
                                     },
                                     body: JSON.stringify(Data)
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
-                            }
-                        } else {
-                            //console.log("Date inserite non correttamente");
-                            alert("Date inserite non correttamente");
-                        }
 
+
+
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
+                                })
+                            } else {
+                                //console.log("Date inserite non correttamente");
+                                alert("Date inserite non correttamente");
+                            }
+                        }
                     })
                 })
             })
@@ -156,12 +163,12 @@ window.addEventListener("load", function(){
     prenotaSalaBlu.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -208,12 +215,12 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaBlu").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaBlu").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
                                 fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
@@ -245,12 +252,12 @@ window.addEventListener("load", function(){
     prenotaSalaRossa.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -297,12 +304,12 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaRossa").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaRossa").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
                                 fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
@@ -332,12 +339,12 @@ window.addEventListener("load", function(){
     prenotaSalaViola.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -384,12 +391,12 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaViola").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaViola").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
                                 fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
@@ -419,12 +426,12 @@ window.addEventListener("load", function(){
     prenotaSalaGialla.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -471,12 +478,12 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaGialla").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaGialla").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
                                 fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
@@ -506,12 +513,12 @@ window.addEventListener("load", function(){
     prenotaSalaNera.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if(idUtente === null || idUtente === "null" || idUtente === ""){
+        if (idUtente === null || idUtente === "null" || idUtente === "") {
             //se l'utente non ha effettuato l'accesso viene reindirizzato nella pagina di accesso
             alert("Verrai reindirizzato alla pagina di login");
             open("accedi.html");
 
-        }else {
+        } else {
 
             /* qui dobbiamo prenderci:
                 l'id dell'utente tramite il suo nominativo di login,
@@ -558,12 +565,12 @@ window.addEventListener("load", function(){
                             }
                             if (salaLibera) {
                                 /** LA POST FUNZIONA, MA NON AGGIUNGE L'ANAGRAFICA PERCHE' VUOLE TUTTI I CAMPI DI ANAGRAFICA, E SALE */
-                                //console.log("FAI LA POST QUI");
+                                    //console.log("FAI LA POST QUI");
                                 const Data = {
-                                    descrizione: document.querySelector("#descrizioneSalaNera").value,
-                                    dataInizio: startDate,
-                                    dataFine: endDate
-                                }
+                                        descrizione: document.querySelector("#descrizioneSalaNera").value,
+                                        dataInizio: startDate,
+                                        dataFine: endDate
+                                    }
 
                                 fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
                                     method: 'POST',
@@ -592,23 +599,23 @@ window.addEventListener("load", function(){
     let prezzi = document.querySelector("#prezzi");
     let home = document.querySelector("#home");
 
-    prezzi.addEventListener("click", function (e){
+    prezzi.addEventListener("click", function (e) {
         e.preventDefault();
         open("prezzi.html?id=" + idUtente);
     })
 
-    leMiePrenotazioni.addEventListener("click", function (e){
+    leMiePrenotazioni.addEventListener("click", function (e) {
         e.preventDefault();
         open("prenotazioni.html?id=" + idUtente);
     })
 
-    home.addEventListener("click", function (e){
+    home.addEventListener("click", function (e) {
         //e.preventDefault();
         //console.log("Ho cliccato il link Home");
         open("index.html?id=" + idUtente);
     })
 
-    logoutButton.addEventListener("click", function (e){
+    logoutButton.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + null);
     })

@@ -1,8 +1,8 @@
 package it.project.galleria_arte.controller;
 
-import it.project.galleria_arte.MailSender;
+import com.sun.istack.NotNull;
+import it.project.galleria_arte.util.MailSenderComponent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class MailSenderController {
 
-    //@Autowired
-   // private MailSender mailSender;
+    @Autowired
+    private MailSenderComponent mailSenderComponent;
 
     @PostMapping("/send-email/{dest}/{ogg}/{mess}")
-    public void sendEmail(@PathVariable("dest") String dest,@PathVariable("ogg") String ogg,@PathVariable("mess") String mess){
-        //mailSender.(dest, ogg, mess);
-
+    public void sendMmail(@RequestBody @NotNull @PathVariable("dest") String dest, @PathVariable("ogg") String ogg, @PathVariable("mess") String mess){
+        mailSenderComponent.send(dest,ogg,mess);
     }
 }

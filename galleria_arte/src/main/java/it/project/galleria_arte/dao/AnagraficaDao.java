@@ -48,4 +48,11 @@ public class AnagraficaDao {
         query.setParameter("email",email);
         return query.getSingleResult();
     }
+
+    public String getEmailById(Integer id){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<String> query = currentSession.createQuery("SELECT email FROM Anagrafica WHERE idAnagrafica = :id", String.class);
+        query.setParameter("id",id);
+        return query.getSingleResult();
+    }
 }

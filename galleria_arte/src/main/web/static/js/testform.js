@@ -19,8 +19,8 @@ window.addEventListener('load', function () {
     let loginbuttons = document.querySelector("#loginButtons");
     let logoutButton = document.querySelector("#buttonEsci");
 
-    if(idUtente !== "null"){
-        if(idUtente !== null) {
+    if (idUtente !== "null") {
+        if (idUtente !== null) {
             if (idUtente !== "") {
                 userWelcome.style.display = "block";
                 loginbuttons.style.display = "none";
@@ -48,33 +48,33 @@ window.addEventListener('load', function () {
         //console.log("Prenotazioni");
         //console.log(prenotazioni);
 
-        stampaPrenotazioni(prenotazioni);
+        stampaPrenotazioni(prenotazioni, idUtente);
     })
 
-    home.addEventListener("click", function (e){
+    home.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + idUtente);
     })
 
-    sale.addEventListener("click", function (e){
+    sale.addEventListener("click", function (e) {
         e.preventDefault();
         //console.log("Ho cliccato sulle sale");
         open("Sale.html?id=" + idUtente);
     })
 
-    prezzi.addEventListener("click", function (e){
+    prezzi.addEventListener("click", function (e) {
         e.preventDefault();
         //console.log("Ho cliccato sulle sale");
         open("prezzi.html?id=" + idUtente);
     })
 
-    logoutButton.addEventListener("click", function (e){
+    logoutButton.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + null);
     })
 })
 
-function stampaPrenotazioni(prenotazioni) {
+function stampaPrenotazioni(prenotazioni, idUtente) {
     let tBody = document.querySelector("#tabellaBody")
 
     //console.log(prenotazioni.length);
@@ -82,11 +82,11 @@ function stampaPrenotazioni(prenotazioni) {
 
     let viewportWidth = window.innerWidth;
     let titolo = document.querySelector("#titolo");
-    if(viewportWidth <= 500){
+    if (viewportWidth <= 500) {
         console.log("titolo inferiore");
-        titolo.style.display="none";
-    }else{
-        titolo.style.display="block";
+        titolo.style.display = "none";
+    } else {
+        titolo.style.display = "block";
     }
 
     for (let j = 0; j < prenotazioni.length; j++) {
@@ -127,7 +127,7 @@ function stampaPrenotazioni(prenotazioni) {
 
         cell = document.createElement("td");
         bottone = document.createElement("button")
-        bottone.className="btn-sm btn-danger"
+        bottone.className = "btn-sm btn-danger"
         bottone.dataset.id = prenotazioni[j].idPrenotazione;
         bottone.innerHTML = "cancella"
         cell.appendChild(bottone);
@@ -137,30 +137,63 @@ function stampaPrenotazioni(prenotazioni) {
             //console.log(e.currentTarget);
             //console.log(e.currentTarget.dataset.id);
 
-            fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + e.currentTarget.dataset.id, {
-                method: 'DELETE',
-            }).then(res => res.json()).then(res => console.log(res));
-            alert("prenotazione cancellata");
-
-            bottone.send({
-                Host : "smtp.gmail.com",
-                Username : "sublimeartjaba37@gmail.com",
-                Password : "J4b437!!",
-                To : 'dom.co9999@libero.it',
-                From : "sublimeartjaba37@gmail.com",
-                Subject : "This is the subject",
-                Body : "And this is the body"
-            }).then(
-                message => alert(message)
-            );
-
-            alert("Ti è stata inviata una email di conferma.");
+            let idPrenotazione = e.currentTarget.dataset.id;
+            console.log(idPrenotazione);
 
 
-            //open("prenotazioni.html?id=" + idUtente);
-            location.reload();
+            //prendi l'email dell'utente loggato per inviargli una mail di conferma
+            // fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+            //     method: 'GET',
+            // }).then(res => res.text()).then(function (emailUtente) {
+            //
+            //     console.log(emailUtente);
+            //     console.log(idPrenotazione);
+            //
+            //     fetch('http://localhost:8080/api/get-prenotazione-by-id/' + idPrenotazione, {
+            //         method: 'GET',
+            //     }).then(function (response){
+            //     return response.text()
+            //     }).then(function (prenotazione) {
+            //
+            //         let j = JSON.parse(prenotazione);
+            //         console.log(prenotazione);
+            //         console.log(JSON.parse(prenotazione).descrizione);
+            //         let destinatario = emailUtente;
+            //         let oggetto = "Sublime Art - prenotazione cancellata con successo";
+            //         let messaggio = "Hai cancellato la prenotazione: " + j.descrizione;
+            //
+            //         fetch('http://localhost:8080/api/send-email/' + destinatario + '/' + oggetto + '/' + messaggio, {
+            //             method: 'POST',
+            //             headers: {
+            //                 "content-type": "application/json; charset=UTF-8",
+            //                 "Accept": "*/*",
+            //                 "Accept-Encoding": "gzip,deflate,br",
+            //                 "Connection": "keep-live",
+            //                 "Access-Control-Allow-Origin": "*"
+            //             },
+            //             body: JSON.stringify(messaggio)
+            //         }).then(function (ress) {
+            //             console.log(ress);
 
-        })
+                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                    method: 'GET',
+                }).then(res => res.text()).then(function (emailUtente) {
+
+                        fetch('http://localhost:8080/api/delete-prenotazione-by-id/' + idPrenotazione, {
+                            method: 'DELETE',
+                        }).then(function(data){
+                            alert("***Prenotazione cancellata***");
+
+                            alert("Ti è stata inviata una email di conferma all'inidirizzo " + emailUtente);
+
+
+                            //open("prenotazioni.html?id=" + idUtente);
+                            location.reload();
+                        })
+                    })
+                })
+            //})
+        //})
         tBody.appendChild(row);
     }
 }
