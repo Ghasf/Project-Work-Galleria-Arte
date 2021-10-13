@@ -58,11 +58,7 @@ footer{
 .bottone-form{
     width: 100%;
 }
-.centro{
-    position:relative !important;
-    right: 50% !important;
-    left: 50% !important;
-}
+
 .hidden{
     display: none;
 }
