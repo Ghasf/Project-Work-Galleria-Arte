@@ -88,7 +88,7 @@ function stampaPrenotazioni(prenotazioni, idUtente) {
     let viewportWidth = window.innerWidth;
     let titolo = document.querySelector("#titolo");
     if (viewportWidth <= 500) {
-        console.log("titolo inferiore");
+        //console.log("titolo inferiore");
         titolo.style.display = "none";
     } else {
         titolo.style.display = "block";
