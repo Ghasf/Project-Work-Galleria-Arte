@@ -132,18 +132,15 @@ window.addEventListener("load", function () {
                                 }).then(res => res.text()).then(function (emailUtente) {
 
                                     fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
-                                })
-
-
-
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
                                     //console.log("Prenotazione registrata con successo!");
                                     alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
                                     //manda una mail di conferma avvenuta prenotazione
@@ -222,19 +219,24 @@ window.addEventListener("load", function () {
                                         dataFine: endDate
                                     }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
                             //console.log("Date inserite non correttamente");
@@ -311,19 +313,24 @@ window.addEventListener("load", function () {
                                         dataFine: endDate
                                     }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
                             //console.log("Date inserite non correttamente");
@@ -398,19 +405,24 @@ window.addEventListener("load", function () {
                                         dataFine: endDate
                                     }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
                             //console.log("Date inserite non correttamente");
@@ -485,19 +497,24 @@ window.addEventListener("load", function () {
                                         dataFine: endDate
                                     }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
                             //console.log("Date inserite non correttamente");
@@ -572,19 +589,24 @@ window.addEventListener("load", function () {
                                         dataFine: endDate
                                     }
 
-                                fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
-                                    method: 'POST',
-                                    headers: {
-                                        "content-type": "application/json; charset=UTF-8",
-                                        "Accept": "*/*",
-                                        "Accept-Encoding": "gzip,deflate,br",
-                                        "Connection": "keep-live"
-                                    },
-                                    body: JSON.stringify(Data)
+                                fetch('http://localhost:8080/api/get-email-by-id/' + idUtente, {
+                                    method: 'GET',
+                                }).then(res => res.text()).then(function (emailUtente) {
+
+                                    fetch('http://localhost:8080/api/save-prenotazione/' + idUtente + "/" + idSala, {
+                                        method: 'POST',
+                                        headers: {
+                                            "content-type": "application/json; charset=UTF-8",
+                                            "Accept": "*/*",
+                                            "Accept-Encoding": "gzip,deflate,br",
+                                            "Connection": "keep-live"
+                                        },
+                                        body: JSON.stringify(Data)
+                                    })
+                                    //console.log("Prenotazione registrata con successo!");
+                                    alert("Prenotazione registrata con successo!\n\nTi è stata inviata una email di conferma all'indirizzo " + emailUtente);
+                                    //manda una mail di conferma avvenuta prenotazione
                                 })
-                                //console.log("Prenotazione registrata con successo!");
-                                alert("Prenotazione registrata con successo!");
-                                //manda una mail di conferma avvenuta prenotazione
                             }
                         } else {
                             //console.log("Date inserite non correttamente");
@@ -619,7 +641,7 @@ window.addEventListener("load", function () {
         e.preventDefault();
         open("index.html?id=" + null);
     })
-    logo.addEventListener("click", function (e){
+    logo.addEventListener("click", function (e) {
         e.preventDefault();
         open("index.html?id=" + idUtente);
     })
