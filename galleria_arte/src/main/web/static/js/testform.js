@@ -58,7 +58,7 @@ window.addEventListener('load', function () {
     })
     logo.addEventListener("click", function (e){
         e.preventDefault();
-        open("index.html?=" + idUtente);
+        open("index.html?id=" + idUtente);
     })
 
     sale.addEventListener("click", function (e) {
